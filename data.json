@@ -8,7 +8,11 @@
     { "tag": "Công việc", "q": "Some employers now value practical experience more than university degrees. Do you think this is a positive change?" },
     { "tag": "Xã hội", "q": "In many families, both parents now work full time. Do you think this is a good development for children?" },
     { "tag": "Cá nhân", "q": "Some people prefer to save money for the future, while others prefer to spend it and enjoy the present. Which approach do you think is better?" },
-    { "tag": "Du lịch", "q": "Tourism brings money to many countries but can also damage local culture. Do the advantages outweigh the disadvantages?" }
+    { "tag": "Du lịch", "q": "Tourism brings money to many countries but can also damage local culture. Do the advantages outweigh the disadvantages?" },
+    { "tag": "Giải trí", "q": "Many people now watch films and TV shows on their phones rather than at the cinema. Do you think this is a positive trend?" },
+    { "tag": "Giáo dục", "q": "Some parents reward their children with money for good exam results. Do you think this is a good idea?" },
+    { "tag": "Công việc", "q": "In some workplaces, employees are encouraged to take short breaks to rest during the day. Do you think this improves productivity?" },
+    { "tag": "Xã hội", "q": "Some people believe that public libraries are no longer necessary because information is available online. To what extent do you agree?" }
   ],
   "vocab": [
     { "t": "cutting-edge", "p": "adj", "d": "tối tân, tiên tiến nhất", "m": "Đồng nghĩa", "ex": "~ state-of-the-art — “The lab uses cutting-edge technology.”" },
@@ -25,6 +29,12 @@
     { "t": "put a strain on", "p": "collocation", "d": "gây căng thẳng/áp lực lên", "m": "Ví dụ", "ex": "Long working hours put a strain on family relationships." },
     { "t": "readily available", "p": "collocation", "d": "sẵn có, dễ tiếp cận", "m": "Ví dụ", "ex": "Online courses are readily available to anyone with internet." },
     { "t": "offset", "p": "v", "d": "bù đắp, cân bằng lại", "m": "Ví dụ", "ex": "The income from tourism can offset the cost of preserving heritage sites." },
-    { "t": "a top priority", "p": "collocation", "d": "ưu tiên hàng đầu", "m": "Ví dụ", "ex": "For many workers, work-life balance is now a top priority." }
+    { "t": "a top priority", "p": "collocation", "d": "ưu tiên hàng đầu", "m": "Ví dụ", "ex": "For many workers, work-life balance is now a top priority." },
+    { "t": "a passing trend", "p": "collocation", "d": "trào lưu nhất thời", "m": "Đối lập", "ex": ">< a lasting change — “Watching films on phones is not just a passing trend.”" },
+    { "t": "foster creativity", "p": "collocation", "d": "nuôi dưỡng sự sáng tạo", "m": "Đồng nghĩa", "ex": "~ encourage creativity — “Free play helps foster creativity in children.”" },
+    { "t": "at your fingertips", "p": "idiom", "d": "trong tầm tay, sẵn có ngay", "m": "Ví dụ", "ex": "The internet puts a world of information at your fingertips." },
+    { "t": "detrimental to", "p": "adj phrase", "d": "có hại cho", "m": "Đối lập", "ex": ">< beneficial to — “Too much screen time can be detrimental to sleep.”" },
+    { "t": "reap the benefits", "p": "collocation", "d": "gặt hái lợi ích", "m": "Ví dụ", "ex": "Workers who rest well reap the benefits of higher productivity." },
+    { "t": "a means to an end", "p": "idiom", "d": "phương tiện để đạt mục đích", "m": "Ví dụ", "ex": "For some students, money is a means to an end, not a goal in itself." }
   ]
 }
