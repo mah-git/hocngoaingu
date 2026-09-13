@@ -293,6 +293,7 @@ ul.tight li b{color:var(--ink)}
       <h3 class="blk" style="margin-top:4px">Bài của ngày — mỗi ngày một bộ khác nhau</h3>
       <p class="note" style="margin-bottom:16px">Kho bài xoay vòng theo ngày: hôm nay bạn có một combo riêng gồm một đề viết, một bài đọc, một câu nói và vài từ vựng. Làm hết là đủ một buổi khoảng 25–30 phút.</p>
       <div id="todayHost"></div>
+      <p class="note" id="sheetStatus" style="margin-top:12px"></p>
     </div>
 
     <div>
@@ -1519,6 +1520,23 @@ examInput.value=STATE.examDate||"2026-10-01";
 renderCountdown(); renderDash(); renderToday(); renderRoadmap(); renderReading(); renderDict(); renderListening(); renderTraps(); renderPrompts(); renderSamples(); renderSpeaking(); renderVocab();
 wrText.value=(STATE.writing&&STATE.writing[STATE.prompt||0])||""; paintWords();
 setInterval(renderCountdown,60000);
+
+/* ============ NỘI DUNG THÊM — tự cập nhật từ GitHub, KHÔNG cần đăng lại ============ */
+const DATA_URL = "https://raw.githubusercontent.com/mah-git/hocngoaingu/main/data.json";
+async function loadExtra(){
+  const st=document.getElementById("sheetStatus");
+  try{
+    const res = await fetch(DATA_URL + "?t=" + Date.now(), {cache:"no-store"});
+    if(!res.ok) throw new Error("HTTP "+res.status);
+    const d = await res.json();
+    let added=0;
+    (d.writing||[]).forEach(r=>{ if(r&&r.q){ PROMPTS.push({tag:r.tag||"Bài mới", q:r.q}); added++; } });
+    (d.vocab||[]).forEach(r=>{ if(r&&r.t){ VOCAB.push({t:r.t, p:r.p||"", d:r.d||"", m:r.m||"Ví dụ", ex:r.ex||""}); added++; } });
+    renderPrompts(); renderVocab(); try{ renderToday(); }catch(e){}
+    if(st) st.textContent = added>0 ? ("✓ Đã nạp thêm "+added+" mục mới (tự cập nhật từ kho online).") : "";
+  }catch(e){ console.warn("loadExtra:", e); }
+}
+loadExtra();
 
 /* ============ CAPABILITIES ============ */
 (async()=>{

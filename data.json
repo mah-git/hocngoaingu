@@ -1,0 +1,30 @@
+{
+  "_note": "Kho bài tự cập nhật cho hocngoaingu-for.netlify.app. Thêm phần tử vào mảng writing/vocab rồi push GitHub la web tu hien, khong can dang lai.",
+  "writing": [
+    { "tag": "Công nghệ", "q": "Some people believe that smartphones have made face-to-face communication worse. Do you agree?" },
+    { "tag": "Giáo dục", "q": "A number of universities now offer full degree courses online. Do the benefits of studying online outweigh the drawbacks?" },
+    { "tag": "Môi trường", "q": "Some governments encourage people to use bicycles instead of cars in city centres. Do you think this is an effective way to protect the environment?" },
+    { "tag": "Sức khỏe", "q": "Many people today do not get enough sleep because of work and entertainment. Whose responsibility is it to solve this problem?" },
+    { "tag": "Công việc", "q": "Some employers now value practical experience more than university degrees. Do you think this is a positive change?" },
+    { "tag": "Xã hội", "q": "In many families, both parents now work full time. Do you think this is a good development for children?" },
+    { "tag": "Cá nhân", "q": "Some people prefer to save money for the future, while others prefer to spend it and enjoy the present. Which approach do you think is better?" },
+    { "tag": "Du lịch", "q": "Tourism brings money to many countries but can also damage local culture. Do the advantages outweigh the disadvantages?" }
+  ],
+  "vocab": [
+    { "t": "cutting-edge", "p": "adj", "d": "tối tân, tiên tiến nhất", "m": "Đồng nghĩa", "ex": "~ state-of-the-art — “The lab uses cutting-edge technology.”" },
+    { "t": "face-to-face communication", "p": "collocation", "d": "giao tiếp trực tiếp", "m": "Ví dụ", "ex": "Smartphones can reduce face-to-face communication within families." },
+    { "t": "at the expense of", "p": "phrase", "d": "phải đánh đổi bằng", "m": "Ví dụ", "ex": "Some people chase money at the expense of their health." },
+    { "t": "a viable alternative", "p": "collocation", "d": "một lựa chọn khả thi", "m": "Ví dụ", "ex": "For busy adults, online study is a viable alternative to classes." },
+    { "t": "curb", "p": "v", "d": "hạn chế, kìm hãm", "m": "Đồng nghĩa", "ex": "~ limit, restrict — “Bike lanes help curb traffic in the city centre.”" },
+    { "t": "well-rounded", "p": "adj", "d": "toàn diện", "m": "Ví dụ", "ex": "Practical experience makes a graduate more well-rounded." },
+    { "t": "instil (a habit) in", "p": "collocation", "d": "gieo/tạo (thói quen) cho", "m": "Ví dụ", "ex": "Parents can instil good sleeping habits in their children." },
+    { "t": "a sense of independence", "p": "collocation", "d": "cảm giác độc lập", "m": "Ví dụ", "ex": "A part-time job gives teenagers a sense of independence." },
+    { "t": "dilute", "p": "v", "d": "làm loãng, làm phai nhạt", "m": "Ví dụ", "ex": "Mass tourism can dilute a region's local culture." },
+    { "t": "live within your means", "p": "idiom", "d": "sống trong khả năng tài chính", "m": "Ví dụ", "ex": "People who live within their means rarely fall into debt." },
+    { "t": "far-reaching", "p": "adj", "d": "sâu rộng, ảnh hưởng lớn", "m": "Ví dụ", "ex": "Working from home has had far-reaching effects on city life." },
+    { "t": "put a strain on", "p": "collocation", "d": "gây căng thẳng/áp lực lên", "m": "Ví dụ", "ex": "Long working hours put a strain on family relationships." },
+    { "t": "readily available", "p": "collocation", "d": "sẵn có, dễ tiếp cận", "m": "Ví dụ", "ex": "Online courses are readily available to anyone with internet." },
+    { "t": "offset", "p": "v", "d": "bù đắp, cân bằng lại", "m": "Ví dụ", "ex": "The income from tourism can offset the cost of preserving heritage sites." },
+    { "t": "a top priority", "p": "collocation", "d": "ưu tiên hàng đầu", "m": "Ví dụ", "ex": "For many workers, work-life balance is now a top priority." }
+  ]
+}
