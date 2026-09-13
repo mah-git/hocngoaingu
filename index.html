@@ -1,0 +1,1450 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Sổ luyện thi BM × Vietop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#ECEEF0; --card:#FFFFFF; --card-2:#F6F7F8;
+  --ink:#141A1F; --ink-2:#3E4A53; --muted:#5D6B74;
+  --rule:#D3D9DD; --rule-soft:#E3E7EA;
+  --accent:#17466E; --accent-soft:#E4EBF2;
+  --signal:#B5661A; --signal-soft:#F6EBDF;
+  --ok:#1E7A4D; --ok-soft:#E1F0E8;
+  --bad:#AE2A20; --bad-soft:#F7E5E3;
+  --shadow:0 1px 2px rgba(20,26,31,.06), 0 8px 24px -14px rgba(20,26,31,.28);
+  --ui:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#11161A; --card:#191F25; --card-2:#20272E;
+    --ink:#E7ECEF; --ink-2:#C0CAD1; --muted:#93A1AB;
+    --rule:#2E3941; --rule-soft:#242C33;
+    --accent:#7FB0DC; --accent-soft:#1B2A38;
+    --signal:#E0A05A; --signal-soft:#2E2419;
+    --ok:#5FC08D; --ok-soft:#16281F; --bad:#E48078; --bad-soft:#2C1B19;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -16px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#11161A; --card:#191F25; --card-2:#20272E; --ink:#E7ECEF; --ink-2:#C0CAD1;
+  --muted:#93A1AB; --rule:#2E3941; --rule-soft:#242C33; --accent:#7FB0DC; --accent-soft:#1B2A38;
+  --signal:#E0A05A; --signal-soft:#2E2419; --ok:#5FC08D; --ok-soft:#16281F; --bad:#E48078; --bad-soft:#2C1B19;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -16px rgba(0,0,0,.8);
+}
+
+*{box-sizing:border-box}
+body{background:var(--paper); color:var(--ink); font-family:var(--ui); font-size:15px; line-height:1.55; -webkit-font-smoothing:antialiased}
+img{max-width:100%}
+[hidden]{display:none!important}
+h1,h2,h3,h4{margin:0; text-wrap:balance; letter-spacing:-.012em; font-weight:600}
+p{margin:0}
+a{color:var(--accent)}
+button{font:inherit; color:inherit}
+:focus-visible{outline:2px solid var(--signal); outline-offset:2px; border-radius:3px}
+@media (prefers-reduced-motion: reduce){*{animation:none!important; transition:none!important}}
+
+.wrap{max-width:1180px; margin:0 auto; padding:0 20px 96px}
+
+header.top{position:sticky; top:0; z-index:40; background:color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--rule)}
+.top-in{max-width:1180px; margin:0 auto; padding:12px 20px; display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+.brand{display:flex; flex-direction:column; gap:1px; margin-right:auto}
+.brand b{font-size:15px; font-weight:700; letter-spacing:-.02em}
+.brand span{font-size:11.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.09em}
+.count{display:flex; align-items:baseline; gap:7px; padding:6px 12px; background:var(--signal-soft); border:1px solid color-mix(in srgb, var(--signal) 32%, transparent); border-radius:2px}
+.count b{font-family:var(--mono); font-size:20px; font-weight:600; color:var(--signal); font-variant-numeric:tabular-nums}
+.count span{font-size:11.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em}
+.count input{font:500 12px/1 var(--mono); background:transparent; border:0; border-bottom:1px dashed var(--muted); color:var(--ink-2); width:92px; padding:2px 0}
+.icon-btn{width:34px; height:34px; border:1px solid var(--rule); background:var(--card); border-radius:2px; cursor:pointer; display:grid; place-items:center; font-size:15px; line-height:1}
+.icon-btn:hover{border-color:var(--accent); color:var(--accent)}
+
+nav.tabs{display:flex; gap:2px; overflow-x:auto; scrollbar-width:thin; border-bottom:1px solid var(--rule); background:var(--paper); position:sticky; top:57px; z-index:39}
+nav.tabs .in{max-width:1180px; margin:0 auto; padding:0 20px; display:flex; gap:2px}
+.tab{flex:0 0 auto; background:none; border:0; border-bottom:2px solid transparent; padding:11px 14px; font-size:13.5px; font-weight:500; color:var(--muted); cursor:pointer; white-space:nowrap}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--accent); border-bottom-color:var(--accent); font-weight:600}
+.tab .n{font-family:var(--mono); font-size:11px; opacity:.65; margin-right:6px}
+
+section.pane{padding-top:30px}
+.lede{max-width:64ch; color:var(--ink-2); font-size:15.5px}
+h2.pane-h{font-size:26px; letter-spacing:-.025em; margin-bottom:8px}
+h3.blk{font-size:17px; margin-bottom:10px}
+.eyebrow{font-family:var(--mono); font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin-bottom:6px}
+.stack{display:flex; flex-direction:column; gap:14px}
+.stack-lg{display:flex; flex-direction:column; gap:32px}
+hr.sep{border:0; border-top:1px solid var(--rule); margin:34px 0 0}
+
+.card{background:var(--card); border:1px solid var(--rule); border-radius:3px; padding:18px 20px}
+.grid{display:grid; gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(168px,1fr))}
+
+.btn{border:1px solid var(--rule); background:var(--card); border-radius:2px; padding:8px 15px; font-size:13.5px; font-weight:500; cursor:pointer}
+.btn:hover{border-color:var(--accent); color:var(--accent)}
+.btn.primary{background:var(--accent); border-color:var(--accent); color:#fff}
+:root[data-theme="dark"] .btn.primary, :root:not([data-theme="light"]) .btn.primary{color:var(--paper)}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]) .btn.primary{color:#fff}}
+.btn.primary:hover{filter:brightness(1.1)}
+.btn.sm{padding:6px 11px; font-size:12.5px}
+.btn:disabled{opacity:.45; cursor:not-allowed}
+.btn-row{display:flex; gap:9px; flex-wrap:wrap; align-items:center}
+
+.pill{display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:.04em; padding:3px 8px; border-radius:2px; background:var(--card-2); color:var(--muted); border:1px solid var(--rule-soft)}
+.pill.acc{background:var(--accent-soft); color:var(--accent); border-color:transparent}
+.pill.sig{background:var(--signal-soft); color:var(--signal); border-color:transparent}
+.pill.ok{background:var(--ok-soft); color:var(--ok); border-color:transparent}
+.pill.bad{background:var(--bad-soft); color:var(--bad); border-color:transparent}
+
+/* dashboard */
+.dash{display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.stat{border:1px solid var(--rule); border-radius:3px; background:var(--card); padding:14px 16px; display:flex; flex-direction:column; gap:3px}
+.stat .lab{font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted)}
+.stat .val{font-family:var(--mono); font-size:26px; font-weight:600; font-variant-numeric:tabular-nums; letter-spacing:-.02em; line-height:1.1}
+.stat .val small{font-size:13px; color:var(--muted); font-weight:500}
+.stat .sub{font-size:12px; color:var(--ink-2)}
+.stat.hot{background:var(--signal-soft); border-color:transparent}
+.stat.hot .val{color:var(--signal)}
+.chartwrap{border:1px solid var(--rule); border-radius:3px; background:var(--card); padding:16px 18px}
+.chartwrap .empty{color:var(--muted); font-size:13.5px; padding:20px 0; text-align:center}
+
+/* timing rail */
+.rail{display:flex; gap:2px; margin:10px 0 6px}
+.seg{min-width:0; padding:7px 9px; background:var(--card-2); border-top:2px solid var(--rule); display:flex; flex-direction:column; gap:2px}
+.seg b{font-family:var(--mono); font-size:12px; font-weight:600; font-variant-numeric:tabular-nums}
+.seg span{font-size:11.5px; color:var(--muted); line-height:1.3}
+.seg.hot{background:var(--signal-soft); border-top-color:var(--signal)}
+.seg.hot b{color:var(--signal)}
+.seg.cool{border-top-color:var(--accent)}
+.seg.cool b{color:var(--accent)}
+
+/* clock */
+.clock{display:flex; align-items:center; gap:12px; padding:11px 14px; border:1px solid var(--rule); border-radius:3px; background:var(--card-2); flex-wrap:wrap}
+.clock .t{font-family:var(--mono); font-size:27px; font-weight:600; font-variant-numeric:tabular-nums; letter-spacing:-.02em; min-width:92px}
+.clock .t.warn{color:var(--signal)}
+.clock .t.over{color:var(--bad)}
+.clock .lbl{font-size:12px; color:var(--muted); margin-right:auto}
+.bar{height:3px; background:var(--rule-soft); border-radius:2px; overflow:hidden; width:100%; margin-top:8px}
+.bar i{display:block; height:100%; background:var(--accent); width:0}
+.bar i.warn{background:var(--signal)}
+
+/* reading */
+.split{display:grid; grid-template-columns:1.08fr .92fr; gap:26px; align-items:start}
+@media (max-width:940px){.split{grid-template-columns:1fr}}
+.passage{font-family:var(--serif); font-size:15.5px; line-height:1.68; color:var(--ink)}
+.passage p{margin-bottom:12px}
+.passage h4{font-family:var(--ui); font-size:16px; margin-bottom:12px}
+.passage .kw{font-family:var(--ui); font-weight:600; font-size:14px; display:block; margin-top:14px; color:var(--accent)}
+@media (min-width:941px){.passage-hold{position:sticky; top:110px; max-height:calc(100vh - 140px); overflow-y:auto; padding-right:12px}}
+
+.q{border-top:1px solid var(--rule-soft); padding:14px 0}
+.q:first-child{border-top:0; padding-top:0}
+.q-head{display:flex; gap:10px; align-items:flex-start}
+.q-num{font-family:var(--mono); font-size:12px; font-weight:600; color:var(--muted); background:var(--card-2); border:1px solid var(--rule-soft); border-radius:2px; padding:2px 6px; flex:0 0 auto; margin-top:1px}
+.q-text{font-size:14.5px; line-height:1.5}
+.opts{display:flex; gap:5px; flex-wrap:wrap; margin-top:9px; padding-left:34px}
+.opt{border:1px solid var(--rule); background:var(--card); border-radius:2px; padding:5px 11px; font-family:var(--mono); font-size:12px; font-weight:500; cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt[aria-pressed="true"]{background:var(--accent); border-color:var(--accent); color:#fff}
+:root[data-theme="dark"] .opt[aria-pressed="true"]{color:var(--paper)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .opt[aria-pressed="true"]{color:var(--paper)}}
+.opt.right{background:var(--ok-soft); border-color:var(--ok); color:var(--ok)}
+.opt.wrong{background:var(--bad-soft); border-color:var(--bad); color:var(--bad)}
+input.word{margin-top:9px; margin-left:34px; font-family:var(--mono); font-size:13px; padding:7px 10px; border:1px solid var(--rule); border-radius:2px; background:var(--card); color:var(--ink); width:200px}
+input.word.right{border-color:var(--ok); background:var(--ok-soft)}
+input.word.wrong{border-color:var(--bad); background:var(--bad-soft)}
+.fb{margin:10px 0 0 34px; padding:10px 12px; border-left:2px solid var(--rule); background:var(--card-2); font-size:13.5px; line-height:1.5; color:var(--ink-2)}
+.fb.right{border-left-color:var(--ok)}
+.fb.wrong{border-left-color:var(--bad)}
+.fb .ev{font-family:var(--serif); font-style:italic; display:block; margin-top:6px; color:var(--ink)}
+.fb b{color:var(--ink)}
+
+.score{display:flex; align-items:baseline; gap:10px; padding:12px 16px; border-radius:3px; background:var(--accent-soft); border:1px solid transparent}
+.score b{font-family:var(--mono); font-size:28px; font-weight:600; color:var(--accent); font-variant-numeric:tabular-nums}
+.score span{font-size:13.5px; color:var(--ink-2)}
+
+/* roadmap */
+.week{border:1px solid var(--rule); border-radius:3px; background:var(--card); overflow:hidden}
+.week-h{display:flex; align-items:baseline; gap:12px; padding:13px 18px; border-bottom:1px solid var(--rule-soft); background:var(--card-2); flex-wrap:wrap}
+.week-h b{font-size:15px; font-weight:600}
+.week-h .rng{font-family:var(--mono); font-size:12px; color:var(--muted)}
+.week-h .goal{font-size:13px; color:var(--ink-2); margin-left:auto}
+.day{display:flex; gap:13px; padding:12px 18px; border-top:1px solid var(--rule-soft); align-items:flex-start}
+.day:first-of-type{border-top:0}
+.day .dt{flex:0 0 62px; font-family:var(--mono); font-size:12px; font-weight:500; color:var(--muted); padding-top:2px; font-variant-numeric:tabular-nums}
+.day .body{flex:1 1 auto; min-width:0}
+.day .body b{display:block; font-size:14px; font-weight:600; margin-bottom:3px}
+.day .body ul{margin:0; padding-left:17px; font-size:13.5px; color:var(--ink-2); line-height:1.5}
+.day .body li{margin-bottom:2px}
+.day .mins{flex:0 0 auto; font-family:var(--mono); font-size:11.5px; color:var(--signal); padding-top:3px}
+.chk{flex:0 0 auto; width:18px; height:18px; margin-top:2px; border:1.5px solid var(--rule); border-radius:2px; background:var(--card); cursor:pointer; display:grid; place-items:center; font-size:11px; color:transparent; padding:0}
+.chk[aria-pressed="true"]{background:var(--ok); border-color:var(--ok); color:#fff}
+.day.done .body b, .day.done .body ul{text-decoration:line-through; opacity:.5}
+
+/* writing */
+textarea{width:100%; min-height:230px; font-family:var(--serif); font-size:15.5px; line-height:1.65; padding:14px 16px; border:1px solid var(--rule); border-radius:3px; background:var(--card); color:var(--ink); resize:vertical}
+textarea:focus{border-color:var(--accent)}
+.wc{display:flex; gap:16px; align-items:center; font-family:var(--mono); font-size:12px; color:var(--muted); flex-wrap:wrap}
+.wc b{color:var(--ink); font-weight:600; font-variant-numeric:tabular-nums}
+.wc b.short{color:var(--bad)}
+.wc b.good{color:var(--ok)}
+.ai-out{font-size:14px; line-height:1.6; white-space:pre-wrap; padding:14px 16px; background:var(--card-2); border:1px solid var(--rule); border-radius:3px; color:var(--ink-2); max-height:460px; overflow-y:auto}
+.ai-out:empty{display:none}
+.peel{display:grid; gap:0; border:1px solid var(--rule); border-radius:3px; overflow:hidden}
+.peel > div{padding:12px 15px; border-top:1px solid var(--rule-soft); display:flex; gap:13px; align-items:baseline}
+.peel > div:first-child{border-top:0}
+.peel .k{flex:0 0 82px; font-family:var(--mono); font-size:11.5px; font-weight:600; letter-spacing:.06em; color:var(--accent); text-transform:uppercase}
+.peel .v{font-size:13.5px; color:var(--ink-2); line-height:1.5}
+.prompt-card{padding:15px 18px; border:1px solid var(--rule); border-left:2px solid var(--signal); border-radius:3px; background:var(--card); cursor:pointer; text-align:left; width:100%}
+.prompt-card:hover{background:var(--card-2)}
+.prompt-card[aria-pressed="true"]{background:var(--signal-soft); border-left-color:var(--signal)}
+.prompt-card .q{font-family:var(--serif); font-size:15px; line-height:1.55; padding:0; border:0}
+.prompt-card .tag{font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); display:block; margin-bottom:5px}
+
+/* speaking / vocab */
+.qa{border:1px solid var(--rule); border-radius:3px; background:var(--card); padding:14px 17px}
+.qa .ask{font-family:var(--serif); font-size:15px; margin-bottom:8px}
+.qa .model{font-family:var(--serif); font-size:14.5px; line-height:1.6; color:var(--ink-2); padding:11px 13px; background:var(--card-2); border-left:2px solid var(--accent); margin-top:9px}
+.qa .model em{color:var(--accent); font-style:normal; font-weight:600; font-family:var(--ui); font-size:11px; letter-spacing:.06em; text-transform:uppercase; display:block; margin-bottom:4px}
+.hidden-model{display:none}
+.rec{display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:10px}
+.rec audio{height:34px}
+.dot{width:9px; height:9px; border-radius:50%; background:var(--bad); display:inline-block; animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.3}}
+
+.vcard{border:1px solid var(--rule); border-radius:3px; background:var(--card); padding:14px 16px; cursor:pointer; text-align:left; width:100%; min-height:118px}
+.vcard:hover{border-color:var(--accent)}
+.vcard .term{font-family:var(--serif); font-size:17px; font-weight:600; margin-bottom:4px}
+.vcard .pos{font-family:var(--mono); font-size:11px; color:var(--muted)}
+.vcard .back{margin-top:9px; font-size:13.5px; color:var(--ink-2); line-height:1.5}
+.vcard .back .ex{font-family:var(--serif); font-style:italic; display:block; margin-top:6px; color:var(--ink)}
+.vcard .meth{font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:.09em; color:var(--signal); margin-top:8px; display:block}
+
+/* audio player */
+.player{display:flex; gap:10px; align-items:center; flex-wrap:wrap; padding:10px 13px; border:1px solid var(--rule); border-radius:3px; background:var(--card-2)}
+.player .play{width:38px; height:38px; border-radius:50%; border:1px solid var(--accent); background:var(--accent); color:#fff; cursor:pointer; display:grid; place-items:center; font-size:14px; flex:0 0 auto}
+:root[data-theme="dark"] .player .play, :root:not([data-theme="light"]) .player .play{color:var(--paper)}
+.player .play:hover{filter:brightness(1.1)}
+.player .meta{font-size:12.5px; color:var(--ink-2); margin-right:auto}
+.speed{display:inline-flex; border:1px solid var(--rule); border-radius:2px; overflow:hidden}
+.speed button{background:var(--card); border:0; border-left:1px solid var(--rule); padding:5px 10px; font-family:var(--mono); font-size:11.5px; cursor:pointer; color:var(--muted)}
+.speed button:first-child{border-left:0}
+.speed button[aria-pressed="true"]{background:var(--accent-soft); color:var(--accent); font-weight:600}
+.gapline{font-family:var(--serif); font-size:15px; line-height:2.1; color:var(--ink)}
+.gapline .g-in{font-family:var(--mono); font-size:13px; padding:4px 8px; border:1px solid var(--rule); border-radius:2px; background:var(--card); color:var(--ink); width:150px; margin:0 3px}
+.gapline .g-in.right{border-color:var(--ok); background:var(--ok-soft)}
+.gapline .g-in.wrong{border-color:var(--bad); background:var(--bad-soft)}
+.gapkey{font-family:var(--mono); font-size:11.5px; color:var(--ok)}
+
+/* tables */
+.tbl-hold{overflow-x:auto}
+table{border-collapse:collapse; width:100%; font-size:13.5px; min-width:520px}
+th,td{text-align:left; padding:10px 13px; border-bottom:1px solid var(--rule-soft); vertical-align:top}
+th{font-size:11px; text-transform:uppercase; letter-spacing:.09em; color:var(--muted); font-weight:600; border-bottom-color:var(--rule)}
+td.num{font-family:var(--mono); font-variant-numeric:tabular-nums; white-space:nowrap; color:var(--signal); font-weight:500}
+td b{font-weight:600}
+
+.note{font-size:13px; color:var(--muted); line-height:1.5}
+.warnbox{border:1px solid color-mix(in srgb, var(--signal) 38%, transparent); background:var(--signal-soft); border-radius:3px; padding:13px 16px; font-size:13.5px; line-height:1.55; color:var(--ink-2)}
+.warnbox b{color:var(--ink)}
+ul.tight{margin:0; padding-left:18px; font-size:14px; line-height:1.6; color:var(--ink-2)}
+ul.tight li{margin-bottom:4px}
+ul.tight li b{color:var(--ink)}
+.saved{font-family:var(--mono); font-size:11px; color:var(--muted)}
+</style>
+<header class="top">
+  <div class="top-in">
+    <div class="brand">
+      <b>Sổ luyện thi BM × Vietop</b>
+      <span>Bài thi năng lực ngoại ngữ · rút gọn theo IELTS General</span>
+    </div>
+    <div class="count">
+      <b id="cdNum">—</b>
+      <span>ngày nữa</span>
+      <input id="examDate" type="date" value="2026-10-01" aria-label="Ngày thi">
+    </div>
+    <button class="icon-btn" id="themeBtn" title="Đổi nền sáng/tối" aria-label="Đổi nền sáng/tối">◐</button>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <div class="in">
+    <button class="tab" data-pane="p-tq" aria-selected="true"><span class="n">01</span>Tổng quan</button>
+    <button class="tab" data-pane="p-lt"><span class="n">02</span>Lộ trình 26 ngày</button>
+    <button class="tab" data-pane="p-rd"><span class="n">03</span>Reading</button>
+    <button class="tab" data-pane="p-ls"><span class="n">04</span>Listening</button>
+    <button class="tab" data-pane="p-wr"><span class="n">05</span>Writing</button>
+    <button class="tab" data-pane="p-sp"><span class="n">06</span>Speaking</button>
+    <button class="tab" data-pane="p-vc"><span class="n">07</span>Từ vựng</button>
+    <button class="tab" data-pane="p-ts"><span class="n">08</span>Tự học &amp; Tài nguyên</button>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ============ 01 TỔNG QUAN ============ -->
+<section class="pane" id="p-tq">
+  <div class="stack-lg">
+    <div>
+      <div class="eyebrow">Bảng theo dõi</div>
+      <h2 class="pane-h">Tiến độ của bạn, không phải lời động viên chung chung</h2>
+      <p class="lede">Mỗi lần bạn chấm Reading, làm Dictation hay chấm 5 bẫy Listening, kết quả được ghi lại ở đây kèm ngày giờ. Con số quan trọng nhất không phải điểm cao nhất, mà là số ngày bạn thật sự động vào bài.</p>
+    </div>
+
+    <div class="dash" id="dash"></div>
+
+    <div class="chartwrap">
+      <div class="eyebrow">10 lần chấm gần nhất · phần trăm đúng</div>
+      <div id="chart"><div class="empty">Chưa có lần chấm nào. Vào tab Reading hoặc Listening, làm một bài rồi bấm chấm — biểu đồ sẽ hiện ở đây.</div></div>
+    </div>
+
+    <hr class="sep">
+
+    <div>
+      <div class="eyebrow">Đề thi này là gì</div>
+      <h2 class="pane-h">Bốn kỹ năng, bốn cách thể hiện năng lực khác nhau</h2>
+      <p class="lede">Đây không phải IELTS đầy đủ. Đây là bản rút gọn: 20 câu Listening, ~20 câu Reading, một đoạn thân bài Writing, và một buổi Speaking ba phần. Điều được chấm là ba thứ: hiểu câu hỏi, tổ chức câu trả lời, giao tiếp rõ ràng.</p>
+    </div>
+
+    <div>
+      <h3 class="blk">Cấu trúc và thời gian</h3>
+      <div class="tbl-hold">
+        <table>
+          <thead><tr><th>Kỹ năng</th><th>Khối lượng</th><th>Thời gian</th><th>Gồm những gì</th></tr></thead>
+          <tbody>
+            <tr><td><b>Listening</b></td><td>20 câu</td><td class="num">18′ + 5′</td><td>Section 1 hội thoại điện thoại (form, MCQ) · Section 2 bài nói đơn, chỉ đường trên bản đồ (matching, sentence completion)</td></tr>
+            <tr><td><b>Reading</b></td><td>20 câu</td><td class="num">30′</td><td>Text 1 True/False/Not Given · Text 2 matching information · Text 3 one word only</td></tr>
+            <tr><td><b>Writing</b></td><td>≥ 110 từ</td><td class="num">25′</td><td>Một đoạn thân bài nêu quan điểm, có lý do và ví dụ</td></tr>
+            <tr><td><b>Speaking</b></td><td>3 phần</td><td class="num">11–14′</td><td>Part 1 hỏi cá nhân · Part 2 độc thoại 1–2 phút · Part 3 thảo luận sâu</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="blk">Mốc thời gian phải thuộc lòng</h3>
+      <p class="note" style="margin-bottom:14px">Ba thanh dưới đây là ba lần bấm giờ thật trong phòng thi. Học thuộc chúng quan trọng hơn học thêm từ vựng.</p>
+      <div class="stack">
+        <div>
+          <div class="eyebrow">Reading · 30 phút</div>
+          <div class="rail">
+            <div class="seg cool" style="flex:9"><b>0–9′</b><span>Text 1 · câu 1–7 · T/F/NG</span></div>
+            <div class="seg cool" style="flex:10"><b>9–19′</b><span>Text 2 · câu 8–14 · Matching</span></div>
+            <div class="seg cool" style="flex:9"><b>19–28′</b><span>Text 3 · câu 15–20 · One word</span></div>
+            <div class="seg hot" style="flex:2"><b>28–30′</b><span>Rà đáp án, ô trống</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="eyebrow">Writing · 25 phút</div>
+          <div class="rail">
+            <div class="seg cool" style="flex:3"><b>3′</b><span>Chọn quan điểm, ghi P–E–E–L, chọn ví dụ</span></div>
+            <div class="seg cool" style="flex:18"><b>18′</b><span>Viết một mạch, không sửa từng câu</span></div>
+            <div class="seg hot" style="flex:4"><b>4′</b><span>Đếm từ, sửa ngữ pháp, rà chính tả</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="eyebrow">Listening · 23 phút</div>
+          <div class="rail">
+            <div class="seg cool" style="flex:18"><b>18′</b><span>Nghe · không được nghe lại</span></div>
+            <div class="seg hot" style="flex:5"><b>5′</b><span>Chuyển đáp án · kiểm chính tả và số từ</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid g2">
+      <div class="card">
+        <div class="eyebrow">Mất điểm vì thao tác</div>
+        <ul class="tight">
+          <li>Không đọc kỹ <b>NO MORE THAN…</b> hoặc <b>ONE WORD ONLY</b>.</li>
+          <li>Viết thừa từ, sai số ít/số nhiều, hoặc bỏ trống đáp án.</li>
+          <li>Dừng quá lâu ở một câu khó rồi mất cả nhóm câu sau.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Mất điểm vì thể hiện</div>
+        <ul class="tight">
+          <li>Trả lời Speaking quá ngắn hoặc lệch trọng tâm.</li>
+          <li>Writing không nêu rõ quan điểm, thiếu ví dụ cụ thể.</li>
+          <li>Không chừa thời gian kiểm tra lỗi cuối bài.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="warnbox">
+      <b>Nguyên tắc gốc của cả sổ này.</b> Bình tĩnh không có nghĩa là làm chậm. Bình tĩnh là luôn biết bước tiếp theo của mình là gì. Mỗi tab bên trên là một bước đã được quyết định sẵn để bạn không phải nghĩ trong phòng thi.
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 LỘ TRÌNH ============ -->
+<section class="pane" id="p-lt" hidden>
+  <div class="stack-lg">
+    <div>
+      <div class="eyebrow">09/09 → 04/10/2026</div>
+      <h2 class="pane-h">Lộ trình 26 ngày, mỗi ngày 25–40 phút</h2>
+      <p class="lede">Bốn tuần, mỗi tuần một mục tiêu duy nhất. Tuần 1 nhận diện định dạng, tuần 2 học kỹ thuật từng dạng câu hỏi, tuần 3 ép tốc độ, tuần 4 mô phỏng nguyên bài. Tích vào ô bên trái khi xong; tiến độ được lưu lại.</p>
+    </div>
+
+    <div class="clock" id="roadStat">
+      <div class="t" id="roadPct">0%</div>
+      <div class="lbl">đã hoàn thành · <span id="roadCount">0/26 ngày</span></div>
+      <button class="btn" id="roadReset">Xóa tiến độ</button>
+      <div class="bar"><i id="roadBar"></i></div>
+    </div>
+
+    <div class="stack" id="roadmap"></div>
+
+    <div class="card" style="border-left:2px solid var(--signal)">
+      <div class="eyebrow">Sáng ngày thi</div>
+      <ul class="tight">
+        <li>Không học từ mới. Đọc lại <b>mốc thời gian</b> của Reading và Writing một lần.</li>
+        <li>Shadow 5 phút một đoạn quen thuộc để tai và miệng "nóng máy" trước Listening và Speaking.</li>
+        <li>Đọc lại đoạn mẫu P–E–E–L ở tab Writing, chỉ để nhớ hình dạng đoạn văn, không để chép.</li>
+        <li>Vào phòng thi: đọc yêu cầu → khoanh giới hạn từ → đặt mốc → kiểm tra trước khi nộp.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 READING ============ -->
+<section class="pane" id="p-rd" hidden>
+  <div class="stack-lg">
+    <div>
+      <div class="eyebrow">Đề thật · Paper 2 · Test 1 + đề luyện thêm</div>
+      <h2 class="pane-h">Reading: câu hỏi dẫn đường, bằng chứng quyết định</h2>
+      <p class="lede">Chấm tự động kèm câu bằng chứng trong bài. Quy trình cố định: câu hỏi → từ khóa → vị trí → bằng chứng → đáp án. Đừng đọc hết bài rồi mới nhìn câu hỏi. Hai đề chấm riêng để bạn thấy tiến bộ giữa hai lần.</p>
+    </div>
+
+    <div class="clock">
+      <div class="t" id="rdT">30:00</div>
+      <div class="lbl">bấm giờ như thi thật · 30 phút cho cả 20 câu của Test 1</div>
+      <button class="btn primary" id="rdStart">Bắt đầu</button>
+      <button class="btn" id="rdStop">Dừng</button>
+      <div class="bar"><i id="rdBar"></i></div>
+    </div>
+
+    <div class="grid g3">
+      <div class="card">
+        <div class="eyebrow">True / False / Not Given</div>
+        <p style="font-size:13.5px;color:var(--ink-2)">Hỏi: thông tin <b>giống</b>, <b>trái</b>, hay <b>không hề có</b>? So sánh ý nghĩa, không so từ giống nhau. Không suy diễn từ kiến thức ngoài bài.</p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Matching information</div>
+        <p style="font-size:13.5px;color:var(--ink-2)">Gạch chân <b>đặc điểm độc nhất</b> của mỗi mục A–F trước khi đọc câu hỏi. Một chữ cái có thể dùng lại nhiều lần.</p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">One word only</div>
+        <p style="font-size:13.5px;color:var(--ink-2)">Chép <b>đúng một từ</b> có sẵn trong bài, không đổi dạng. Kiểm tra từ loại và số ít/số nhiều sau khi điền.</p>
+      </div>
+    </div>
+
+    <div id="readingHost" class="stack-lg"></div>
+  </div>
+</section>
+<!-- ============ 04 LISTENING ============ -->
+<section class="pane" id="p-ls" hidden>
+  <div class="stack-lg">
+    <div>
+      <div class="eyebrow">Paper 1 · Test 1 · có âm thanh</div>
+      <h2 class="pane-h">Listening: giờ đã có tiếng, nhưng vẫn phải nghe có mục tiêu</h2>
+      <p class="lede">Đề gốc không kèm file nghe, nên phần này dùng giọng đọc của trình duyệt để bạn luyện nghe thật: một bài <b>dictation</b> điền form, và năm đoạn <b>bẫy</b> có nút phát. Vẫn giữ nguyên tắc quyết định điểm: <b>dự đoán</b> trước khi băng chạy.</p>
+      <p class="note" id="ttsWarn" style="margin-top:8px"></p>
+    </div>
+
+    <div>
+      <h3 class="blk">Bài tập 1 · Dictation — điền form vừa nghe</h3>
+      <p class="note" style="margin-bottom:12px">Một cuộc gọi đặt sân kiểu Section 1. Bấm phát, nghe rồi điền 8 ô. Trong phòng thi bạn <b>không được nghe lại</b> — nhưng lúc luyện, cứ chỉnh chậm và nghe lại để bắt chỗ mình nghe hụt. Chấm xong mới xem transcript.</p>
+      <div class="player" id="dictPlayer">
+        <button class="play" id="dictPlay" aria-label="Phát">▶</button>
+        <span class="meta" id="dictMeta">Riverside Leisure Centre · ~45 giây</span>
+        <span class="speed" role="group" aria-label="Tốc độ đọc">
+          <button data-rate="0.7">0.7×</button>
+          <button data-rate="0.85" aria-pressed="true">0.85×</button>
+          <button data-rate="1">1×</button>
+        </span>
+      </div>
+      <div class="card" style="margin-top:12px">
+        <div class="gapline" id="dictForm"></div>
+      </div>
+      <div class="btn-row" style="margin-top:12px">
+        <button class="btn primary" id="dictGrade">Chấm 8 ô</button>
+        <button class="btn" id="dictScript">Xem transcript</button>
+        <span class="saved" id="dictScore"></span>
+      </div>
+      <div class="fb" id="dictScriptBox" hidden style="margin-left:0"></div>
+    </div>
+
+    <div class="grid g4">
+      <div class="card"><div class="eyebrow">1 · Trước khi nghe</div><p style="font-size:13.5px;color:var(--ink-2)">Đọc câu, đoán loại từ và dạng dữ liệu.</p></div>
+      <div class="card"><div class="eyebrow">2 · Khi nghe</div><p style="font-size:13.5px;color:var(--ink-2)">Bám từ khóa. Chú ý từ sửa lại và từ phủ định.</p></div>
+      <div class="card"><div class="eyebrow">3 · Nếu lỡ</div><p style="font-size:13.5px;color:var(--ink-2)">Đánh dấu, bỏ qua, bắt kịp câu tiếp theo ngay.</p></div>
+      <div class="card"><div class="eyebrow">4 · Chuyển đáp án</div><p style="font-size:13.5px;color:var(--ink-2)">Kiểm chính tả, số từ và ô còn trống.</p></div>
+    </div>
+
+    <div>
+      <h3 class="blk">Bài tập 2 · Dự đoán 20 ô trống của Test 1</h3>
+      <p class="note" style="margin-bottom:14px">Nhìn ô trống, tự trả lời trong đầu "mình đang chờ nghe cái gì", rồi mở đáp án để đối chiếu. Làm hết 20 ô trong 6 phút.</p>
+      <div class="stack" id="lsHost"></div>
+      <div class="btn-row" style="margin-top:14px">
+        <button class="btn" id="lsAll">Mở toàn bộ gợi ý</button>
+        <button class="btn" id="lsHide">Đóng lại</button>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="blk">Bài tập 3 · Năm cái bẫy kinh điển — bấm nghe</h3>
+      <p class="note" style="margin-bottom:14px">Bấm ▶ để nghe đoạn thoại <b>một lần</b> rồi chọn đáp án, đừng đọc transcript trước. Đây đúng là năm loại bẫy trong đề: đổi ý, phủ định, liệt kê, đồng nghĩa, đánh vần và số.</p>
+      <div class="stack" id="trapHost"></div>
+      <div class="btn-row" style="margin-top:14px">
+        <button class="btn primary" id="trapGrade">Chấm 5 câu</button>
+        <span id="trapScore" class="saved"></span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="eyebrow">Quy trình tự luyện nghe hằng ngày · 20 phút</div>
+      <ul class="tight">
+        <li><b>Bước 1 — Nghe và tận hưởng.</b> Nghe một lần, không dừng, không tra từ. Mục tiêu là tiếp xúc liên tục, không phải hiểu hết.</li>
+        <li><b>Bước 2 — Nghe kèm script hoặc chép chính tả.</b> Đối chiếu chỗ mình nghe hụt. Đây là bước phát hiện lỗi thật.</li>
+        <li><b>Bước 3 — Shadow.</b> Nói đuổi theo giọng đọc. Việc này kiểm tra lại phát âm, cải thiện phản xạ và trí nhớ ngắn hạn cùng lúc.</li>
+      </ul>
+      <p class="note" style="margin-top:12px">Công cụ miễn phí do Vietop cung cấp: <a href="https://www.vietopdictation.com/" target="_blank" rel="noopener">vietopdictation.com</a> để chép chính tả và shadowing, <a href="https://www.moore.vn/ielts" target="_blank" rel="noopener">moore.vn/ielts</a> để luyện Listening và Reading.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 WRITING ============ -->
+<section class="pane" id="p-wr" hidden>
+  <div class="stack-lg">
+    <div>
+      <div class="eyebrow">Paper 3 · 25 phút · tối thiểu 110 từ</div>
+      <h2 class="pane-h">Một đoạn văn, một quan điểm, một đường lập luận</h2>
+      <p class="lede">Đề chỉ yêu cầu <b>một đoạn thân bài</b>. Không có mở bài, không có kết bài, không viết hai phía nếu không đủ thời gian phát triển cả hai. Bốn câu theo P–E–E–L là đã đủ hình dạng của một đoạn đạt yêu cầu.</p>
+    </div>
+
+    <div>
+      <h3 class="blk">Bộ khung P–E–E–L</h3>
+      <div class="peel">
+        <div><span class="k">Point</span><span class="v">Câu chủ đề. Nêu thẳng quan điểm của bạn, không vòng vo, không nhắc lại đề.</span></div>
+        <div><span class="k">Explain</span><span class="v">Tại sao quan điểm đó đúng. Đây là câu dài nhất và là chỗ giám khảo nhìn thấy khả năng lập luận.</span></div>
+        <div><span class="k">Example</span><span class="v">Một tình huống cụ thể, có nhân vật và hành động. Ví dụ chung chung không tính là ví dụ.</span></div>
+        <div><span class="k">Link</span><span class="v">Chốt hệ quả hoặc quay lại đề bài. Một câu là đủ.</span></div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="blk">Chọn một đề rồi bấm giờ</h3>
+      <div class="grid g2" id="promptHost"></div>
+    </div>
+
+    <div class="clock">
+      <div class="t" id="wrT">25:00</div>
+      <div class="lbl" id="wrPhase">chưa bắt đầu · 3 phút lập ý · 18 phút viết · 4 phút kiểm</div>
+      <button class="btn primary" id="wrStart">Bắt đầu 25 phút</button>
+      <button class="btn" id="wrStop">Dừng</button>
+      <div class="bar"><i id="wrBar"></i></div>
+    </div>
+
+    <div>
+      <div class="eyebrow" id="wrCurrent">Chưa chọn đề</div>
+      <textarea id="wrText" placeholder="Viết Version 1 ở đây. Viết một mạch, đừng sửa từng câu khi đoạn chưa xong."></textarea>
+      <div class="wc" style="margin-top:9px">
+        <span>Số từ <b id="wcNum">0</b></span>
+        <span>Tối thiểu <b>110</b></span>
+        <span id="wcHint" class="note"></span>
+        <button class="btn sm" id="wrLog" style="margin-left:auto">Lưu vào nhật ký</button>
+        <span class="saved" id="wrSaved"></span>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="blk">Tự soi trước khi nhờ AI</h3>
+      <div class="grid g3">
+        <div class="card">
+          <div class="eyebrow">Đúng trọng tâm</div>
+          <ul class="tight" style="font-size:13.5px"><li>Quan điểm có rõ không?</li><li>Lý do và ví dụ có liên quan không?</li><li>Đã đủ 110 từ chưa?</li></ul>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Mạch lạc và gắn kết</div>
+          <ul class="tight" style="font-size:13.5px"><li>Một ý chính xuyên suốt?</li><li>Câu nối có logic không?</li><li>Có lặp ý không?</li></ul>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Từ vựng và ngữ pháp</div>
+          <ul class="tight" style="font-size:13.5px"><li>Hòa hợp chủ ngữ – động từ.</li><li>Số ít / số nhiều, danh từ không đếm được.</li><li>Thì và dạng bị động.</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="blk">Bước AI Audit</h3>
+      <p class="note" style="margin-bottom:12px">Đây là bước 7 trong quy trình tự luyện viết: bắt AI bóc tách lỗi theo đúng format Lỗi – Loại lỗi – Giải thích – Sửa lỗi, chứ không phải nhờ AI viết hộ. Chép các lỗi ra giấy, đợi ít nhất 12 tiếng, rồi <b>tự</b> viết Version 2.</p>
+      <div class="btn-row">
+        <button class="btn primary" id="aiGo">Soi lỗi bài viết này</button>
+        <button class="btn" id="aiCopy">Copy prompt + bài viết</button>
+        <button class="btn" id="aiStop" disabled>Dừng</button>
+        <span class="saved" id="aiState"></span>
+      </div>
+      <div class="ai-out" id="aiOut" style="margin-top:12px"></div>
+    </div>
+
+    <div>
+      <h3 class="blk">Đoạn mẫu · đủ cả bốn khối P–E–E–L</h3>
+      <div class="stack" id="sampleHost"></div>
+    </div>
+
+    <div class="warnbox">
+      <b>Quy trình đầy đủ để tiến bộ thật.</b> Đọc 2 bài mẫu cùng đề → học collocation (tra ở <a href="https://ozdic.com" target="_blank" rel="noopener">ozdic.com</a>, tra cụm chứ không tra từ đơn) → chép ý tưởng và từ vựng ra giấy trắng → <b>cất bài mẫu đi</b> → viết Version 1 trong 25 phút → tự soi lỗi → nhờ AI bóc lỗi → chép lỗi ra giấy → đợi 12–24 tiếng → tự sửa thành Version 2. Luôn giữ lại Version 1 để về sau còn so sánh.
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 SPEAKING ============ -->
+<section class="pane" id="p-sp" hidden>
+  <div class="stack-lg">
+    <div>
+      <div class="eyebrow">Test 1 · 11–14 phút</div>
+      <h2 class="pane-h">Nói có cấu trúc để người nghe thấy được đường đi của ý</h2>
+      <p class="lede">Mục tiêu không phải nói như người bản ngữ. Mục tiêu là trả lời đúng câu hỏi trước, rồi mở rộng bằng lý do và ví dụ. Mỗi phần có một khung riêng: A–R–E cho Part 1, C–A–R–E cho Part 2, P–R–E–I cho Part 3.</p>
+      <p class="note" id="recWarn" style="margin-top:8px"></p>
+    </div>
+
+    <div class="clock">
+      <div class="t" id="spT">00:00</div>
+      <div class="lbl" id="spLbl">đồng hồ cho Part 2 · 1 phút chuẩn bị, sau đó nói 2 phút</div>
+      <button class="btn primary" id="spPrep">1 phút chuẩn bị</button>
+      <button class="btn primary" id="spTalk">2 phút nói</button>
+      <button class="btn" id="spStop">Dừng</button>
+      <div class="bar"><i id="spBar"></i></div>
+    </div>
+
+    <div class="grid g3">
+      <div class="card">
+        <div class="eyebrow">Part 1 · A–R–E · 2–4 câu</div>
+        <ul class="tight" style="font-size:13.5px"><li><b>Answer</b> — trả lời thẳng: Yes / No / It depends.</li><li><b>Reason</b> — một lý do đơn giản, cụ thể.</li><li><b>Example</b> — ví dụ hoặc thói quen của chính bạn.</li></ul>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Part 2 · C–A–R–E · 1–2 phút</div>
+        <ul class="tight" style="font-size:13.5px"><li><b>Context</b> — dự án gì, khi nào, mục tiêu.</li><li><b>Action</b> — vai trò của bạn, cách phối hợp, khó khăn.</li><li><b>Result</b> — kết quả và bài học.</li><li><b>Extend</b> — vì sao nó đáng nhớ, sau đó thì sao.</li></ul>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Part 3 · P–R–E–I · 40–60 giây/câu</div>
+        <ul class="tight" style="font-size:13.5px"><li><b>Position</b> — nêu ý kiến rõ ràng.</li><li><b>Reason</b> — giải thích vì sao.</li><li><b>Example</b> — ví dụ thực tế.</li><li><b>Impact</b> — tác động hoặc kết luận.</li></ul>
+      </div>
+    </div>
+
+    <div class="warnbox">
+      <b>Khi chưa nghe rõ hoặc chưa hiểu:</b> "Could you repeat the question, please?" hoặc "What do you mean by …?". Hỏi lại không bị trừ điểm. Trả lời lệch câu hỏi thì bị.
+    </div>
+
+    <div id="spHost" class="stack-lg"></div>
+  </div>
+</section>
+
+<!-- ============ 07 TỪ VỰNG ============ -->
+<section class="pane" id="p-vc" hidden>
+  <div class="stack-lg">
+    <div>
+      <div class="eyebrow">Lấy từ chính các bài đọc của Test 1</div>
+      <h2 class="pane-h">Học một từ tiếng Anh đúng cách bạn đã học một từ tiếng Việt</h2>
+      <p class="lede">Không ai dịch tiếng Việt sang "tiếng baby" cho bạn khi bạn còn nhỏ, vậy mà bạn vẫn hiểu. Cơ chế là <b>đoán lại từ liên tục</b> trong ngữ cảnh. Bấm vào thẻ để đoán rồi lật, hoặc bật chế độ tự kiểm để nhớ chủ động.</p>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn" id="vcFlipAll">Lật hết</button>
+      <button class="btn" id="vcHideAll">Úp hết</button>
+      <button class="btn primary" id="vcQuiz">Tự kiểm tra</button>
+      <span class="note" id="vcNote">Không có cách nào tốt nhất cho tất cả từ vựng. Biết nghĩa rồi mới chọn cách ghi.</span>
+    </div>
+
+    <div id="quizBox" class="card" hidden>
+      <div class="eyebrow" id="quizProg">Câu 1</div>
+      <div style="font-size:15px;color:var(--ink-2);margin:6px 0 4px">Nghĩa / gợi ý:</div>
+      <div style="font-family:var(--serif);font-size:18px;font-weight:600" id="quizClue">—</div>
+      <input class="word" id="quizIn" style="margin-left:0;width:260px;margin-top:14px" placeholder="gõ từ/cụm tiếng Anh" autocomplete="off" spellcheck="false">
+      <div class="btn-row" style="margin-top:12px">
+        <button class="btn primary" id="quizCheck">Kiểm tra</button>
+        <button class="btn" id="quizSkip">Bỏ qua</button>
+        <button class="btn" id="quizEnd">Thoát</button>
+        <span class="saved" id="quizFb"></span>
+      </div>
+    </div>
+
+    <div class="grid g3" id="vcHost"></div>
+  </div>
+</section>
+
+<!-- ============ 08 TỰ HỌC & TÀI NGUYÊN ============ -->
+<section class="pane" id="p-ts" hidden>
+  <div class="stack-lg">
+    <div>
+      <div class="eyebrow">Tài liệu Workshop BM × Vietop · 60 phút mỗi ngày</div>
+      <h2 class="pane-h">Tự học ba kỹ năng bằng ba công cụ, không cần đến lớp</h2>
+      <p class="lede">Phần này gom lại đúng quy trình tự học mà workshop hướng dẫn: dùng AI để tạo script và luyện nói, dùng công cụ miễn phí để chép chính tả và shadow, và ba cách ghi nhớ từ vựng. Mọi prompt đều copy được để dán thẳng vào ChatGPT, Gemini hay Claude.</p>
+    </div>
+
+    <!-- ---- Tự học Speaking 4 bước ---- -->
+    <div>
+      <div class="eyebrow">Tự học Speaking · 15 phút</div>
+      <h3 class="blk">Bốn bước: Tạo script → Shadow → Nói → Sửa</h3>
+      <div class="grid g4">
+        <div class="card"><div class="eyebrow">1 · Tạo script</div><p style="font-size:13.5px;color:var(--ink-2)">Nhờ ChatGPT/Gemini viết script cho đúng chủ đề và bối cảnh của mình, thay vì tự bịa từ đầu.</p></div>
+        <div class="card"><div class="eyebrow">2 · Shadow</div><p style="font-size:13.5px;color:var(--ink-2)">Dán script vào <b>Microsoft Clipchamp</b> (hoặc video có phụ đề), nói đuổi theo để bắt chước ngữ điệu và nhịp.</p></div>
+        <div class="card"><div class="eyebrow">3 · Nói</div><p style="font-size:13.5px;color:var(--ink-2)">Dùng <b>Gemini Live</b> để nói và nhận feedback trực tiếp về phát âm, tốc độ, ngữ điệu.</p></div>
+        <div class="card"><div class="eyebrow">4 · Sửa</div><p style="font-size:13.5px;color:var(--ink-2)">Ghi lại lỗi phát âm và từ dùng sai, sửa vào script, rồi shadow lại bản đã sửa.</p></div>
+      </div>
+    </div>
+
+    <!-- Prompt tạo script -->
+    <div>
+      <h3 class="blk">Prompt mẫu · nhờ AI tạo script</h3>
+      <p class="note" style="margin-bottom:10px">Thay phần trong ngoặc bằng nội dung của bạn rồi dán vào ChatGPT/Gemini.</p>
+      <div class="btn-row" style="margin-bottom:10px">
+        <button class="btn primary" onclick="const t=document.getElementById('scriptPrompt').innerText;navigator.clipboard.writeText(t).then(()=>{this.textContent='✓ Đã copy';setTimeout(()=>this.textContent='Copy prompt tạo script',1500)}).catch(()=>{})">Copy prompt tạo script</button>
+      </div>
+      <div class="ai-out" id="scriptPrompt">Hãy tạo script của một bài thuyết trình bằng tiếng Anh, đáp ứng những yêu cầu sau:
+- Chủ đề / Plan: (ví dụ: Beach Vacation Combined with Training Sessions)
+- Bối cảnh / Destination: (ví dụ: Da Nang; 4-star beachfront resort)
+- Đối tượng nghe: (ví dụ: đồng nghiệp và ban lãnh đạo)
+- Độ dài: khoảng 1–2 phút khi nói
+- Văn phong: rõ ràng, tự nhiên, dễ shadow theo
+Sau script, hãy liệt kê 5–7 từ/cụm từ (collocation) quan trọng trong bài kèm nghĩa tiếng Việt để tôi học thuộc trước khi nói.</div>
+    </div>
+
+    <!-- Prompt Gemini Live -->
+    <div>
+      <h3 class="blk">Prompt Gemini Live · luyện nói &amp; nhận feedback</h3>
+      <p class="note" style="margin-bottom:10px">Dán prompt này kèm script vào khung chat trước, sau đó bấm nút <b>Gemini Live</b> (biểu tượng micro/sóng âm) để bắt đầu nói.</p>
+      <div class="btn-row" style="margin-bottom:10px">
+        <button class="btn primary" onclick="const t=document.getElementById('gemPrompt').innerText;navigator.clipboard.writeText(t).then(()=>{this.textContent='✓ Đã copy';setTimeout(()=>this.textContent='Copy prompt Gemini Live',1500)}).catch(()=>{})">Copy prompt Gemini Live</button>
+      </div>
+      <div class="ai-out" id="gemPrompt">Bạn là một Chuyên gia Huấn luyện Tiếng Anh Doanh nghiệp (Business English Coach) chuyên nghiệp và khắt khe. Tôi sắp thực hành bài thuyết trình của mình.
+
+Dưới đây là kịch bản (script) bài nói của tôi: [DÁN SCRIPT TIẾNG ANH VÀO ĐÂY]
+
+Hãy giúp tôi luyện tập theo đúng quy trình 3 bước sau:
+Bước 1: Hãy giữ yên lặng và lắng nghe tôi nói toàn bộ bài thuyết trình từ đầu đến cuối mà không ngắt lời.
+Bước 2: Sau khi tôi nói xong (hoặc khi tôi nói 'I have finished my presentation'), hãy đưa ra nhận xét bằng tiếng Việt ngắn gọn, đi thẳng vào vấn đề theo 3 tiêu chí:
+• Phát âm & Trọng âm: Chỉ ra chính xác 2-3 từ tôi phát âm sai, chưa tròn chữ hoặc sai trọng âm.
+• Tốc độ & Ngắt nghỉ: Tôi nói có bị quá nhanh, quá chậm, hay nuốt chữ ở đoạn nào không?
+• Ngữ điệu: Bài nói đã có điểm nhấn và thần thái tự nhiên chưa, hay còn bị đơ (monotone)?
+Bước 3: Cuối cùng, hãy đổi sang tiếng Anh, đóng vai một khán giả và đặt cho tôi 1 câu hỏi phản biện ngắn liên quan trực tiếp đến nội dung tôi vừa thuyết trình, để tôi luyện phản xạ Q&A.
+
+Bạn đã nắm rõ quy trình chưa? Hãy xác nhận ngắn gọn bằng một câu để tôi bắt đầu nói nhé!</div>
+      <div class="grid g2" style="margin-top:14px">
+        <div class="card">
+          <div class="eyebrow">Hướng 1 · Business English Coach</div>
+          <p style="font-size:13.5px;color:var(--ink-2)">Chuyên sâu công việc: luyện họp hành, báo cáo tiến độ, nói chuyện với đối tác/đồng nghiệp, thương lượng.</p>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Hướng 2 · Personal English Coach</div>
+          <p style="font-size:13.5px;color:var(--ink-2)">Giao tiếp &amp; đồng hành cá nhân: luyện phản xạ nói chung, kể chuyện, chia sẻ quan điểm, cải thiện độ tự nhiên (natural flow) không áp lực văn phong công sở.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- ---- Tự học Từ vựng: 3 cách ---- -->
+    <div>
+      <div class="eyebrow">Tự học Từ vựng</div>
+      <h3 class="blk">Ba cách ghi nhớ — chọn cách hợp với từng từ</h3>
+      <p class="note" style="margin-bottom:14px">Nguyên tắc gốc: một từ tiếng Việt bạn học thế nào thì từ tiếng Anh học thế đó — bằng cách <b>liên tục đoán lại từ</b> trong ngữ cảnh, không phải học thuộc danh sách dịch.</p>
+      <div class="grid g3">
+        <div class="card">
+          <div class="eyebrow">Cách 1 · Hình ảnh / hình vẽ</div>
+          <p style="font-size:13.5px;color:var(--ink-2)">Gắn từ với một hình ảnh trong đầu. Hợp với từ cụ thể, tả được.</p>
+          <p class="passage" style="font-size:14px;margin-top:8px"><b>shallow</b> · <b>farming implements</b> — tưởng tượng nước nông và bộ nông cụ.</p>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Cách 2 · Đồng nghĩa / trái nghĩa</div>
+          <p style="font-size:13.5px;color:var(--ink-2)">Nối từ mới vào từ đã biết bằng dấu ~ (giống) và &gt;&lt; (trái).</p>
+          <p class="passage" style="font-size:14px;margin-top:8px">narrow &gt;&lt; wide · implements ~ tools/equipment · stingy &gt;&lt; generous</p>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Cách 3 · Ví dụ</div>
+          <p style="font-size:13.5px;color:var(--ink-2)">Chỉ ghi ví dụ đã <b>giúp bạn đoán ra</b> từ, đủ ngữ cảnh và càng gần cuộc sống càng tốt.</p>
+          <p class="passage" style="font-size:14px;margin-top:8px"><i>Covid-19 is a contagious disease. It has spread all over the world, from one person to another.</i> → đoán được <b>contagious</b>.</p>
+        </div>
+      </div>
+      <div class="warnbox" style="margin-top:14px"><b>Cốt lõi:</b> KHÔNG có một cách tốt nhất cho tất cả từ vựng. Sau khi biết nghĩa một từ, tự quyết định cách nào giúp mình nhớ nó lâu nhất. Vào tab <b>07 · Từ vựng</b> để luyện với flashcard lấy từ chính đề Test 1.</p>
+    </div>
+
+    <hr class="sep">
+
+    <!-- ---- Tài nguyên ---- -->
+    <div>
+      <div class="eyebrow">Trang web &amp; công cụ miễn phí</div>
+      <h3 class="blk">Luyện tập mỗi ngày 20 phút</h3>
+      <div class="grid g2">
+        <div class="card">
+          <div class="eyebrow">Nghe · Reading</div>
+          <p style="font-size:14px"><a href="https://www.moore.vn/ielts" target="_blank" rel="noopener">moore.vn/ielts</a></p>
+          <p class="note" style="margin-top:4px">Luyện Listening và Reading theo dạng đề.</p>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Shadowing · Dictation</div>
+          <p style="font-size:14px"><a href="https://www.vietopdictation.com/" target="_blank" rel="noopener">vietopdictation.com</a></p>
+          <p class="note" style="margin-top:4px">Chép chính tả và shadow, hoàn toàn miễn phí (Vietop).</p>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Collocation</div>
+          <p style="font-size:14px"><a href="https://ozdic.com" target="_blank" rel="noopener">ozdic.com</a></p>
+          <p class="note" style="margin-top:4px">Tra <b>cụm từ</b> đi với nhau (không phải từ đơn) khi học Writing.</p>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Video hướng dẫn shadow</div>
+          <p style="font-size:14px"><a href="https://drive.google.com/file/d/1Krx4YMTFnDYR0iVOORqzoVREVk9qOqHC/view?usp=sharing" target="_blank" rel="noopener">Xem trên Google Drive</a></p>
+          <p class="note" style="margin-top:4px">Minh hoạ cách shadow của workshop.</p>
+        </div>
+      </div>
+      <div class="card" style="margin-top:14px;border-left:2px solid var(--accent)">
+        <div class="eyebrow">Quy trình luyện nghe 20 phút</div>
+        <ul class="tight">
+          <li><b>Bước 1 — Nghe &amp; enjoy.</b> Nghe một lần, không dừng, không tra từ. Điều quan trọng nhất là <b>tiếp xúc liên tục</b>.</li>
+          <li><b>Bước 2 — Nghe + script / dictation.</b> Đối chiếu chỗ nghe hụt — đây mới là bước phát hiện lỗi thật.</li>
+          <li><b>Bước 3 — Shadow.</b> Nói đuổi theo giọng đọc để sửa phát âm, tăng phản xạ và trí nhớ ngắn hạn (mắt chậm hơn tai).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+<script>
+/* ============================================================ DỮ LIỆU ============================================================ */
+const READING = [
+{ id:"test1", label:"Test 1 · đề thật", sections:[
+  { id:"t1", band:"TEXT 1 · Câu 1–7 · TRUE / FALSE / NOT GIVEN · mốc phút 0–9", title:"National Competition",
+    html:`<h4>National Competition</h4>
+      <p>Young Fashion Designer UK is an exciting national competition which aims to showcase and promote the exceptional work achieved by students studying courses in textile design, product design and fashion throughout the UK.</p>
+      <p>The competition is designed for students to enter the coursework they are currently working on rather than specifically producing different pieces of work. If you would like to add to your coursework, that is for you and your teacher to decide.</p>
+      <p>You can apply independently or through your school/college. To enter please ensure you follow these steps:</p>
+      <p>1) Provide three A3 colour copies from your design folder. You must include: – initial ideas about the clothing – a close-up photograph of the front and back view of the finished clothing.<br>
+      2) Please label each sheet clearly with your name and school (on the back).<br>
+      3) Print off a copy of your registration form and attach it to your work.<br>
+      4) Post your entry to the Young Fashion Designer Centre.</p>
+      <p>Once the entry deadline has passed, the judges will select the shortlist of students who will be invited to the Finals. You will be notified if you are shortlisted. You will need to bring originals of the work that you entered. Each finalist will have their own stand consisting of a table and tabletop cardboard display panels. Feel free to add as much creativity to your stand as possible. Some students bring tablets/laptops with slideshows or further images of work but it should be emphasised that these may not necessarily improve your chances of success.</p>
+      <p>The judges will assess your work and will ask various questions about it. They will look through any supporting information and the work you have on display before coming together as a judging panel to decide on the winners. You are welcome to ask the judges questions. In fact, you should make the most of having experts on hand!</p>
+      <p>There are 1st, 2nd and 3rd prize winners for each category. The judges can also decide to award special prizes if the work merits this. The 1st, 2nd and 3rd place winners will receive a glass trophy and prize from a kind donor.</p>`,
+    instr:"Do the following statements agree with the information given in the text above? Write TRUE if the statement agrees, FALSE if it contradicts, NOT GIVEN if there is no information on this.",
+    type:"tfng", opts:["TRUE","FALSE","NOT GIVEN"],
+    qs:[
+      {n:1, q:"Participants are required to create a new item of clothing for the Young Fashion Designer UK competition.", a:"FALSE", ev:"The competition is designed for students to enter the coursework they are currently working on rather than specifically producing different pieces of work.", why:"Bài nói ngược lại: thí sinh nộp <b>bài tập đang làm sẵn</b>, không phải làm mới. Có mâu thuẫn trực tiếp thì là FALSE, không phải NOT GIVEN."},
+      {n:2, q:"Participants must send information about the thoughts that led to the item they are entering for the competition.", a:"TRUE", ev:"You must include: – initial ideas about the clothing", why:"<b>initial ideas</b> chính là cách nói khác của \"the thoughts that led to the item\". Đây là bẫy đồng nghĩa: đúng ý nhưng khác chữ."},
+      {n:3, q:"The shortlist will consist of a fixed number of finalists.", a:"NOT GIVEN", ev:"the judges will select the shortlist of students who will be invited to the Finals", why:"Bài có nói tới shortlist nhưng <b>không hề nói số lượng cố định hay không</b>. Không có thông tin thì là NOT GIVEN, đừng suy đoán."},
+      {n:4, q:"Finalists can choose how to present their work to the judges on their stand.", a:"TRUE", ev:"Feel free to add as much creativity to your stand as possible.", why:"\"Feel free to add as much creativity as possible\" = được tự quyết cách trình bày."},
+      {n:5, q:"It is strongly recommended that finalists support their entry with additional photographs.", a:"FALSE", ev:"these may not necessarily improve your chances of success", why:"Bài nói ảnh thêm <b>chưa chắc</b> giúp tăng cơ hội. Câu hỏi nói \"strongly recommended\" — trái ngược, nên FALSE."},
+      {n:6, q:"Questions that the students ask the judges may count towards the final decisions.", a:"NOT GIVEN", ev:"You are welcome to ask the judges questions. In fact, you should make the most of having experts on hand!", why:"Bài chỉ nói thí sinh <b>được phép</b> hỏi. Việc câu hỏi đó có ảnh hưởng tới quyết định hay không thì bài không đề cập."},
+      {n:7, q:"Extra prizes may be awarded depending on the standard of the entries submitted.", a:"TRUE", ev:"The judges can also decide to award special prizes if the work merits this.", why:"\"if the work merits this\" = tùy chất lượng bài dự thi. \"special prizes\" = \"extra prizes\"."}
+    ]},
+  { id:"t2", band:"TEXT 2 · Câu 8–14 · MATCHING INFORMATION · mốc phút 9–19", title:"Which keyboard to buy?",
+    html:`<h4>Which keyboard to buy?</h4>
+      <p>It’s worth remembering that a bad keyboard can significantly affect your entire computing experience. So make sure you pick the right keyboard for your needs.</p>
+      <span class="kw">A · Logitech K120</span>
+      <p>Logitech’s K120 offers a number of extra features. It’s spill-resistant, draining small amounts of liquid if you have an accident. It isn’t particularly eye-catching, but it feels very solid. For the price, it’s a tempting choice.</p>
+      <span class="kw">B · Cherry MX 3.0 Keyboard</span>
+      <p>The Cherry MX 3.0 looks simple and neat, thanks to its compact build. It’s solid, durable and you don’t need to push keys all the way down to activate them. It’s also rather loud though, which can take some getting used to.</p>
+      <span class="kw">C · Logitech K780</span>
+      <p>The K780 is a compact, pleasantly modern-looking keyboard. There’s an integrated stand for smartphones and tablets too. It’s quiet to type on, and the circular keys are easy to familiarise yourself with, well-spaced and large enough to hit accurately. For this price though, the lack of backlighting is disappointing.</p>
+      <span class="kw">D · Microsoft Sculpt Ergonomic</span>
+      <p>The Sculpt’s curved, strange-looking build serves a purpose. It provides wrist support and lifts your forearms into a relaxed position so you don’t hurt yourself from typing for lengthy periods. It feels weird, but it seems to do the trick.</p>
+      <span class="kw">E · Microsoft Universal Bluetooth Keyboard</span>
+      <p>Microsoft’s Bluetooth keyboard has one very handy feature – you can fold it in half and carry it around in your jacket pocket or bag, and it feels rather like a large wallet. It has generously sized keys, though the two-piece spacebar takes some getting used to. Another useful feature is that you can get up to three months’ use from a single charge.</p>
+      <span class="kw">F · Corsair Strafe RGB Keyboard</span>
+      <p>Corsair’s keyboard is expensive, flashy and extremely impressive. All of its keys are programmable, there’s eye-catching backlighting and the buttons are textured for improved grip. All this is because it’s designed for gamers. However, it’s also silent, meaning it is suitable for everyday office work too.</p>`,
+    instr:"Look at the six reviews of computer keyboards, A–F. For which keyboard are the following statements true? NB You may use any letter more than once.",
+    type:"letter", opts:["A","B","C","D","E","F"],
+    qs:[
+      {n:8, q:"This keyboard may not suit users who prefer the keys to be almost silent.", a:"B", ev:"It’s also rather loud though, which can take some getting used to. (Cherry MX 3.0)", why:"\"rather loud\" là đặc điểm độc nhất của B. Bẫy ở đây là F cũng nhắc tới \"silent\" — nhưng F <b>im lặng</b>, tức là ngược với câu hỏi."},
+      {n:9, q:"This keyboard is easily portable because it can be made to fit into a small space.", a:"E", ev:"you can fold it in half and carry it around in your jacket pocket or bag (Microsoft Universal Bluetooth)", why:"\"fold it in half\" = \"can be made to fit into a small space\". Chỉ E gập được."},
+      {n:10, q:"This keyboard includes a special place to put small devices.", a:"C", ev:"There’s an integrated stand for smartphones and tablets too. (Logitech K780)", why:"\"integrated stand for smartphones and tablets\" = chỗ đặt thiết bị nhỏ."},
+      {n:11, q:"This keyboard is designed to prevent injury to those who spend a lot of time on the computer.", a:"D", ev:"It provides wrist support ... so you don’t hurt yourself from typing for lengthy periods. (Sculpt Ergonomic)", why:"\"don’t hurt yourself\" = prevent injury; \"lengthy periods\" = a lot of time."},
+      {n:12, q:"This keyboard offers good value for money.", a:"A", ev:"For the price, it’s a tempting choice. (Logitech K120)", why:"\"For the price, tempting\" = đáng tiền. Bẫy: C cũng nhắc tới giá nhưng theo hướng <b>chê</b>."},
+      {n:13, q:"This keyboard is primarily aimed at people who use their computer for entertainment.", a:"F", ev:"All this is because it’s designed for gamers. (Corsair Strafe RGB)", why:"gamers = dùng máy tính để giải trí. \"primarily\" khớp với \"All this is because\"."},
+      {n:14, q:"It shouldn’t take long for users to get used to the shape of the keys on this keyboard.", a:"C", ev:"the circular keys are easy to familiarise yourself with (Logitech K780)", why:"Đây là câu dùng lại chữ cái C lần thứ hai. Bẫy: B và E đều có cụm \"takes some getting used to\", tức là <b>ngược</b> với câu hỏi."}
+    ]},
+  { id:"t3", band:"TEXT 3 · Câu 15–20 · ONE WORD ONLY · mốc phút 19–28", title:"Is it good to work for a small company?",
+    html:`<h4>Is it good to work for a small company?</h4>
+      <p>Recent research shows that many job-seekers believe their ideal position would be in a large company. However, working for a small or medium-sized business has many advantages that are too easily overlooked. Here are just a few of them.</p>
+      <p>Working in a small organisation with a small workforce means it’s likely to be easy to become part of it. It won’t be long before you’re familiar with the staff and the departments that you need to deal with. This can provide a feeling of comfort that takes much longer to develop in a large company. Departments are likely to be small and have close connections with each other, which helps to make internal communication work well – everyone knows what’s going on. You’ll also gain a better understanding of how your own role fits into the company as a whole.</p>
+      <p>In a small business you’re likely to have considerable variety in your workload, including opportunities to work in different areas of the company, which will allow you to identify abilities that you didn’t know you had. An introduction to new activities could even lead to a change of career. This variety in your work will help to make it stimulating, so you have a good reason for getting out of bed in the morning.</p>
+      <p>There will be plenty of opportunities to show initiative, and you’ll also learn to function well as part of a team. Because it’s much harder to overlook someone within a small workforce than a large one, your efforts are more likely to attract the attention of those higher up. You’ll have plenty of opportunities to show what you can do, and to have your potential noticed. The result is very likely to be that promotion comes to you faster.</p>
+      <p>Small businesses are usually flexible, something that is rarely true of large organisations. This means that if they’re well managed, they can adapt to make the most of changes in the wider economy, which in turn can help you. Don’t dismiss them as a place to work because of the myths about them. Small firms can be ideal places for developing your career.</p>`,
+    instr:"Complete the sentences below. Choose ONE WORD ONLY from the text for each answer.",
+    type:"word",
+    qs:[
+      {n:15, q:"In a small business it is easy to become ……………… with colleagues and other departments.", a:"familiar", ev:"It won’t be long before you’re familiar with the staff and the departments that you need to deal with.", why:"Sau \"become\" cần một <b>tính từ</b>. \"colleagues and other departments\" là cách diễn đạt lại \"the staff and the departments\"."},
+      {n:16, q:"You may find you have ……………… you were not aware of.", a:"abilities", ev:"which will allow you to identify abilities that you didn’t know you had", why:"Chép nguyên dạng <b>số nhiều</b> abilities như trong bài. Viết \"ability\" là sai."},
+      {n:17, q:"Finding that your work is ……………… will make you enjoy doing it.", a:"stimulating", ev:"This variety in your work will help to make it stimulating, so you have a good reason for getting out of bed in the morning.", why:"Sau \"is\" cần tính từ. \"make you enjoy doing it\" tương ứng với \"a good reason for getting out of bed\"."},
+      {n:18, q:"Other people are likely to realise that you have ……………… .", a:"potential", ev:"You’ll have plenty of opportunities to show what you can do, and to have your potential noticed.", why:"\"have your potential noticed\" = người khác nhận ra bạn có tiềm năng. Danh từ không đếm được, không thêm s."},
+      {n:19, q:"Opportunities for ……………… will come sooner than in a larger business.", a:"promotion", ev:"The result is very likely to be that promotion comes to you faster.", why:"Sau giới từ \"for\" cần <b>danh từ</b>. \"sooner\" khớp với \"faster\"."},
+      {n:20, q:"You can benefit from a small company being more ……………… than a large one.", a:"flexible", ev:"Small businesses are usually flexible, something that is rarely true of large organisations.", why:"Sau \"more\" cần tính từ. Bài so sánh gián tiếp qua \"rarely true of large organisations\"."}
+    ]}
+]},
+{ id:"test2", label:"Đề luyện thêm · Repair Café", sections:[
+  { id:"e1", band:"TEXT · Câu 21–26 · TRUE / FALSE / NOT GIVEN", title:"The Rise of the Repair Café",
+    html:`<h4>The Rise of the Repair Café</h4>
+      <p>The first Repair Café opened in Amsterdam in 2009, founded by a former journalist named Martine Postma. Her aim was simple: to bring neighbours together to mend broken household objects instead of throwing them away. At a typical event, visitors arrive with damaged items — a lamp that no longer switches on, a torn jacket, a bicycle with a flat tyre — and sit down beside a volunteer who has the tools and knowledge to help. The service is offered free of charge, though many cafés invite guests to leave a small donation.</p>
+      <p>The idea spread quickly. Within a decade there were more than two thousand Repair Cafés operating in over thirty countries. Organisers say the appeal is not only environmental. While reducing the amount of waste sent to landfill is a central goal, regular visitors often mention the social side: the chance to share a coffee and a conversation while they wait. For some older participants, the café is one of the few places where their practical skills are still valued.</p>
+      <p>Not every item can be saved. Volunteers are honest when a repair is impossible or when a spare part is simply unavailable, and visitors are encouraged to watch and learn rather than hand over their belongings and leave. In this way the café passes on skills that might otherwise disappear. Studies of the movement suggest that roughly seventy per cent of the objects brought in are successfully returned to use.</p>`,
+    instr:"Do the following statements agree with the information in the text? Write TRUE, FALSE or NOT GIVEN.",
+    type:"tfng", opts:["TRUE","FALSE","NOT GIVEN"],
+    qs:[
+      {n:21, q:"Martine Postma worked as a journalist before founding the first Repair Café.", a:"TRUE", ev:"founded by a former journalist named Martine Postma", why:"\"a former journalist\" = từng làm nhà báo trước đó. Khớp trực tiếp."},
+      {n:22, q:"Visitors must pay a fixed fee to have their items repaired.", a:"FALSE", ev:"The service is offered free of charge, though many cafés invite guests to leave a small donation.", why:"Bài nói <b>miễn phí</b>, chỉ mời quyên góp tự nguyện — trái với \"fixed fee\"."},
+      {n:23, q:"The first Repair Café was more successful than its founder had expected.", a:"NOT GIVEN", ev:"The idea spread quickly.", why:"Bài nói lan nhanh, nhưng <b>không nói gì về kỳ vọng</b> của người sáng lập. Không suy đoán."},
+      {n:24, q:"Reducing waste is the only reason people attend Repair Cafés.", a:"FALSE", ev:"the appeal is not only environmental ... regular visitors often mention the social side", why:"\"not only environmental\" và \"the social side\" cho thấy còn lý do khác — trái với \"the only reason\"."},
+      {n:25, q:"Volunteers sometimes tell visitors that an object cannot be repaired.", a:"TRUE", ev:"Volunteers are honest when a repair is impossible or when a spare part is simply unavailable", why:"\"honest when a repair is impossible\" = có lúc nói thẳng là không sửa được."},
+      {n:26, q:"Repair Cafés employ trained technicians to carry out the repairs.", a:"NOT GIVEN", ev:"a volunteer who has the tools and knowledge to help", why:"Bài nói người giúp là <b>tình nguyện viên</b>, không đề cập việc thuê hay đào tạo kỹ thuật viên. Thiếu thông tin về \"employ/trained\"."}
+    ]},
+  { id:"e2", band:"CÙNG BÀI · Câu 27–30 · ONE WORD ONLY", title:"", html:"",
+    instr:"Complete the sentences using ONE WORD ONLY from the passage above.",
+    type:"word",
+    qs:[
+      {n:27, q:"Guests are often asked to make a small ……………… rather than pay a fee.", a:"donation", ev:"many cafés invite guests to leave a small donation", why:"Danh từ sau \"a small\". Chép đúng \"donation\"."},
+      {n:28, q:"Many older visitors value the café because their ……………… are still appreciated there.", a:"skills", ev:"one of the few places where their practical skills are still valued", why:"\"practical skills are still valued\" = kỹ năng vẫn được coi trọng. Chép số nhiều \"skills\"."},
+      {n:29, q:"Visitors are encouraged to ……………… the repair so that they can learn.", a:"watch", ev:"visitors are encouraged to watch and learn", why:"Động từ nguyên thể sau \"to\". \"watch and learn\" → \"watch\"."},
+      {n:30, q:"Around seventy per cent of items are successfully returned to ……………… .", a:"use", ev:"roughly seventy per cent of the objects brought in are successfully returned to use", why:"\"returned to use\" = được dùng lại. Danh từ không đếm được, chép \"use\"."}
+    ]}
+]}
+];
+
+const LISTEN = [
+  {sec:"Section 1 · Product Incident Report · form completion · NO MORE THAN TWO WORDS AND/OR A NUMBER", items:[
+    {n:1, f:"Model Number", exp:"Tổ hợp chữ và số, đọc từng ký tự", trap:"Người nói hay đọc lại hoặc sửa: “…that's B for Bravo, no sorry, D for Delta.” Luôn lấy con số <b>cuối cùng</b> được xác nhận."},
+    {n:2, f:"Price of the Product", exp:"Số tiền, đề đã in sẵn ký hiệu £ nên chỉ viết con số", trap:"Đã có £ trước ô trống thì <b>không viết lại</b> £. Cẩn thận giá gốc và giá giảm được nhắc liền nhau."},
+    {n:3, f:"Name of the Branch", exp:"Tên riêng, gần như chắc chắn được đánh vần", trap:"Nghe nhầm cặp âm dễ lẫn: M/N, S/F, B/P/V, A/E/I. Viết hoa chữ cái đầu."},
+    {n:4, f:"Problem", exp:"Cụm danh từ hoặc động từ ngắn mô tả hỏng hóc", trap:"Người nói kể dài dòng nhiều triệu chứng. Chỉ lấy triệu chứng được chốt lại, và nhớ giới hạn hai từ."},
+    {n:5, f:"Address", exp:"Số nhà cộng tên đường, đây là ô cho phép ba từ", trap:"Số nhà đọc theo cặp (“twenty-three” hay “two three”). Tên đường thường được đánh vần."},
+    {n:6, f:"Postcode", exp:"Tổ hợp chữ và số kiểu Anh, ví dụ dạng SW1A 2AA", trap:"Số 0 hay được đọc là “oh”. Chữ và số đi liền nhau, chép nguyên khối."},
+    {n:7, f:"Method of payment", exp:"Danh từ ngắn: credit card, debit card, cash, cheque", trap:"Bẫy đổi ý kinh điển: “I paid by card… actually no, it was cash that day.”"},
+    {n:8, f:"Card’s Expiry Date", exp:"Tháng và năm", trap:"Đừng nhầm expiry date với ngày mua hàng được nhắc ngay trước đó."},
+    {n:9, f:"Method of Compensation", exp:"Danh từ: refund, replacement, voucher, exchange", trap:"Nhân viên liệt kê cả ba lựa chọn rồi khách mới chọn một. Chỉ lấy cái khách <b>đồng ý</b>."},
+    {n:10, f:"Shopping Frequency", exp:"Cụm chỉ tần suất: once a week, twice a month", trap:"Bẫy liệt kê và phủ định: “I used to come weekly, but now only once a month.” Lấy hiện tại."}
+  ]},
+  {sec:"Section 2 · Chỉ đường trên bản đồ · matching A–E", items:[
+    {n:11, f:"Student Centre", exp:"Vị trí trên bản đồ, xác định bằng giới từ chỉ nơi chốn", trap:"Trước khi nghe: đánh dấu điểm xuất phát và hướng bạn đang quay mặt. Nghe kỹ opposite, next to, at the end of, on your left."},
+    {n:12, f:"Health Centre", exp:"Vị trí trên bản đồ", trap:"Bẫy hay gặp: nhắc một tòa nhà để làm mốc chứ không phải để trả lời (“past the library, and then…”)."},
+    {n:13, f:"Internet Unit", exp:"Vị trí trên bản đồ", trap:"“Turn right” khi đang đi ngược chiều thì trên bản đồ lại là bên trái. Vẽ mũi tên di chuyển."},
+    {n:14, f:"Complaint Office", exp:"Vị trí trên bản đồ", trap:"Người nói có thể quay lại đính chính một địa điểm đã nói trước đó."},
+    {n:15, f:"Cafe", exp:"Vị trí trên bản đồ", trap:"Còn lại một đáp án thì loại trừ, nhưng vẫn phải nghe xác nhận. Đừng điền bừa quá sớm."}
+  ]},
+  {sec:"Section 2 · Nội quy ký túc xá · sentence completion · NO MORE THAN TWO WORDS AND/OR A NUMBER", items:[
+    {n:16, f:"Students in a room don’t need to share a ___ with ones in other rooms.", exp:"Danh từ đếm được số ít, một tiện ích trong phòng: bathroom, kitchen, toilet", trap:"Sau mạo từ <b>a</b> nên bắt buộc số ít. Câu có “don’t need to” — nghe kỹ để không đảo ngược ý."},
+    {n:17, f:"Everyone has to write down his name on the ___ .", exp:"Danh từ chỉ giấy tờ: list, form, sheet, register", trap:"Có “the” trước ô trống nên không cần mạo từ trong đáp án."},
+    {n:18, f:"All the students use a ___ to enter the dorm’s front door.", exp:"Danh từ chỉ vật: key card, password, code, swipe card", trap:"Có thể là cụm hai từ. Đừng viết ba từ vì giới hạn ở đây là hai."},
+    {n:19, f:"the laundry room which is located in the ___ .", exp:"Nơi chốn trong tòa nhà: basement, ground floor, first floor", trap:"Ground floor của Anh là tầng trệt, first floor là tầng hai. Chép đúng cái được nói."},
+    {n:20, f:"The dormitory closes at ___ every night.", exp:"Giờ", trap:"Bẫy đổi ý: “normally at eleven, but from next month it will be half past ten.” \"closes … every night\" là quy định hiện hành."}
+  ]}
+];
+
+const TRAPS = [
+  {kind:"Bẫy đổi ý", script:"So the workshop is on Tuesday the fourteenth. Oh, hang on — the room was double-booked, so we moved it. It’s now Thursday the sixteenth, same time.",
+   q:"When is the workshop?", opts:["Tuesday the 14th","Thursday the 16th","Tuesday the 16th"], a:1, why:"Thông tin đầu tiên bị thu hồi bằng “hang on / we moved it”. Cái được nói <b>sau cùng và được xác nhận</b> mới là đáp án."},
+  {kind:"Bẫy phủ định", script:"The gym is open to all residents. What isn’t included, though, is the swimming pool — you need a separate membership for that.",
+   q:"What is free for residents?", opts:["Both gym and pool","The pool only","The gym only"], a:2, why:"Chỉ một từ “isn’t” đảo ngược cả câu. Khi nghe though, however, except, apart from — dừng lại và đánh dấu."},
+  {kind:"Bẫy liệt kê", script:"We can offer you a refund, a replacement unit, or a store voucher. Most people take the voucher, but in your case I'd say a replacement makes more sense — shall I arrange that? Yes, please do.",
+   q:"What did the customer choose?", opts:["A refund","A replacement","A store voucher"], a:1, why:"Ba lựa chọn đọc liên tiếp để bạn chép nhầm cái nghe rõ nhất. Đáp án là cái khách <b>đồng ý</b> ở cuối, không phải cái phổ biến nhất."},
+  {kind:"Bẫy đồng nghĩa", script:"Applicants must submit evidence of their initial thinking — rough sketches, mood boards, anything that shows where the design came from.",
+   q:"What must applicants send?", opts:["Only the finished design","Their early ideas","A written essay"], a:1, why:"Đề dùng “early ideas”, băng dùng “initial thinking / rough sketches”. Không từ nào trùng. Nghe <b>ý</b>, đừng săn từ khóa giống hệt."},
+  {kind:"Bẫy đánh vần và số", script:"The branch is in Halstead — that's H, A, L, S, T, E, A, D. And the reference is four, zero, nine, double seven, five.",
+   q:"What is the reference number?", opts:["409 77 5","4 0 9 7 5","409 275"], a:0, why:"“double seven” là <b>hai chữ số 7</b>, không phải 27. “zero” hay được đọc là “oh”. Nghe số phải viết ngay."}
+];
+
+const DICT = {
+  script:"Good morning, Riverside Leisure Centre, how can I help? Hello, I'd like to book a badminton court for the weekend. Certainly. Can I take your surname, please? Yes, it's Foster — F, O, S, T, E, R. Thank you. And do you have a membership number? I do, it's four, four, seven, two. Great. Which day would you like? Saturday, if that's possible. Saturday's fine. I can give you court number three. And how many players will there be? Four of us. Lovely. The cost is eight pounds fifty for the hour. Will you pay by card? Yes, by card, please. Perfect. One last thing — please bring a form of photo ID when you arrive.",
+  gaps:[
+    {label:"Activity booked", a:["badminton"]},
+    {label:"Surname", a:["foster"]},
+    {label:"Membership number", a:["4472"]},
+    {label:"Day of booking", a:["saturday"]},
+    {label:"Court number", a:["3","three"]},
+    {label:"Number of players", a:["four","4"]},
+    {label:"Payment method", a:["card","by card"]},
+    {label:"Must bring", a:["photo id","id","photo id card"]}
+  ]
+};
+
+const PROMPTS = [
+  {tag:"Đề mẫu của workshop", q:"Nowadays, it is easier for young people to have a credit card compared to the past. Do you think this is a good trend?"},
+  {tag:"Công việc", q:"Some companies now allow employees to work from home several days a week. Do you think this is a positive development for both workers and employers?"},
+  {tag:"Giáo dục", q:"Some people say that schools should give students more group projects than individual assignments. To what extent do you agree?"},
+  {tag:"Công nghệ", q:"Many people now get their news from social media rather than from newspapers or television. Is this a good or a bad thing?"},
+  {tag:"Xã hội", q:"In many cities, people prefer to shop online instead of visiting physical stores. Do the advantages of this trend outweigh the disadvantages?"},
+  {tag:"Cá nhân", q:"Some people believe that learning a new skill is easier when you teach yourself than when you take a formal course. Do you agree?"},
+  {tag:"Môi trường", q:"Some people think individuals can do little to protect the environment and that only governments and large companies can make a real difference. Do you agree?"},
+  {tag:"Sức khỏe", q:"Many companies now encourage their staff to exercise during working hours. Do you think this is a positive development?"},
+  {tag:"Thành phố", q:"In some cities, public transport is free for everyone. Do you think the advantages of this policy outweigh the disadvantages?"},
+  {tag:"Công việc", q:"Many young people today change their jobs every few years instead of staying with one employer. Do you think this is a good trend?"}
+];
+
+const SAMPLES = [
+  {q:"Nowadays, it is easier for young people to have a credit card compared to the past. Do you think this is a good trend?", words:121,
+   text:"I believe easier access to credit cards can be a positive trend for young people when banks and families provide clear financial guidance. A credit card helps users handle emergencies, pay safely online and begin building a reliable credit history. However, the benefit depends on disciplined spending because the available limit is borrowed money, not additional income. For example, a young employee who uses the card only for planned monthly expenses and pays the full balance on time can avoid interest while developing good financial habits. In contrast, impulsive purchases and minimum payments may create long-term debt. Therefore, easier access should be accompanied by spending limits, payment reminders and basic financial education so that convenience does not turn into financial pressure.",
+   tags:["Câu 1 = Point","Câu 2–3 = Explain","Câu 4–5 = Example","Câu 6 = Link"]},
+  {q:"Some companies now allow employees to work from home several days a week. Do you think this is a positive development?", words:118,
+   text:"In my opinion, allowing employees to work from home for part of the week is a positive development for both sides when the work is clearly measured. Remote days remove long commutes, so workers gain time and energy that they can put back into the job, while companies can reduce office costs. The key condition is that output, rather than hours in a chair, becomes the measure of performance. For instance, in my own engineering team we now prepare drawings from home two days a week and hold a short online meeting each morning to confirm priorities; since then our deadlines have actually become easier to meet. Therefore, flexible home working benefits everyone as long as expectations and communication stay clear.",
+   tags:["Point","Explain","Example cụ thể từ công việc","Link"]},
+  {q:"Many people now get their news from social media rather than from newspapers or television. Is this a good or a bad thing?", words:116,
+   text:"I think relying on social media for news is more harmful than helpful, mainly because of how the information is selected. Traditional newspapers and television channels employ editors who check facts before publishing, whereas a social media feed is shaped by algorithms that reward whatever is shocking or emotional. As a result, misinformation can spread faster than corrections. For example, during a recent local flood in my area, a false warning about a dam was shared thousands of times on Facebook before officials could deny it, causing unnecessary panic. This does not mean social media has no value, but readers should treat it as a starting point and confirm important stories with a reliable source before believing or sharing them.",
+   tags:["Point rõ","Explain (cơ chế)","Example thật","Link cân bằng"]}
+];
+
+const SPEAKING = [
+  {part:"Opening · vài câu làm quen, trả lời ngắn gọn và rõ ràng", frame:"", qs:[
+    {q:"What is your full name?", model:null},
+    {q:"When is your birthday?", model:null},
+    {q:"Where do you live?", model:null},
+    {q:"Which department are you working for in your company?", model:"I work in the engineering department at a façade and window manufacturer. My main job is to prepare production drawings and material lists for aluminium and glass panels."}
+  ]},
+  {part:"Part 1 · Conversation · trả lời theo A–R–E, mỗi câu 2–4 câu nói", frame:"ARE", qs:[
+    {q:"Do you enjoy talking with your friends?", model:"Yes, I do. Talking with close friends helps me relax after work. For example, we usually have coffee on weekends and talk about our jobs and families."},
+    {q:"What do you usually talk about?", model:"Mostly everyday things. We talk about work pressure, football and where to eat, because those topics are easy and we all have something to say. Recently we have also talked a lot about buying a house."},
+    {q:"Have the kind of conversations you have changed much?", model:"Yes, quite a lot. When I was a student we mainly talked about games and exams, but now the conversations are about work, money and family responsibilities. I think that change happened naturally as we all started working."},
+    {q:"Do you like listening to your friends tell stories?", model:"I do, especially when the story is about something they experienced themselves. A good story gives me a different point of view. For instance, a friend of mine once described how he handled a difficult client, and I later used the same approach at work."},
+    {q:"How much time do you spend on your phone every day?", model:"Probably too much, around three hours. Most of it is for messaging and reading news during breaks. I have started leaving the phone in another room while I work so that I can concentrate better."},
+    {q:"Do you prefer mornings or evenings? Why?", model:"I prefer mornings. My mind is clearest right after breakfast, so I do my most difficult drawing work then. By the evening I am tired, so I keep that time for lighter tasks and rest."}
+  ]},
+  {part:"Part 2 · Cue card · 1 phút chuẩn bị, nói 1–2 phút theo C–A–R–E", frame:"CARE", qs:[
+    {q:"Talk about a group project that you worked on. You should say: what the project was about · who you worked with · the result of the project.", model:"I’d like to talk about a project I worked on last year, when my team had to prepare the panel drawings for a residential tower. [CONTEXT] The building had more than two thousand aluminium panels and the deadline was about six weeks. I worked with two colleagues from the engineering team and one person from production. [ACTION] My role was to check the panel dimensions and to build the list that production used for cutting. The difficult part was that the architect kept changing the design, so we agreed on a short meeting every morning to confirm what had changed. [RESULT] In the end we delivered the drawings three days before the deadline, and the number of errors on site was much lower than on previous projects. [EXTEND] What I learned is that in a group project, clear communication saves more time than working faster individually."},
+    {q:"Cue card luyện thêm · Talk about a time you had to learn something new for your job. You should say: what it was · how you learned it · how it changed your work.", model:null},
+    {q:"Cue card luyện thêm · Talk about a decision you made that turned out well. You should say: what the decision was · why you made it · what happened afterwards.", model:null},
+    {q:"Cue card luyện thêm · Describe a piece of technology you use often. You should say: what it is · how you use it · why it is useful to you.", model:null}
+  ]},
+  {part:"Part 3 · Thảo luận sâu · mỗi câu 40–60 giây theo P–R–E–I", frame:"PREI", qs:[
+    {q:"Do you prefer working alone or in a group? Why?", model:"It depends on the task, but overall I prefer working in a group. [POSITION] When several people look at the same problem, mistakes are found much earlier. [REASON] In my job, one wrong dimension can affect hundreds of panels, so having a colleague check my work is valuable. [EXAMPLE] That said, for tasks that need deep concentration I still work alone in the morning and join the team later. [IMPACT]"},
+    {q:"What makes a team work well together?", model:"I think the most important factor is that everyone knows exactly what they are responsible for. [POSITION] When roles overlap, people either duplicate work or assume someone else has done it. [REASON] In my team we write down who owns each drawing package before we start. [EXAMPLE] Since we started doing that, the number of missed items has dropped noticeably. [IMPACT]"},
+    {q:"How important is good communication in teamwork?", model:"Good communication is essential because team members need to understand their roles and deadlines. For example, short weekly updates can prevent duplicated work and help the team solve problems early. Without them, small misunderstandings grow into delays that cost the whole project time."},
+    {q:"Has technology changed the way people work in teams? How?", model:"Yes, significantly. [POSITION] Shared files and messaging apps mean a team no longer has to be in the same room to work on the same document. [REASON] My team uses a shared drawing folder, so when one person updates a drawing, everyone sees the latest version immediately. [EXAMPLE] The main downside is that people now expect instant replies, which can interrupt deep work. [IMPACT]"},
+    {q:"Should schools and offices give more group projects or individual work? Why?", model:"I would say schools should give more group work and offices should protect more individual time. [POSITION] Students need to practise cooperation because most jobs require it, while office workers already spend most of the day in meetings. [REASON] At my company, we recently reduced the number of weekly meetings and gave engineers two quiet mornings, and output improved. [EXAMPLE] So the right balance depends on which skill the environment is already short of. [IMPACT]"}
+  ]}
+];
+
+const VOCAB = [
+  {t:"showcase and promote", p:"v. phrase", d:"trưng bày và quảng bá", m:"Ví dụ", ex:"The competition aims to showcase and promote the exceptional work achieved by students."},
+  {t:"exceptional", p:"adj", d:"xuất sắc, vượt trội", m:"Đồng nghĩa", ex:"~ outstanding, remarkable  ><  ordinary, mediocre"},
+  {t:"the entry deadline has passed", p:"collocation", d:"hạn nộp đã qua", m:"Ví dụ", ex:"Once the entry deadline has passed, the judges will select the shortlist."},
+  {t:"shortlist (v/n)", p:"v · n", d:"vào danh sách rút gọn", m:"Ví dụ", ex:"You will be notified if you are shortlisted."},
+  {t:"merit (v)", p:"v", d:"xứng đáng được", m:"Đồng nghĩa", ex:"~ deserve, be worthy of — “special prizes if the work merits this”"},
+  {t:"make the most of", p:"v. phrase", d:"tận dụng tối đa", m:"Ví dụ", ex:"You should make the most of having experts on hand."},
+  {t:"spill-resistant", p:"adj", d:"chống đổ nước", m:"Hình ảnh", ex:"Hình dung ly cà phê đổ lên bàn phím mà nước thoát ra đằng sau."},
+  {t:"eye-catching", p:"adj", d:"bắt mắt", m:"Đồng nghĩa", ex:"~ striking, attractive  ><  plain, unremarkable"},
+  {t:"durable", p:"adj", d:"bền", m:"Đồng nghĩa", ex:"~ long-lasting, hard-wearing  ><  fragile"},
+  {t:"take some getting used to", p:"idiom", d:"phải mất thời gian mới quen", m:"Ví dụ", ex:"The two-piece spacebar takes some getting used to."},
+  {t:"familiarise yourself with", p:"v. phrase", d:"làm quen với", m:"Ví dụ", ex:"The circular keys are easy to familiarise yourself with."},
+  {t:"serve a purpose", p:"v. phrase", d:"có mục đích riêng", m:"Ví dụ", ex:"The Sculpt’s curved, strange-looking build serves a purpose."},
+  {t:"do the trick", p:"idiom", d:"có tác dụng, giải quyết được việc", m:"Ví dụ", ex:"It feels weird, but it seems to do the trick."},
+  {t:"overlook (v)", p:"v", d:"bỏ sót, xem nhẹ", m:"Ví dụ", ex:"Advantages that are too easily overlooked."},
+  {t:"workforce", p:"n", d:"lực lượng lao động", m:"Đồng nghĩa", ex:"~ staff, personnel — “a small organisation with a small workforce”"},
+  {t:"internal communication", p:"collocation", d:"giao tiếp nội bộ", m:"Ví dụ", ex:"Close connections between departments help to make internal communication work well."},
+  {t:"considerable variety", p:"collocation", d:"sự đa dạng đáng kể", m:"Ví dụ", ex:"You’re likely to have considerable variety in your workload."},
+  {t:"stimulating", p:"adj", d:"kích thích, thú vị", m:"Đồng nghĩa", ex:"~ engaging, inspiring  ><  dull, monotonous"},
+  {t:"show initiative", p:"collocation", d:"thể hiện tinh thần chủ động", m:"Ví dụ", ex:"There will be plenty of opportunities to show initiative."},
+  {t:"attract the attention of", p:"collocation", d:"thu hút sự chú ý của", m:"Ví dụ", ex:"Your efforts are more likely to attract the attention of those higher up."},
+  {t:"adapt to", p:"v. phrase", d:"thích ứng với", m:"Ví dụ", ex:"They can adapt to make the most of changes in the wider economy."},
+  {t:"play an indispensable role", p:"collocation", d:"đóng vai trò không thể thiếu", m:"Đồng nghĩa", ex:"Nâng cấp từ “it is so important that you cannot do without”."},
+  {t:"the ubiquity of the internet", p:"collocation", d:"sự phổ biến khắp nơi của internet", m:"Đồng nghĩa", ex:"Nâng cấp từ “the widespread of the internet”."},
+  {t:"misinformation", p:"n (uncountable)", d:"thông tin sai lệch", m:"Ví dụ", ex:"Online news is often unverified and can spread misinformation."},
+  {t:"free of charge", p:"phrase", d:"miễn phí", m:"Đồng nghĩa", ex:"~ at no cost — “The service is offered free of charge.”"},
+  {t:"leave a donation", p:"collocation", d:"để lại một khoản quyên góp", m:"Ví dụ", ex:"Many cafés invite guests to leave a small donation."},
+  {t:"return something to use", p:"collocation", d:"đưa thứ gì đó dùng lại được", m:"Ví dụ", ex:"Seventy per cent of the objects are successfully returned to use."},
+  {t:"disciplined spending", p:"collocation", d:"chi tiêu có kỷ luật", m:"Ví dụ", ex:"The benefit depends on disciplined spending, not on the size of the limit."},
+  {t:"a reliable source", p:"collocation", d:"nguồn đáng tin cậy", m:"Đồng nghĩa", ex:"~ a trustworthy source — confirm important stories with a reliable source."},
+  {t:"outweigh", p:"v", d:"lớn hơn, vượt trội hơn", m:"Ví dụ", ex:"Do the advantages of this trend outweigh the disadvantages?"},
+  {t:"work-life balance", p:"collocation", d:"cân bằng công việc – cuộc sống", m:"Ví dụ", ex:"Working from home can improve employees’ work-life balance."},
+  {t:"boost productivity", p:"collocation", d:"tăng năng suất", m:"Đồng nghĩa", ex:"~ increase efficiency — “Quiet mornings can boost productivity.”"},
+  {t:"cut commuting time", p:"collocation", d:"giảm thời gian đi lại", m:"Ví dụ", ex:"Remote days cut commuting time, so workers gain energy for the job."},
+  {t:"face-to-face interaction", p:"collocation", d:"tương tác trực tiếp", m:"Đối lập", ex:">< online/remote contact — “Offices still value face-to-face interaction.”"},
+  {t:"foster collaboration", p:"collocation", d:"thúc đẩy sự hợp tác", m:"Đồng nghĩa", ex:"~ encourage teamwork — “Group projects foster collaboration.”"},
+  {t:"soft skills", p:"collocation", d:"kỹ năng mềm", m:"Ví dụ", ex:"Group work helps students develop soft skills such as communication."},
+  {t:"financial literacy", p:"collocation", d:"hiểu biết về tài chính", m:"Ví dụ", ex:"Schools should teach basic financial literacy before students get a credit card."},
+  {t:"keep track of expenses", p:"collocation", d:"theo dõi chi tiêu", m:"Ví dụ", ex:"A budgeting app helps young people keep track of their expenses."},
+  {t:"fall into debt", p:"collocation", d:"rơi vào nợ nần", m:"Đối lập", ex:">< stay debt-free — “Impulsive spending can make users fall into debt.”"},
+  {t:"raise awareness", p:"collocation", d:"nâng cao nhận thức", m:"Ví dụ", ex:"Social media can quickly raise awareness of local issues."},
+  {t:"spread misinformation", p:"collocation", d:"lan truyền thông tin sai", m:"Ví dụ", ex:"Unverified posts can spread misinformation faster than corrections."},
+  {t:"cross-check with a reliable source", p:"collocation", d:"đối chiếu với nguồn đáng tin", m:"Ví dụ", ex:"Readers should cross-check important news with a reliable source."},
+  {t:"at your own pace", p:"idiom", d:"theo nhịp độ của riêng mình", m:"Ví dụ", ex:"Self-teaching lets you learn a new skill at your own pace."},
+  {t:"stay motivated", p:"collocation", d:"giữ động lực", m:"Đối lập", ex:">< lose motivation — “Without a teacher, it is harder to stay motivated.”"},
+  {t:"broaden your horizons", p:"idiom", d:"mở mang tầm nhìn", m:"Ví dụ", ex:"Working in different areas of a company can broaden your horizons."},
+  {t:"convenient but impersonal", p:"collocation", d:"tiện nhưng thiếu tính con người", m:"Ví dụ", ex:"Online shopping is convenient but impersonal compared with local stores."},
+  {t:"reduce your carbon footprint", p:"collocation", d:"giảm lượng khí thải cá nhân", m:"Ví dụ", ex:"Fewer commutes can reduce a company’s carbon footprint."},
+  {t:"critical thinking", p:"collocation", d:"tư duy phản biện", m:"Ví dụ", ex:"Reading from many sources develops critical thinking."}
+];
+
+const ROADMAP = [
+  {w:"Tuần 1", rng:"09 – 14/09", goal:"Nhận diện định dạng, chưa cần nhanh", days:[
+    {d:"T4 09/09", m:"30′", t:"Đọc tab Tổng quan, làm Reading Text 1", li:["Học thuộc bảng cấu trúc và ba thanh mốc thời gian.","Làm câu 1–7 (T/F/NG) <b>không bấm giờ</b>, đọc kỹ phần giải thích từng câu."]},
+    {d:"T5 10/09", m:"30′", t:"Reading Text 2 · Matching information", li:["Làm câu 8–14 không bấm giờ.","Gạch ra đặc điểm độc nhất của từng bàn phím A–F trước khi đọc câu hỏi.","Ghi 8 collocation mới vào sổ tay."]},
+    {d:"T6 11/09", m:"25′", t:"Reading Text 3 · One word only", li:["Làm câu 15–20.","Với mỗi ô, xác định <b>từ loại</b> cần điền trước khi tìm trong bài."]},
+    {d:"T7 12/09", m:"30′", t:"Listening · Dictation + dự đoán 20 ô", li:["Làm Dictation điền form ở tab Listening, chỉnh chậm 0.7× nếu cần.","Làm bài dự đoán 20 ô trống."]},
+    {d:"CN 13/09", m:"40′", t:"Writing · Version 1 đầu tiên", li:["Đề credit card, viết 25 phút đúng nhịp 3–18–4.","Bấm AI Audit, chép toàn bộ lỗi ra giấy. Chưa sửa vội."]},
+    {d:"CN 14/09", m:"25′", t:"Speaking Part 1 · khung A–R–E", li:["Trả lời các câu Conversation, dùng nút ghi âm để tự nghe lại.","Nghe lại: có đủ Answer – Reason – Example trong mỗi câu không?"]}
+  ]},
+  {w:"Tuần 2", rng:"15 – 21/09", goal:"Kỹ thuật riêng cho từng dạng câu hỏi", days:[
+    {d:"T2 15/09", m:"30′", t:"Luật NOT GIVEN", li:["Làm lại Text 1, lần này bấm 9 phút.","Với mỗi câu tự hỏi: bài có <b>nói ngược</b> không, hay chỉ là <b>không nhắc tới</b>?"]},
+    {d:"T3 16/09", m:"30′", t:"Kỹ thuật matching", li:["Làm lại Text 2 trong 10 phút.","Đọc câu hỏi trước, tìm đặc điểm độc nhất, chỉ quét đúng đoạn đó."]},
+    {d:"T4 17/09", m:"30′", t:"Sentence completion không sai dạng từ", li:["Làm lại Text 3 trong 9 phút.","Kiểm tra: số ít/số nhiều, từ loại, chép đúng nguyên văn."]},
+    {d:"T5 18/09", m:"30′", t:"Listening · năm cái bẫy có tiếng", li:["Bấm nghe 5 đoạn bẫy, chỉ nghe một lần rồi chấm.","10 phút dictation, chép lại đúng từng từ chỗ nghe hụt."]},
+    {d:"T6 19/09", m:"40′", t:"Writing · đề 2 trọn quy trình", li:["Đọc 2 bài mẫu cùng đề, tra collocation trên ozdic.com.","Cất bài mẫu đi, viết Version 1 trong 25 phút, rồi AI Audit."]},
+    {d:"T7 20/09", m:"30′", t:"Speaking Part 2 · cue card group project", li:["1 phút ghi từ khóa, 2 phút nói, ghi âm.","Nói lại lần hai, mục tiêu là không dừng quá 3 giây."]},
+    {d:"CN 21/09", m:"25′", t:"Ôn từ vựng · tự kiểm tra", li:["Bật chế độ Tự kiểm tra ở tab Từ vựng, làm hết một lượt.","Tự viết 5 câu tiếng Anh dùng 5 collocation mình thích nhất."]}
+  ]},
+  {w:"Tuần 3", rng:"22 – 28/09", goal:"Ép tốc độ và chịu áp lực thời gian", days:[
+    {d:"T2 22/09", m:"35′", t:"Reading nguyên bài trong 30 phút", li:["Bấm giờ thật, làm liền 20 câu Test 1, không dừng.","Ghi lại giờ xong từng text để so với mốc 9/19/28."]},
+    {d:"T3 23/09", m:"30′", t:"Chữa bài + làm đề luyện thêm", li:["Với mỗi câu sai, viết một dòng lý do: đọc sót, suy diễn, hay sai dạng từ?","Làm đề Repair Café để đổi ngữ liệu."]},
+    {d:"T4 24/09", m:"30′", t:"Listening · nghe và shadow", li:["20 phút dictation.","10 phút shadow: nói đuổi theo giọng đọc, không nhìn script ở lần cuối."]},
+    {d:"T5 25/09", m:"35′", t:"Writing · đề 3, không dùng AI khi viết", li:["Viết đúng 25 phút, tự soi lỗi 4 phút cuối.","Chấm AI <b>sau khi</b> đã tự sửa xong."]},
+    {d:"T6 26/09", m:"30′", t:"Speaking Part 3 · khung P–R–E–I", li:["Trả lời cả 5 câu Part 3, mỗi câu 40–60 giây.","Bắt buộc có Position ngay câu đầu tiên."]},
+    {d:"T7 27/09", m:"25′", t:"Mock Speaking đủ 3 phần", li:["Chạy liền Opening → Part 1 → Part 2 → Part 3 trong 12 phút, ghi âm.","Nghe lại và đếm số lần dừng quá lâu."]},
+    {d:"CN 28/09", m:"25′", t:"Sổ lỗi của riêng mình", li:["Gom toàn bộ lỗi Writing và Reading đã ghi trong 3 tuần.","Chọn <b>10 lỗi lặp lại nhiều nhất</b>, viết lên một tờ giấy duy nhất."]}
+  ]},
+  {w:"Tuần 4", rng:"29/09 – 04/10", goal:"Mô phỏng nguyên bài và tinh chỉnh", days:[
+    {d:"T2 29/09", m:"60′", t:"Mock Reading 30′ + Writing 25′ liền mạch", li:["Không nghỉ giữa hai phần, đúng như phòng thi.","Đây là lần đo thật cuối cùng."]},
+    {d:"T3 30/09", m:"35′", t:"Chữa mock", li:["Đối chiếu với tờ 10 lỗi lặp lại. Lỗi nào vẫn còn?","Với mỗi lỗi còn lại, viết một câu tiếng Anh đúng để ghi đè trí nhớ."]},
+    {d:"T4 01/10", m:"30′", t:"Listening và Speaking giữ nhịp", li:["15 phút dictation và shadow.","Nói 2 cue card mới ở tab Speaking, mỗi cái 2 phút."]},
+    {d:"T5 02/10", m:"30′", t:"Writing · đề 4, mục tiêu tốc độ", li:["Mục tiêu: 120 từ trong 22 phút, chừa 3 phút kiểm tra.","Không dùng từ khó mà mình không chắc chắn."]},
+    {d:"T6 03/10", m:"20′", t:"Ôn nhẹ, không học mới", li:["Đọc lại ba thanh mốc thời gian và quy trình 30 giây.","Đọc lại đoạn mẫu P–E–E–L một lần."]},
+    {d:"T7 04/10", m:"15′", t:"Nghỉ", li:["Chỉ shadow 10 phút cho quen tai.","Chuẩn bị giấy tờ, ngủ sớm."]}
+  ]}
+];
+/* ============ STATE ============ */
+const LS_KEY="bm-vietop-prep-v2";
+let STATE={road:{}, reading:{}, writing:{}, examDate:"2026-10-01", prompt:0, history:[], theme:null};
+let dbRef=null, saveTimer=null;
+function loadLocal(){ try{const r=localStorage.getItem(LS_KEY); if(r) Object.assign(STATE, JSON.parse(r));}catch(e){} }
+function saveLocal(){ try{localStorage.setItem(LS_KEY, JSON.stringify(STATE));}catch(e){} }
+function markSaved(t){ document.querySelectorAll(".saved[data-auto]").forEach(el=>el.textContent=t); }
+function save(){ saveLocal(); clearTimeout(saveTimer); saveTimer=setTimeout(async()=>{ if(!dbRef) return; try{await dbRef.set({...STATE, at:Date.now()});}catch(e){} },900); }
+function logAttempt(kind, label, score, total){ STATE.history.push({t:Date.now(), kind, label, score, total}); if(STATE.history.length>200) STATE.history=STATE.history.slice(-200); renderDash(); save(); }
+const $=id=>document.getElementById(id);
+
+/* ============ THEME ============ */
+function applyTheme(){ const t=STATE.theme; if(t==="dark"||t==="light") document.documentElement.setAttribute("data-theme",t); else document.documentElement.removeAttribute("data-theme"); }
+$("themeBtn").addEventListener("click",()=>{ const cur=document.documentElement.getAttribute("data-theme"); const dark=cur? cur==="dark" : matchMedia("(prefers-color-scheme: dark)").matches; STATE.theme=dark?"light":"dark"; applyTheme(); save(); });
+
+/* ============ COUNTDOWN ============ */
+const examInput=$("examDate");
+function renderCountdown(){ const v=examInput.value; STATE.examDate=v; const target=new Date(v+"T08:00:00"); const days=Math.ceil((target-new Date())/86400000); $("cdNum").textContent=isNaN(days)?"—":(days>=0?days:"—"); }
+examInput.addEventListener("change",()=>{ renderCountdown(); save(); });
+
+/* ============ TABS ============ */
+const tabs=[...document.querySelectorAll(".tab")];
+tabs.forEach(t=>t.addEventListener("click",()=>{ tabs.forEach(x=>x.setAttribute("aria-selected",String(x===t))); document.querySelectorAll(".pane").forEach(p=>{p.hidden=(p.id!==t.dataset.pane);}); try{speechSynthesis.cancel();}catch(e){} window.scrollTo({top:0,behavior:"instant"}); }));
+
+/* ============ TIMER ============ */
+function makeTimer({display,bar,total,onTick,onEnd,countUp=false}){
+  let id=null,left=total,elapsed=0;
+  const fmt=s=>{const neg=s<0;s=Math.abs(s);return (neg?"-":"")+String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");};
+  function paint(){ display.textContent=fmt(countUp?elapsed:left); display.classList.toggle("warn",!countUp&&left<=total*0.2&&left>0); display.classList.toggle("over",!countUp&&left<=0); if(bar){const pct=countUp?Math.min(100,elapsed/total*100):Math.max(0,(total-left)/total*100); bar.style.width=pct+"%"; bar.classList.toggle("warn",pct>80);} if(onTick) onTick(countUp?elapsed:total-left); }
+  paint();
+  return { start(t){if(t!=null){left=t;total=t;elapsed=0;} clearInterval(id); id=setInterval(()=>{left--;elapsed++;paint(); if(left<=0&&!countUp){clearInterval(id);id=null;if(onEnd)onEnd();}},1000); paint();},
+    stop(){clearInterval(id);id=null;}, reset(t){clearInterval(id);id=null;left=t??total;total=t??total;elapsed=0;paint();} };
+}
+
+/* ============ DASHBOARD ============ */
+function dayKey(ts){ const d=new Date(ts); return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate(); }
+function streak(){ const days=[...new Set(STATE.history.map(h=>dayKey(h.t)))]; if(!days.length) return 0; const set=new Set(days); let s=0; let d=new Date(); for(;;){ const k=d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate(); if(set.has(k)){s++; d.setDate(d.getDate()-1);} else if(s===0){ d.setDate(d.getDate()-1); const k2=d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate(); if(set.has(k2)){continue;} else break; } else break; if(s>400)break; } return s; }
+function bestPct(kind){ const hs=STATE.history.filter(h=>h.kind===kind); if(!hs.length) return null; return Math.max(...hs.map(h=>Math.round(h.score/h.total*100))); }
+function lastPct(kind){ const hs=STATE.history.filter(h=>h.kind===kind); if(!hs.length) return null; const h=hs[hs.length-1]; return Math.round(h.score/h.total*100); }
+function renderDash(){
+  const days=new Set(STATE.history.map(h=>dayKey(h.t))).size;
+  const rd=lastPct("reading"), rb=bestPct("reading");
+  const tr=bestPct("traps"), di=bestPct("dictation");
+  const wlog=STATE.history.filter(h=>h.kind==="writing"); const wCount=wlog.length; const wWords=wlog.reduce((s,h)=>s+(h.total||0),0);
+  const cards=[
+    {lab:"Chuỗi ngày", val:streak(), unit:" ngày", sub:"liên tiếp có luyện", hot:true},
+    {lab:"Ngày đã luyện", val:days, unit:"", sub:STATE.history.length+" lần chấm"},
+    {lab:"Reading gần nhất", val:rd==null?"—":rd, unit:rd==null?"":"%", sub:rb==null?"chưa có":"cao nhất "+rb+"%"},
+    {lab:"Dictation tốt nhất", val:di==null?"—":di, unit:di==null?"":"%", sub:"điền form nghe"},
+    {lab:"5 bẫy tốt nhất", val:tr==null?"—":tr, unit:tr==null?"":"%", sub:"Listening traps"},
+    {lab:"Bài viết đã lưu", val:wCount, unit:"", sub:wWords+" từ tổng cộng"}
+  ];
+  $("dash").innerHTML=cards.map(c=>`<div class="stat${c.hot?' hot':''}"><span class="lab">${c.lab}</span><span class="val">${c.val}<small>${c.unit}</small></span><span class="sub">${c.sub}</span></div>`).join("");
+  renderChart();
+}
+function renderChart(){
+  const host=$("chart");
+  const gr=STATE.history.filter(h=>["reading","dictation","traps"].includes(h.kind)).slice(-10);
+  if(!gr.length){ host.innerHTML='<div class="empty">Chưa có lần chấm nào. Vào tab Reading hoặc Listening, làm một bài rồi bấm chấm — biểu đồ sẽ hiện ở đây.</div>'; return; }
+  const W=Math.max(320, gr.length*64), H=180, pad=28, bw=Math.min(40,(W-pad*2)/gr.length-14);
+  const col={reading:"var(--accent)",dictation:"var(--signal)",traps:"var(--ok)"};
+  let bars="";
+  gr.forEach((h,i)=>{ const pct=Math.round(h.score/h.total*100); const x=pad+i*((W-pad*2)/gr.length)+((W-pad*2)/gr.length-bw)/2; const bh=(H-pad*2)*pct/100; const y=H-pad-bh;
+    bars+=`<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${bw.toFixed(1)}" height="${bh.toFixed(1)}" rx="2" style="fill:${col[h.kind]}"></rect>`;
+    bars+=`<text x="${(x+bw/2).toFixed(1)}" y="${(y-5).toFixed(1)}" text-anchor="middle" font-size="10" style="fill:var(--ink-2);font-family:var(--mono)">${pct}</text>`;
+    bars+=`<text x="${(x+bw/2).toFixed(1)}" y="${(H-pad+13).toFixed(1)}" text-anchor="middle" font-size="9" style="fill:var(--muted);font-family:var(--mono)">${h.kind==="reading"?"R":h.kind==="dictation"?"D":"T"}</text>`;
+  });
+  const grid=[0,50,100].map(v=>{const y=H-pad-(H-pad*2)*v/100; return `<line x1="${pad}" y1="${y}" x2="${W-pad}" y2="${y}" style="stroke:var(--rule-soft)"></line><text x="${pad-6}" y="${y+3}" text-anchor="end" font-size="9" style="fill:var(--muted);font-family:var(--mono)">${v}</text>`;}).join("");
+  host.innerHTML=`<div class="tbl-hold"><svg viewBox="0 0 ${W} ${H}" style="width:100%;max-width:${W}px;height:auto">${grid}${bars}</svg></div><p class="note" style="margin-top:6px">R = Reading · D = Dictation · T = Traps</p>`;
+}
+
+/* ============ ROADMAP ============ */
+function renderRoadmap(){
+  const host=$("roadmap"); host.innerHTML="";
+  ROADMAP.forEach((wk,wi)=>{ const box=document.createElement("div"); box.className="week";
+    const head=document.createElement("div"); head.className="week-h"; head.innerHTML=`<b>${wk.w}</b><span class="rng">${wk.rng}</span><span class="goal">${wk.goal}</span>`; box.appendChild(head);
+    wk.days.forEach((d,di)=>{ const key=wi+"-"+di; const row=document.createElement("div"); row.className="day"; const done=!!STATE.road[key]; if(done)row.classList.add("done");
+      row.innerHTML=`<button class="chk" aria-pressed="${done}" aria-label="Đánh dấu hoàn thành">✓</button><span class="dt">${d.d}</span><div class="body"><b>${d.t}</b><ul>${d.li.map(x=>`<li>${x}</li>`).join("")}</ul></div><span class="mins">${d.m}</span>`;
+      row.querySelector(".chk").addEventListener("click",e=>{ const on=!STATE.road[key]; STATE.road[key]=on; e.currentTarget.setAttribute("aria-pressed",String(on)); row.classList.toggle("done",on); roadStats(); save(); });
+      box.appendChild(row); });
+    host.appendChild(box); });
+  roadStats();
+}
+function roadStats(){ const total=ROADMAP.reduce((s,w)=>s+w.days.length,0); const done=Object.values(STATE.road).filter(Boolean).length; const pct=Math.round(done/total*100); $("roadPct").textContent=pct+"%"; $("roadCount").textContent=`${done}/${total} ngày`; $("roadBar").style.width=pct+"%"; }
+$("roadReset").addEventListener("click",()=>{ STATE.road={}; renderRoadmap(); save(); });
+
+/* ============ READING (multi-test) ============ */
+function renderReading(){
+  const host=$("readingHost"); host.innerHTML="";
+  READING.forEach(test=>{
+    const wrap=document.createElement("div");
+    const h=document.createElement("h3"); h.className="blk"; h.style.fontSize="15px"; h.innerHTML=`<span class="pill sig">${test.label}</span>`; wrap.appendChild(h);
+    test.sections.forEach(sec=>{
+      const secWrap=document.createElement("div"); secWrap.style.marginTop="18px";
+      secWrap.innerHTML=`<div class="eyebrow">${sec.band}</div>`;
+      const split=document.createElement("div"); split.className="split";
+      const left=document.createElement("div");
+      if(sec.html){ left.className="passage-hold"; left.innerHTML=`<div class="passage">${sec.html}</div>`; }
+      else { left.innerHTML=`<p class="note">Dùng chung đoạn văn phía trên.</p>`; }
+      const right=document.createElement("div");
+      right.innerHTML=`<p class="note" style="margin-bottom:14px"><b style="color:var(--ink)">${sec.instr}</b></p>`;
+      sec.qs.forEach(q=>{ const box=document.createElement("div"); box.className="q"; let ctl="";
+        if(sec.type==="word") ctl=`<input class="word" type="text" data-n="${q.n}" placeholder="một từ duy nhất" autocomplete="off" spellcheck="false">`;
+        else ctl=`<div class="opts">${sec.opts.map(o=>`<button class="opt" data-n="${q.n}" data-v="${o}" aria-pressed="false">${o}</button>`).join("")}</div>`;
+        box.innerHTML=`<div class="q-head"><span class="q-num">${q.n}</span><span class="q-text">${q.q}</span></div>${ctl}<div class="fb" data-fb="${q.n}" hidden></div>`;
+        right.appendChild(box); });
+      split.appendChild(left); split.appendChild(right); secWrap.appendChild(split); wrap.appendChild(secWrap);
+    });
+    const bar=document.createElement("div"); bar.className="btn-row"; bar.style.marginTop="18px";
+    bar.innerHTML=`<button class="btn primary" data-grade="${test.id}">Chấm ${test.label}</button><button class="btn" data-clear="${test.id}">Làm lại</button><span class="saved" data-score="${test.id}"></span>`;
+    wrap.appendChild(bar);
+    const scoreLine=document.createElement("div"); scoreLine.dataset.scorebox=test.id; scoreLine.style.marginTop="12px"; wrap.appendChild(scoreLine);
+    host.appendChild(wrap);
+  });
+  host.addEventListener("click",e=>{ const b=e.target.closest(".opt"); if(!b) return; const n=b.dataset.n; host.querySelectorAll(`.opt[data-n="${n}"]`).forEach(x=>x.setAttribute("aria-pressed",String(x===b))); STATE.reading[n]=b.dataset.v; save(); });
+  host.addEventListener("input",e=>{ if(!e.target.classList.contains("word"))return; STATE.reading[e.target.dataset.n]=e.target.value; save(); });
+  host.querySelectorAll("[data-grade]").forEach(btn=>btn.addEventListener("click",()=>gradeTest(btn.dataset.grade)));
+  host.querySelectorAll("[data-clear]").forEach(btn=>btn.addEventListener("click",()=>clearTest(btn.dataset.clear)));
+  restoreReading();
+}
+function restoreReading(){ const host=$("readingHost"); Object.entries(STATE.reading||{}).forEach(([n,v])=>{ const inp=host.querySelector(`input.word[data-n="${n}"]`); if(inp){inp.value=v;return;} const b=host.querySelector(`.opt[data-n="${n}"][data-v="${CSS.escape(v)}"]`); if(b)b.setAttribute("aria-pressed","true"); }); }
+function gradeTest(id){
+  const test=READING.find(t=>t.id===id); const host=$("readingHost");
+  const qs=test.sections.flatMap(s=>s.qs.map(q=>({...q,type:s.type}))); let right=0,blank=0;
+  qs.forEach(q=>{ const given=(STATE.reading[q.n]??"").toString().trim(); const ok=given.toLowerCase()===q.a.toLowerCase(); if(!given)blank++; if(ok)right++;
+    const fb=host.querySelector(`[data-fb="${q.n}"]`); fb.hidden=false; fb.className="fb "+(ok?"right":"wrong"); fb.innerHTML=`<b>${ok?"Đúng":"Sai · đáp án: "+q.a}</b> — ${q.why}<span class="ev">"${q.ev}"</span>`;
+    if(q.type==="word"){ const inp=host.querySelector(`input.word[data-n="${q.n}"]`); inp.classList.remove("right","wrong"); inp.classList.add(ok?"right":"wrong"); }
+    else host.querySelectorAll(`.opt[data-n="${q.n}"]`).forEach(b=>{ b.classList.remove("right","wrong"); if(b.dataset.v===q.a)b.classList.add("right"); else if(b.getAttribute("aria-pressed")==="true")b.classList.add("wrong"); });
+  });
+  const tot=qs.length, pct=Math.round(right/tot*100);
+  const verdict= pct>=85?"Mức này đủ an toàn. Giữ nhịp và chuyển sang ép tốc độ.":pct>=65?"Nền đã ổn. Vấn đề còn lại nằm ở kỹ thuật từng dạng, không phải vốn từ.":"Đọc kỹ phần giải thích từng câu sai và làm lại sau hai ngày. Đừng vội làm đề mới.";
+  host.querySelector(`[data-scorebox="${id}"]`).innerHTML=`<div class="score"><b>${right}/${tot}</b><span>${pct}% · bỏ trống ${blank} câu<br>${verdict}</span></div>`;
+  logAttempt("reading", test.label, right, tot);
+}
+function clearTest(id){ const test=READING.find(t=>t.id===id); test.sections.forEach(s=>s.qs.forEach(q=>{delete STATE.reading[q.n];})); save(); renderReading(); }
+const rdTimer=makeTimer({display:$("rdT"),bar:$("rdBar"),total:1800,onEnd:()=>{$("rdT").textContent="HẾT GIỜ";}});
+$("rdStart").addEventListener("click",()=>rdTimer.start(1800));
+$("rdStop").addEventListener("click",()=>rdTimer.stop());
+
+/* ============ SPEECH (TTS) ============ */
+let VOICES=[]; function loadVoices(){ try{VOICES=speechSynthesis.getVoices();}catch(e){VOICES=[];} }
+const ttsOK=("speechSynthesis" in window);
+if(ttsOK){ loadVoices(); speechSynthesis.onvoiceschanged=loadVoices; } else { $("ttsWarn").textContent="Trình duyệt này không hỗ trợ giọng đọc — Dictation và nút nghe sẽ không phát tiếng. Thử mở bằng Chrome/Edge."; }
+function pickVoice(){ return VOICES.find(v=>/en[-_]GB/i.test(v.lang))||VOICES.find(v=>/^en/i.test(v.lang))||VOICES[0]||null; }
+function speak(text,rate,onend,onstart){ if(!ttsOK)return; try{speechSynthesis.cancel();}catch(e){} const u=new SpeechSynthesisUtterance(text); const v=pickVoice(); if(v){u.voice=v;u.lang=v.lang;} else u.lang="en-GB"; u.rate=rate||0.9; if(onend)u.onend=onend; if(onstart)u.onstart=onstart; speechSynthesis.speak(u); }
+function stopSpeak(){ if(ttsOK) try{speechSynthesis.cancel();}catch(e){} }
+
+/* ============ DICTATION ============ */
+let dictRate=0.85, dictPlaying=false;
+function renderDict(){
+  $("dictForm").innerHTML=DICT.gaps.map((g,i)=>`<span style="display:inline-block">${g.label}: <input class="g-in" data-g="${i}" autocomplete="off" spellcheck="false"></span>`).join("&nbsp;&nbsp; ");
+}
+$("dictPlayer").querySelectorAll(".speed button").forEach(b=>b.addEventListener("click",()=>{ dictRate=parseFloat(b.dataset.rate); $("dictPlayer").querySelectorAll(".speed button").forEach(x=>x.setAttribute("aria-pressed",String(x===b))); }));
+$("dictPlay").addEventListener("click",()=>{ if(dictPlaying){ stopSpeak(); dictPlaying=false; $("dictPlay").textContent="▶"; return; } dictPlaying=true; $("dictPlay").textContent="■"; speak(DICT.script, dictRate, ()=>{dictPlaying=false;$("dictPlay").textContent="▶";}); });
+function normA(s){ return s.toLowerCase().replace(/[.,£]/g,"").replace(/\s+/g," ").trim(); }
+$("dictGrade").addEventListener("click",()=>{ let right=0; DICT.gaps.forEach((g,i)=>{ const inp=$("dictForm").querySelector(`[data-g="${i}"]`); const val=normA(inp.value); const ok=g.a.some(a=>normA(a)===val); inp.classList.remove("right","wrong"); inp.classList.add(ok?"right":"wrong"); if(ok)right++; });
+  $("dictScore").textContent=`${right}/${DICT.gaps.length} ô đúng`; logAttempt("dictation","Dictation", right, DICT.gaps.length); });
+$("dictScript").addEventListener("click",()=>{ const box=$("dictScriptBox"); box.hidden=!box.hidden; if(!box.hidden) box.innerHTML=`<b>Transcript</b><br>${DICT.script}<br><br><b>Đáp án:</b> ${DICT.gaps.map((g,i)=>`${i+1}. ${g.a[0]}`).join(" · ")}`; });
+
+/* ============ LISTENING predict + traps ============ */
+function renderListening(){ const host=$("lsHost"); host.innerHTML="";
+  LISTEN.forEach(group=>{ const card=document.createElement("div"); card.className="card"; card.innerHTML=`<div class="eyebrow">${group.sec}</div>`;
+    group.items.forEach(it=>{ const row=document.createElement("div"); row.className="q";
+      row.innerHTML=`<div class="q-head"><span class="q-num">${it.n}</span><span class="q-text">${it.f}</span></div><div class="opts"><button class="opt" data-rev>Mình chờ nghe gì?</button></div><div class="fb" hidden><b>Chờ nghe:</b> ${it.exp}<br><b>Bẫy:</b> ${it.trap}</div>`;
+      row.querySelector("[data-rev]").addEventListener("click",()=>{const fb=row.querySelector(".fb");fb.hidden=!fb.hidden;});
+      card.appendChild(row); });
+    host.appendChild(card); });
+}
+$("lsAll").addEventListener("click",()=>document.querySelectorAll("#lsHost .fb").forEach(f=>f.hidden=false));
+$("lsHide").addEventListener("click",()=>document.querySelectorAll("#lsHost .fb").forEach(f=>f.hidden=true));
+
+function renderTraps(){ const host=$("trapHost"); host.innerHTML="";
+  TRAPS.forEach((t,i)=>{ const card=document.createElement("div"); card.className="card";
+    card.innerHTML=`<div class="eyebrow">${t.kind}</div>
+      <div class="player" style="margin-bottom:11px"><button class="play" data-play="${i}" aria-label="Phát">▶</button><span class="meta">Nghe một lần rồi chọn — đừng đọc transcript trước</span><button class="btn sm" data-show="${i}">Xem lời</button></div>
+      <p class="passage" data-script="${i}" style="font-size:15px; margin-bottom:11px" hidden>${t.script}</p>
+      <div class="q-head"><span class="q-num">${i+1}</span><span class="q-text">${t.q}</span></div>
+      <div class="opts">${t.opts.map((o,j)=>`<button class="opt" data-t="${i}" data-j="${j}" aria-pressed="false" style="font-family:var(--ui);font-size:13px">${o}</button>`).join("")}</div>
+      <div class="fb" data-tfb="${i}" hidden></div>`;
+    card.querySelector(`[data-play="${i}"]`).addEventListener("click",e=>{ const btn=e.currentTarget; if(btn.textContent==="■"){stopSpeak();btn.textContent="▶";return;} document.querySelectorAll("[data-play]").forEach(b=>b.textContent="▶"); btn.textContent="■"; speak(t.script,0.92,()=>{btn.textContent="▶";}); });
+    card.querySelector(`[data-show="${i}"]`).addEventListener("click",()=>{ const p=card.querySelector(`[data-script="${i}"]`); p.hidden=!p.hidden; });
+    card.addEventListener("click",e=>{ const b=e.target.closest(".opt"); if(!b)return; card.querySelectorAll(".opt").forEach(x=>x.setAttribute("aria-pressed",String(x===b))); });
+    host.appendChild(card); });
+}
+$("trapGrade").addEventListener("click",()=>{ let right=0;
+  TRAPS.forEach((t,i)=>{ const chosen=document.querySelector(`.opt[data-t="${i}"][aria-pressed="true"]`); const ok=chosen&&Number(chosen.dataset.j)===t.a; if(ok)right++;
+    document.querySelectorAll(`.opt[data-t="${i}"]`).forEach(b=>{ b.classList.remove("right","wrong"); if(Number(b.dataset.j)===t.a)b.classList.add("right"); else if(b.getAttribute("aria-pressed")==="true")b.classList.add("wrong"); });
+    const fb=document.querySelector(`[data-tfb="${i}"]`); fb.hidden=false; fb.className="fb "+(ok?"right":"wrong"); fb.innerHTML=`<b>${ok?"Đúng":"Sai · đáp án: "+t.opts[t.a]}</b> — ${t.why}`; });
+  $("trapScore").textContent=`${right}/5 câu đúng`; logAttempt("traps","5 bẫy", right, 5); });
+
+/* ============ WRITING ============ */
+function renderPrompts(){ const host=$("promptHost"); host.innerHTML="";
+  PROMPTS.forEach((p,i)=>{ const b=document.createElement("button"); b.className="prompt-card"; b.setAttribute("aria-pressed",String(i===(STATE.prompt||0)));
+    b.innerHTML=`<span class="tag">${p.tag}</span><span class="q">${p.q}</span>`;
+    b.addEventListener("click",()=>{ STATE.prompt=i; host.querySelectorAll(".prompt-card").forEach((x,j)=>x.setAttribute("aria-pressed",String(j===i))); $("wrCurrent").textContent="Đang viết: "+p.q; wrText.value=(STATE.writing&&STATE.writing[i])||""; paintWords(); save(); });
+    host.appendChild(b); });
+  $("wrCurrent").textContent="Đang viết: "+PROMPTS[STATE.prompt||0].q;
+}
+const wrText=$("wrText");
+function countWords(s){ return (s.trim().match(/[^\s]+/g)||[]).length; }
+function paintWords(){ const n=countWords(wrText.value); const el=$("wcNum"); el.textContent=n; el.className=n>=110?"good":(n>0?"short":""); $("wcHint").textContent=n===0?"":n<110?`còn thiếu ${110-n} từ`:n>190?"hơi dài — 25 phút khó kiểm hết":"đủ độ dài"; }
+wrText.addEventListener("input",()=>{ paintWords(); STATE.writing[STATE.prompt||0]=wrText.value; save(); });
+$("wrLog").addEventListener("click",()=>{ const n=countWords(wrText.value); if(n<30){$("wrSaved").textContent="viết ≥30 từ đã";return;} logAttempt("writing",PROMPTS[STATE.prompt||0].tag,n,n); $("wrSaved").textContent="đã lưu vào nhật ký ("+n+" từ)"; });
+function renderSamples(){ $("sampleHost").innerHTML=SAMPLES.map(s=>`<div class="card"><p class="note" style="margin-bottom:10px"><b>Đề:</b> ${s.q}</p><p class="passage" style="font-size:15px">${s.text}</p><div class="btn-row" style="margin-top:12px"><span class="pill acc">${s.words} từ</span>${s.tags.map(t=>`<span class="pill">${t}</span>`).join("")}</div></div>`).join(""); }
+const wrTimer=makeTimer({display:$("wrT"),bar:$("wrBar"),total:1500,
+  onTick:done=>{ $("wrPhase").textContent=done<180?"Giai đoạn 1 · 3 phút lập ý — chọn quan điểm, ghi P–E–E–L, chọn ví dụ":done<1260?"Giai đoạn 2 · 18 phút viết — viết một mạch, đừng sửa từng câu":"Giai đoạn 3 · 4 phút kiểm — đếm từ, sửa ngữ pháp, rà chính tả"; },
+  onEnd:()=>{ $("wrT").textContent="HẾT GIỜ"; $("wrPhase").textContent="Hết 25 phút · dừng bút"; }});
+$("wrStart").addEventListener("click",()=>wrTimer.start(1500));
+$("wrStop").addEventListener("click",()=>wrTimer.stop());
+
+/* --- AI Audit --- */
+let sampleFn=null, aiCtl=null;
+const aiOut=$("aiOut"), aiBtn=$("aiGo"), aiStopBtn=$("aiStop"), aiState=$("aiState");
+function buildAuditPrompt(question,essay){ return `Bạn là giám khảo chấm bài viết tiếng Anh. Học viên người Việt đang luyện cho một bài thi năng lực ngoại ngữ rút gọn theo IELTS General: yêu cầu là viết MỘT đoạn thân bài tối thiểu 110 từ trong 25 phút, có quan điểm rõ, lý do và ít nhất một ví dụ cụ thể.
+
+ĐỀ BÀI:
+${question}
+
+BÀI VIẾT CỦA HỌC VIÊN:
+${essay}
+
+Trả lời hoàn toàn bằng tiếng Việt, theo đúng ba phần sau, không thêm lời dẫn:
+
+PHẦN 1 — DANH SÁCH LỖI
+Liệt kê TẤT CẢ lỗi, mỗi lỗi đúng bốn dòng:
+· Lỗi: <chép nguyên câu hoặc cụm sai>
+· Loại lỗi: <ví dụ: Hòa hợp chủ ngữ - động từ / Số ít - số nhiều / Danh từ không đếm được / Thì / Giới từ / Mệnh đề quan hệ / Dạng từ / Chính tả / Dùng từ sai ngữ cảnh>
+· Giải thích: <ngắn gọn, nói rõ vì sao sai>
+· Sửa lỗi: <câu đã sửa>
+
+Nếu không có lỗi nào ở một loại thì bỏ qua, đừng bịa thêm lỗi.
+
+PHẦN 2 — BA TIÊU CHÍ
+Nhận xét ngắn, mỗi tiêu chí 2-3 câu:
+· Đúng trọng tâm: quan điểm có rõ không, lý do và ví dụ có liên quan không, đã đủ 110 từ chưa (ghi số từ thực tế).
+· Mạch lạc và gắn kết: có một ý chính xuyên suốt không, từ nối đã đa dạng chưa, có lặp ý không.
+· Từ vựng và ngữ pháp: độ rộng và độ chính xác.
+
+PHẦN 3 — BA VIỆC CẦN LÀM KHI VIẾT VERSION 2
+Ba gạch đầu dòng, mỗi cái một câu, cụ thể và làm được ngay.
+
+Tuyệt đối KHÔNG viết lại cả bài giúp học viên. Chỉ ra lỗi và hướng sửa để học viên tự viết Version 2.`; }
+aiBtn.addEventListener("click",async()=>{ const essay=wrText.value.trim();
+  if(countWords(essay)<30){ aiOut.textContent="Viết ít nhất 30 từ rồi hãy chấm. Bài quá ngắn thì nhận xét không có giá trị."; return; }
+  if(!sampleFn){ aiOut.textContent="Chức năng chấm bằng AI chưa sẵn sàng trong phiên xem này. Bạn vẫn dùng được cách thủ công: copy bài viết sang ChatGPT, Gemini hoặc Claude kèm đúng yêu cầu format Lỗi – Loại lỗi – Giải thích – Sửa lỗi."; return; }
+  aiCtl=new AbortController(); aiBtn.disabled=true; aiStopBtn.disabled=false; aiState.textContent="đang chấm…"; aiOut.textContent="Đang đọc bài…";
+  try{ await sampleFn(buildAuditPrompt(PROMPTS[STATE.prompt||0].q,essay),{signal:aiCtl.signal,modelTier:"complex",cache:false,onText:({text})=>{aiOut.textContent=text;}}); aiState.textContent="xong · chép lỗi ra giấy, đợi 12 tiếng rồi tự viết Version 2"; }
+  catch(err){ const code=err&&err.code; if(code==="cancelled")aiState.textContent="đã dừng"; else if(code==="rate_limited")aiState.textContent="bị giới hạn, thử lại sau ít phút"; else if(code==="not_granted"){aiState.textContent="";aiOut.textContent="Chưa được cấp quyền chấm bằng AI trong phiên này.";} else aiState.textContent="không chấm được, thử lại"; if(err&&err.text)aiOut.textContent=err.text; }
+  finally{ aiBtn.disabled=false; aiStopBtn.disabled=true; aiCtl=null; }
+});
+aiStopBtn.addEventListener("click",()=>{ if(aiCtl)aiCtl.abort(); });
+$("aiCopy").addEventListener("click",function(){ const essay=wrText.value.trim(); if(countWords(essay)<10){ this.textContent="viết bài đã"; setTimeout(()=>this.textContent="Copy prompt + bài viết",1500); return; } const p=buildAuditPrompt(PROMPTS[STATE.prompt||0].q,essay); const done=()=>{ this.textContent="✓ Đã copy — dán vào ChatGPT/Gemini/Claude"; setTimeout(()=>this.textContent="Copy prompt + bài viết",2200); }; navigator.clipboard.writeText(p).then(done).catch(()=>{ const ta=document.createElement("textarea"); ta.value=p; document.body.appendChild(ta); ta.select(); try{document.execCommand("copy");}catch(e){} ta.remove(); done(); }); });
+
+/* ============ SPEAKING + recorder ============ */
+let recSupported=!!(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia&&window.MediaRecorder);
+if(!recSupported) $("recWarn").textContent="Khung xem này không cho ghi âm trực tiếp. Bạn vẫn luyện nói được — dùng ứng dụng ghi âm của điện thoại để tự nghe lại.";
+function attachRecorder(container){
+  if(!recSupported) return;
+  const wrap=document.createElement("div"); wrap.className="rec";
+  wrap.innerHTML=`<button class="btn sm" data-rec>● Ghi âm</button><audio controls hidden></audio><span class="note" data-recst></span>`;
+  const btn=wrap.querySelector("[data-rec]"), audio=wrap.querySelector("audio"), st=wrap.querySelector("[data-recst]");
+  let mr=null,chunks=[],url=null,recording=false;
+  btn.addEventListener("click",async()=>{
+    if(recording){ mr&&mr.stop(); return; }
+    try{ const stream=await navigator.mediaDevices.getUserMedia({audio:true}); mr=new MediaRecorder(stream); chunks=[];
+      mr.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
+      mr.onstop=()=>{ const blob=new Blob(chunks,{type:mr.mimeType||"audio/webm"}); if(url)URL.revokeObjectURL(url); url=URL.createObjectURL(blob); audio.src=url; audio.hidden=false; stream.getTracks().forEach(t=>t.stop()); recording=false; btn.innerHTML="● Ghi lại"; st.innerHTML="nghe lại và tự chấm: đủ khung chưa, có dừng lâu không?"; };
+      mr.start(); recording=true; btn.innerHTML='<span class="dot"></span> Dừng'; st.textContent="đang ghi…";
+    }catch(e){ st.textContent="không truy cập được micro — kiểm tra quyền, hoặc dùng máy ghi âm điện thoại."; }
+  });
+  container.appendChild(wrap);
+}
+function renderSpeaking(){ const host=$("spHost"); host.innerHTML="";
+  SPEAKING.forEach(block=>{ const wrap=document.createElement("div"); wrap.innerHTML=`<div class="eyebrow">${block.part}</div>`;
+    const stack=document.createElement("div"); stack.className="stack";
+    block.qs.forEach(item=>{ const card=document.createElement("div"); card.className="qa"; card.innerHTML=`<div class="ask">${item.q}</div>`;
+      if(item.model){ const btn=document.createElement("button"); btn.className="btn sm"; btn.textContent="Xem câu trả lời mẫu"; const m=document.createElement("div"); m.className="model hidden-model"; m.innerHTML=`<em>Mẫu · khung ${block.frame}</em>${item.model}`;
+        btn.addEventListener("click",()=>{ const on=m.classList.toggle("hidden-model"); btn.textContent=on?"Xem câu trả lời mẫu":"Ẩn câu trả lời mẫu"; }); card.appendChild(btn); card.appendChild(m); }
+      else { const note=document.createElement("p"); note.className="note"; note.textContent="Tự trả lời và ghi âm. Câu này không có mẫu — cố ý, để bạn phải tự tạo nội dung."; card.appendChild(note); }
+      attachRecorder(card);
+      stack.appendChild(card); });
+    wrap.appendChild(stack); host.appendChild(wrap); });
+}
+const spDisplay=$("spT"), spBar=$("spBar"), spLbl=$("spLbl");
+let spTimer=makeTimer({display:spDisplay,bar:spBar,total:60});
+$("spPrep").addEventListener("click",()=>{ spTimer=makeTimer({display:spDisplay,bar:spBar,total:60,onEnd:()=>{spLbl.textContent="Hết 1 phút chuẩn bị · bấm 2 phút nói";}}); spLbl.textContent="Đang chuẩn bị · chỉ ghi từ khóa, không viết cả bài"; spTimer.start(60); });
+$("spTalk").addEventListener("click",()=>{ spTimer=makeTimer({display:spDisplay,bar:spBar,total:120,onEnd:()=>{spLbl.textContent="Hết 2 phút · trong phòng thi giám khảo sẽ dừng bạn ở đây";}}); spLbl.textContent="Đang nói · mục tiêu là không dừng quá 3 giây"; spTimer.start(120); });
+$("spStop").addEventListener("click",()=>spTimer.stop());
+
+/* ============ VOCAB + quiz ============ */
+function renderVocab(){ const host=$("vcHost"); host.innerHTML="";
+  VOCAB.forEach(v=>{ const b=document.createElement("button"); b.className="vcard";
+    b.innerHTML=`<div class="term">${v.t}</div><div class="pos">${v.p}</div><div class="back" hidden>${v.d}<span class="ex">${v.ex}</span><span class="meth">Ghi nhớ bằng: ${v.m}</span></div>`;
+    b.addEventListener("click",()=>{ const back=b.querySelector(".back"); back.hidden=!back.hidden; });
+    host.appendChild(b); });
+}
+$("vcFlipAll").addEventListener("click",()=>document.querySelectorAll("#vcHost .back").forEach(x=>x.hidden=false));
+$("vcHideAll").addEventListener("click",()=>document.querySelectorAll("#vcHost .back").forEach(x=>x.hidden=true));
+let quizOrder=[], quizPos=0, quizRight=0;
+function startQuiz(){ quizOrder=[...VOCAB.keys()].sort(()=>Math.random()-0.5); quizPos=0; quizRight=0; $("quizBox").hidden=false; $("vcHost").hidden=true; nextQuiz(); }
+function nextQuiz(){ if(quizPos>=quizOrder.length){ $("quizClue").textContent="Xong!"; $("quizProg").textContent=`Kết quả: ${quizRight}/${quizOrder.length}`; $("quizIn").hidden=true; $("quizCheck").disabled=true; $("quizSkip").disabled=true; return; }
+  const v=VOCAB[quizOrder[quizPos]]; $("quizProg").textContent=`Câu ${quizPos+1}/${quizOrder.length} · đúng ${quizRight}`; $("quizClue").textContent=v.d+"  ("+v.p+")"; $("quizIn").hidden=false; $("quizIn").value=""; $("quizIn").focus(); $("quizFb").textContent=""; $("quizCheck").disabled=false; $("quizSkip").disabled=false; }
+function checkQuiz(){ const v=VOCAB[quizOrder[quizPos]]; const guess=$("quizIn").value.toLowerCase().replace(/[^a-z ]/g,"").trim(); const ans=v.t.toLowerCase().replace(/\(.*?\)/g,"").replace(/[^a-z ]/g,"").trim();
+  if(guess&&(ans.includes(guess)||guess===ans)){ quizRight++; $("quizFb").textContent="✓ đúng"; } else { $("quizFb").textContent="✗ đáp án: "+v.t; }
+  quizPos++; setTimeout(nextQuiz,750); }
+$("vcQuiz").addEventListener("click",startQuiz);
+$("quizCheck").addEventListener("click",checkQuiz);
+$("quizIn").addEventListener("keydown",e=>{if(e.key==="Enter")checkQuiz();});
+$("quizSkip").addEventListener("click",()=>{ $("quizFb").textContent="đáp án: "+VOCAB[quizOrder[quizPos]].t; quizPos++; setTimeout(nextQuiz,750); });
+$("quizEnd").addEventListener("click",()=>{ $("quizBox").hidden=true; $("vcHost").hidden=false; $("quizIn").hidden=false; $("quizCheck").disabled=false; $("quizSkip").disabled=false; });
+
+/* ============ INIT ============ */
+loadLocal();
+applyTheme();
+examInput.value=STATE.examDate||"2026-10-01";
+renderCountdown(); renderDash(); renderRoadmap(); renderReading(); renderDict(); renderListening(); renderTraps(); renderPrompts(); renderSamples(); renderSpeaking(); renderVocab();
+wrText.value=(STATE.writing&&STATE.writing[STATE.prompt||0])||""; paintWords();
+setInterval(renderCountdown,60000);
+
+/* ============ CAPABILITIES ============ */
+(async()=>{
+  if(typeof window.claude?.use!=="function") return;
+  try{ const db=await window.claude.use("db");
+    if(db){ dbRef=db.doc("state/main"); const snap=await dbRef.get();
+      if(snap&&snap.exists){ const d=snap.data()||{};
+        STATE.road=d.road||STATE.road; STATE.reading=d.reading||STATE.reading; STATE.writing=d.writing||STATE.writing;
+        STATE.prompt=(d.prompt!=null)?d.prompt:STATE.prompt; STATE.examDate=d.examDate||STATE.examDate; STATE.history=Array.isArray(d.history)?d.history:STATE.history; STATE.theme=d.theme||STATE.theme;
+        saveLocal(); applyTheme(); examInput.value=STATE.examDate; renderCountdown(); renderDash(); renderRoadmap(); renderReading(); renderPrompts();
+        wrText.value=(STATE.writing&&STATE.writing[STATE.prompt||0])||""; paintWords();
+      }
+    }
+  }catch(e){}
+  try{ const s=await window.claude.use("sample"); if(s) sampleFn=s; }catch(e){}
+})();
+</script>
+
+</body></html>
