@@ -288,6 +288,13 @@ ul.tight li b{color:var(--ink)}
 <!-- ============ 01 TỔNG QUAN ============ -->
 <section class="pane" id="p-tq">
   <div class="stack-lg">
+    <div class="card" style="border-left:3px solid var(--signal)">
+      <div class="eyebrow">Luyện hôm nay · <span id="todayDate"></span></div>
+      <h3 class="blk" style="margin-top:4px">Bài của ngày — mỗi ngày một bộ khác nhau</h3>
+      <p class="note" style="margin-bottom:16px">Kho bài xoay vòng theo ngày: hôm nay bạn có một combo riêng gồm một đề viết, một bài đọc, một câu nói và vài từ vựng. Làm hết là đủ một buổi khoảng 25–30 phút.</p>
+      <div id="todayHost"></div>
+    </div>
+
     <div>
       <div class="eyebrow">Bảng theo dõi</div>
       <h2 class="pane-h">Tiến độ của bạn, không phải lời động viên chung chung</h2>
@@ -910,6 +917,23 @@ const READING = [
       {n:29, q:"Visitors are encouraged to ……………… the repair so that they can learn.", a:"watch", ev:"visitors are encouraged to watch and learn", why:"Động từ nguyên thể sau \"to\". \"watch and learn\" → \"watch\"."},
       {n:30, q:"Around seventy per cent of items are successfully returned to ……………… .", a:"use", ev:"roughly seventy per cent of the objects brought in are successfully returned to use", why:"\"returned to use\" = được dùng lại. Danh từ không đếm được, chép \"use\"."}
     ]}
+]},
+{ id:"test3", label:"Đề luyện thêm · Community Garden", sections:[
+  { id:"g1", band:"TEXT · Câu 31–36 · TRUE / FALSE / NOT GIVEN", title:"Join the Community Garden",
+    html:`<h4>Join the Community Garden</h4>
+      <p>The Elmwood Community Garden welcomes new members throughout the year. The garden is divided into around forty plots, and each household may rent one plot for a small annual fee of £25. This fee covers the use of shared tools, water and compost, so members do not need to bring their own equipment.</p>
+      <p>New members are asked to attend one short introductory session before they start. At this session, an experienced volunteer explains how the watering system works and which areas are shared. Members are free to grow whatever they like on their own plot, although the committee asks everyone to avoid chemical pesticides, as these can affect neighbouring plots.</p>
+      <p>The garden relies entirely on its members. Everyone is expected to help with general upkeep for at least two hours each month, such as clearing paths or maintaining the shared shed. Members who cannot manage this are encouraged to speak to the committee rather than simply stopping. Plots that are left completely untended for more than three months may be offered to someone on the waiting list.</p>`,
+    instr:"Do the following statements agree with the information in the text? Write TRUE, FALSE or NOT GIVEN.",
+    type:"tfng", opts:["TRUE","FALSE","NOT GIVEN"],
+    qs:[
+      {n:31, q:"Members must provide their own gardening tools.", a:"FALSE", ev:"This fee covers the use of shared tools, water and compost, so members do not need to bring their own equipment.", why:"Bài nói phí đã bao gồm dụng cụ chung, <b>không cần</b> mang riêng — trái với câu hỏi, nên FALSE."},
+      {n:32, q:"New members have to attend a session before they begin gardening.", a:"TRUE", ev:"New members are asked to attend one short introductory session before they start.", why:"Khớp trực tiếp: \"before they start\" = \"before they begin\"."},
+      {n:33, q:"The garden charges a higher fee for larger plots.", a:"NOT GIVEN", ev:"each household may rent one plot for a small annual fee of £25", why:"Bài chỉ nói một mức phí £25, <b>không đề cập</b> chuyện plot to hơn thì đắt hơn. Thiếu thông tin → NOT GIVEN."},
+      {n:34, q:"Members are not allowed to use chemical pesticides.", a:"TRUE", ev:"the committee asks everyone to avoid chemical pesticides, as these can affect neighbouring plots", why:"\"asks everyone to avoid\" = yêu cầu không dùng. Khớp ý câu hỏi."},
+      {n:35, q:"Every member must help with upkeep for at least two hours a week.", a:"FALSE", ev:"Everyone is expected to help with general upkeep for at least two hours each month", why:"Bài nói hai giờ mỗi <b>tháng</b>, câu hỏi ghi mỗi <b>tuần</b> — sai chi tiết, nên FALSE. Bẫy số/đơn vị."},
+      {n:36, q:"A neglected plot may be given to another person after three months.", a:"TRUE", ev:"Plots that are left completely untended for more than three months may be offered to someone on the waiting list.", why:"\"left untended ... may be offered to someone\" = có thể giao cho người khác. Khớp."}
+    ]}
 ]}
 ];
 
@@ -979,7 +1003,19 @@ const PROMPTS = [
   {tag:"Môi trường", q:"Some people think individuals can do little to protect the environment and that only governments and large companies can make a real difference. Do you agree?"},
   {tag:"Sức khỏe", q:"Many companies now encourage their staff to exercise during working hours. Do you think this is a positive development?"},
   {tag:"Thành phố", q:"In some cities, public transport is free for everyone. Do you think the advantages of this policy outweigh the disadvantages?"},
-  {tag:"Công việc", q:"Many young people today change their jobs every few years instead of staying with one employer. Do you think this is a good trend?"}
+  {tag:"Công việc", q:"Many young people today change their jobs every few years instead of staying with one employer. Do you think this is a good trend?"},
+  {tag:"Công nghệ", q:"Some people believe that children today spend too much time on smartphones and tablets. Do you agree, and what can parents do about it?"},
+  {tag:"Giáo dục", q:"Some schools are replacing printed textbooks with tablets and laptops. Do the benefits of this change outweigh the drawbacks?"},
+  {tag:"Sức khỏe", q:"Fast food is becoming more popular in many countries. Do you think this is a negative trend for society?"},
+  {tag:"Môi trường", q:"Some cities charge drivers a fee to enter the city centre in order to reduce traffic. Do you think this is a good idea?"},
+  {tag:"Xã hội", q:"People today rely on online reviews before buying products or booking services. Do you think this is a positive development?"},
+  {tag:"Công việc", q:"Some companies allow employees to choose their own working hours. Do you think this is beneficial for both workers and employers?"},
+  {tag:"Cá nhân", q:"Some people set specific goals for the new year, while others believe planning that far ahead is pointless. Which view do you agree with?"},
+  {tag:"Giáo dục", q:"Learning a foreign language is now part of the school curriculum from a young age. Do you think this is a good approach?"},
+  {tag:"Công nghệ", q:"Artificial intelligence is increasingly used to do tasks that people used to do. Do you think this is more helpful than harmful?"},
+  {tag:"Du lịch", q:"More people now prefer to travel to other countries rather than explore their own. Do you think this is a positive trend?"},
+  {tag:"Xã hội", q:"Some people think large shopping malls have harmed small local shops. Do you agree, and is this a bad thing?"},
+  {tag:"Sức khỏe", q:"Many people now use fitness apps and smartwatches to track their health. Do you think these devices are truly useful?"}
 ];
 
 const SAMPLES = [
@@ -1072,7 +1108,27 @@ const VOCAB = [
   {t:"broaden your horizons", p:"idiom", d:"mở mang tầm nhìn", m:"Ví dụ", ex:"Working in different areas of a company can broaden your horizons."},
   {t:"convenient but impersonal", p:"collocation", d:"tiện nhưng thiếu tính con người", m:"Ví dụ", ex:"Online shopping is convenient but impersonal compared with local stores."},
   {t:"reduce your carbon footprint", p:"collocation", d:"giảm lượng khí thải cá nhân", m:"Ví dụ", ex:"Fewer commutes can reduce a company’s carbon footprint."},
-  {t:"critical thinking", p:"collocation", d:"tư duy phản biện", m:"Ví dụ", ex:"Reading from many sources develops critical thinking."}
+  {t:"critical thinking", p:"collocation", d:"tư duy phản biện", m:"Ví dụ", ex:"Reading from many sources develops critical thinking."},
+  {t:"screen time", p:"collocation", d:"thời gian dùng màn hình", m:"Ví dụ", ex:"Parents should limit their children's daily screen time."},
+  {t:"set a good example", p:"collocation", d:"làm gương tốt", m:"Ví dụ", ex:"Parents set a good example by putting their own phones away at dinner."},
+  {t:"in the long run", p:"idiom", d:"về lâu về dài", m:"Ví dụ", ex:"In the long run, healthy habits save money on medical bills."},
+  {t:"a double-edged sword", p:"idiom", d:"con dao hai lưỡi", m:"Ví dụ", ex:"Technology is a double-edged sword: convenient but distracting."},
+  {t:"strike a balance", p:"collocation", d:"cân bằng giữa hai bên", m:"Ví dụ", ex:"Workers need to strike a balance between office and home life."},
+  {t:"ease the burden", p:"collocation", d:"giảm bớt gánh nặng", m:"Ví dụ", ex:"AI tools can ease the burden of repetitive tasks."},
+  {t:"hands-on experience", p:"collocation", d:"kinh nghiệm thực hành", m:"Ví dụ", ex:"Interns gain hands-on experience that lectures cannot provide."},
+  {t:"tailored to", p:"collocation", d:"được thiết kế riêng cho", m:"Ví dụ", ex:"Self-study lets you follow a plan tailored to your own needs."},
+  {t:"cut down on", p:"phrasal v", d:"cắt giảm", m:"Đồng nghĩa", ex:"~ reduce — “Free public transport helps people cut down on driving.”"},
+  {t:"peer pressure", p:"collocation", d:"áp lực từ bạn bè", m:"Ví dụ", ex:"Peer pressure often pushes young people to overspend."},
+  {t:"a sedentary lifestyle", p:"collocation", d:"lối sống ít vận động", m:"Đối lập", ex:">< an active lifestyle — “Desk jobs encourage a sedentary lifestyle.”"},
+  {t:"keep up with", p:"phrasal v", d:"theo kịp", m:"Ví dụ", ex:"It is hard to keep up with rapid changes in technology."},
+  {t:"a wide range of", p:"collocation", d:"rất nhiều loại", m:"Ví dụ", ex:"Online stores offer a wide range of products at any hour."},
+  {t:"first-hand", p:"adj/adv", d:"trực tiếp, tận mắt", m:"Ví dụ", ex:"Travelling lets you experience another culture first-hand."},
+  {t:"prone to", p:"adj phrase", d:"dễ bị, hay gặp", m:"Ví dụ", ex:"Unverified online reviews are prone to manipulation."},
+  {t:"weigh the pros and cons", p:"collocation", d:"cân nhắc lợi hại", m:"Ví dụ", ex:"Before buying, shoppers should weigh the pros and cons."},
+  {t:"a stepping stone", p:"idiom", d:"bàn đạp, bước đệm", m:"Ví dụ", ex:"A first job is often a stepping stone to a better career."},
+  {t:"time-consuming", p:"adj", d:"tốn thời gian", m:"Đối lập", ex:">< quick, efficient — “Commuting to the office is time-consuming.”"},
+  {t:"hinder", p:"v", d:"cản trở", m:"Đối lập", ex:">< help, promote — “Too many meetings hinder deep work.”"},
+  {t:"cater to", p:"phrasal v", d:"phục vụ, đáp ứng", m:"Ví dụ", ex:"Fast-food chains cater to busy people who have little time to cook."}
 ];
 
 const ROADMAP = [
@@ -1422,11 +1478,45 @@ $("quizIn").addEventListener("keydown",e=>{if(e.key==="Enter")checkQuiz();});
 $("quizSkip").addEventListener("click",()=>{ $("quizFb").textContent="đáp án: "+VOCAB[quizOrder[quizPos]].t; quizPos++; setTimeout(nextQuiz,750); });
 $("quizEnd").addEventListener("click",()=>{ $("quizBox").hidden=true; $("vcHost").hidden=false; $("quizIn").hidden=false; $("quizCheck").disabled=false; $("quizSkip").disabled=false; });
 
+/* ============ LUYỆN HÔM NAY (xoay theo ngày) ============ */
+function dayOfYear(){ const d=new Date(); const s=new Date(d.getFullYear(),0,0); return Math.floor((d-s)/86400000); }
+function gotoTab(id){ const t=document.querySelector('.tab[data-pane="'+id+'"]'); if(t) t.click(); }
+function selectWritingPrompt(i){ STATE.prompt=i; renderPrompts(); wrText.value=(STATE.writing&&STATE.writing[i])||""; $("wrCurrent").textContent="Đang viết: "+PROMPTS[i].q; paintWords(); save(); }
+function renderToday(){
+  const seed=dayOfYear();
+  const wi=seed%PROMPTS.length, w=PROMPTS[wi];
+  const rSecs=READING.flatMap(t=>t.sections.filter(s=>s.qs&&s.qs.length).map(s=>({s,label:t.label})));
+  const r=rSecs[seed%rSecs.length];
+  const spQs=SPEAKING.flatMap(b=>b.qs).filter(q=>q.q);
+  const sp=spQs[seed%spQs.length];
+  const vStart=(seed*4)%VOCAB.length, vs=[0,1,2,3].map(i=>VOCAB[(vStart+i)%VOCAB.length]);
+  try{ $("todayDate").textContent=new Date().toLocaleDateString('vi-VN'); }catch(e){}
+  $("todayHost").innerHTML=`
+    <div class="grid g2">
+      <div class="card" style="background:var(--card-2)"><div class="eyebrow">✍️ Đề viết hôm nay</div>
+        <p class="passage" style="font-size:14.5px;margin:6px 0 12px">${w.q}</p>
+        <button class="btn primary sm" data-today="w">Luyện viết đề này →</button></div>
+      <div class="card" style="background:var(--card-2)"><div class="eyebrow">📖 Bài đọc hôm nay</div>
+        <p class="passage" style="font-size:14.5px;margin:6px 0 12px">${(r.s.title||r.label)} · ${r.s.qs.length} câu</p>
+        <button class="btn primary sm" data-today="r">Làm bài đọc này →</button></div>
+      <div class="card" style="background:var(--card-2)"><div class="eyebrow">🗣️ Câu nói hôm nay</div>
+        <p class="passage" style="font-size:14.5px;margin:6px 0 12px">${sp.q}</p>
+        <button class="btn primary sm" data-today="s">Trả lời câu này →</button></div>
+      <div class="card" style="background:var(--card-2)"><div class="eyebrow">📚 Từ vựng hôm nay</div>
+        <p style="font-size:14px;margin:6px 0 12px">${vs.map(v=>'<b>'+v.t+'</b>').join(' · ')}</p>
+        <button class="btn primary sm" data-today="v">Học 4 từ này →</button></div>
+    </div>`;
+  $("todayHost").querySelector('[data-today="w"]').addEventListener("click",()=>{ selectWritingPrompt(wi); gotoTab("p-wr"); });
+  $("todayHost").querySelector('[data-today="r"]').addEventListener("click",()=>gotoTab("p-rd"));
+  $("todayHost").querySelector('[data-today="s"]').addEventListener("click",()=>gotoTab("p-sp"));
+  $("todayHost").querySelector('[data-today="v"]').addEventListener("click",()=>gotoTab("p-vc"));
+}
+
 /* ============ INIT ============ */
 loadLocal();
 applyTheme();
 examInput.value=STATE.examDate||"2026-10-01";
-renderCountdown(); renderDash(); renderRoadmap(); renderReading(); renderDict(); renderListening(); renderTraps(); renderPrompts(); renderSamples(); renderSpeaking(); renderVocab();
+renderCountdown(); renderDash(); renderToday(); renderRoadmap(); renderReading(); renderDict(); renderListening(); renderTraps(); renderPrompts(); renderSamples(); renderSpeaking(); renderVocab();
 wrText.value=(STATE.writing&&STATE.writing[STATE.prompt||0])||""; paintWords();
 setInterval(renderCountdown,60000);
 
