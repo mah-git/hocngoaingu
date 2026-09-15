@@ -76,8 +76,18 @@ export const handler = async (event) => {
       const cm = html.match(/"captionTracks":(\[.*?\])/s);
       if (cm) { try { tracks = JSON.parse(cm[1].replace(/\\u0026/g, "&")); } catch (e) {} }
     }
-    if (!tracks || !tracks.length)
-      return { statusCode: 404, headers: H, body: JSON.stringify({ error: "video không có phụ đề" }) };
+    if (!tracks || !tracks.length) {
+      const dbg = qs.debug ? {
+        _debug: {
+          len: html.length,
+          hasPlayerResponse: !!prRaw,
+          hasCaptionTracksStr: html.indexOf('"captionTracks"') >= 0,
+          consentOrBot: /consent|sign in to confirm|not a bot|unusual traffic|\/sorry\//i.test(html),
+          snippet: html.slice(0, 220).replace(/\s+/g, " "),
+        },
+      } : {};
+      return { statusCode: 404, headers: H, body: JSON.stringify({ error: "video không có phụ đề", ...dbg }) };
+    }
 
     // chọn track: đúng ngôn ngữ ưu tiên, ưu tiên phụ đề người tạo hơn tự động (asr)
     const pick = (a) => a.slice().sort((x, y) => (x.kind === "asr") - (y.kind === "asr"))[0];
