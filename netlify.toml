@@ -1,0 +1,6 @@
+# Site tĩnh + Netlify Functions cho tính năng lấy phụ đề YouTube.
+[build]
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"

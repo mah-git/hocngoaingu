@@ -1702,6 +1702,12 @@ loadExtra();
   const PROX=[u=>'https://api.allorigins.win/raw?url='+encodeURIComponent(u), u=>'https://corsproxy.io/?url='+encodeURIComponent(u)];
   async function pfetch(url){ let e; for(const w of PROX){ try{ const r=await fetch(w(url),{cache:'no-store'}); if(r.ok){const t=await r.text(); if(t&&t.length>5)return t;} e=new Error('HTTP '+r.status);}catch(x){e=x;} } throw e||new Error('proxy fail'); }
   async function getCaps(id,lang){
+    // 1) Ưu tiên Netlify Function (server-side, tin cậy) — chạy trên site thật
+    try{
+      const r=await fetch('/.netlify/functions/transcript?v='+id+(lang?'&lang='+lang:''));
+      if(r.ok){ const d=await r.json(); if(d.segs&&d.segs.length) return {segs:d.segs,name:d.name||d.lang||'auto'}; }
+    }catch(e){/* mở bằng file:// hoặc chưa deploy → dùng proxy phía dưới */}
+    // 2) Fallback: scrape qua proxy (dùng khi mở file cục bộ)
     const html=await pfetch('https://www.youtube.com/watch?v='+id+'&hl=en');
     const m=html.match(/"captionTracks":(\[.*?\])/); if(!m) throw new Error('Video này không có phụ đề (hoặc bị chặn).');
     let tr=JSON.parse(m[1].replace(/\\u0026/g,'&')); if(!tr.length) throw new Error('Không tìm thấy track phụ đề.');
