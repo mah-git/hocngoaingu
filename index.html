@@ -551,11 +551,12 @@ ul.tight li b{color:var(--ink)}
       </div>
       <p class="note" id="yd-status" style="margin-top:8px" hidden></p>
 
-      <details style="margin-top:8px">
-        <summary class="note" style="cursor:pointer; user-select:none">Hoặc tự dán transcript / tải file .srt · .vtt</summary>
+      <details id="yd-more" style="margin-top:8px">
+        <summary class="note" style="cursor:pointer; user-select:none">Tự dán transcript (khuyên dùng) / tải file .srt · .vtt</summary>
         <div style="margin-top:10px">
+          <p class="note" style="font-size:12.5px; margin-bottom:8px">Cách chắc chắn nhất: mở video trên YouTube → <b>“…more”</b> → <b>Show transcript</b> → bôi đen cả khung → Ctrl+C → dán xuống đây. Có mốc <code>m:ss</code> nên vẫn lặp đúng đoạn.</p>
           <label class="btn sm" style="display:inline-block">Tải file phụ đề<input id="yd-file" type="file" accept=".srt,.vtt,.txt" hidden></label>
-          <textarea id="yd-manual" style="min-height:110px; margin-top:10px; font-family:var(--mono); font-size:13px" placeholder="Dán phụ đề vào đây. Hỗ trợ văn bản thường (mỗi câu 1 dòng), SRT hoặc VTT (có mốc thời gian sẽ tự lặp đúng đoạn)."></textarea>
+          <textarea id="yd-manual" style="min-height:110px; margin-top:10px; font-family:var(--mono); font-size:13px" placeholder="Dán transcript từ YouTube (dạng '0:03  câu...'), hoặc văn bản thường (mỗi câu 1 dòng), SRT/VTT. Có mốc thời gian sẽ tự lặp đúng đoạn."></textarea>
           <div class="btn-row" style="margin-top:8px"><button class="btn" id="yd-usemanual">Dùng transcript này</button></div>
         </div>
       </details>
@@ -1696,7 +1697,27 @@ loadExtra();
     else sents=text.replace(/\s+/g,' ').match(/[^.!?…]+[.!?…]+["')\]]?|\S+$/g)||[];
     return sents.map(t=>({start:null,end:null,text:t.trim()})).filter(s=>s.text);
   }
-  const parseAny=t=>/-->/.test(t)?parseSRT(t):/<text[\s>]/.test(t)?parseXML(t):parsePlain(t);
+  // Transcript copy từ nút "Show transcript" của YouTube: dòng mốc "m:ss" hoặc "h:mm:ss"
+  // theo sau là chữ (cùng dòng hoặc dòng kế). Cho ra cue có mốc thời gian thật.
+  const TS=/^(?:(\d{1,2}):)?(\d{1,2}):(\d{2})(?:\.\d+)?\s*(.*)$/;
+  function parseYT(text){
+    const lines=text.split(/\n+/).map(l=>l.trim()).filter(Boolean);
+    const cues=[]; let cur=null;
+    for(const l of lines){
+      const m=l.match(TS);
+      if(m){
+        const sec=(+(m[1]||0))*3600+(+m[2])*60+(+m[3]);
+        if(cur){ cur.end=sec; if(cur.text.trim())cues.push(cur); }
+        cur={start:sec,end:sec+5,text:(m[4]||'').trim()};
+      } else if(cur){ cur.text+=(cur.text?' ':'')+l; }
+    }
+    if(cur&&cur.text.trim())cues.push(cur);
+    return cues2sent(cues);
+  }
+  // Đếm dòng bắt đầu bằng mốc thời gian để nhận diện transcript YouTube
+  function looksYT(t){ const ls=t.split(/\n+/).map(x=>x.trim()).filter(Boolean); if(ls.length<2)return false;
+    const n=ls.filter(x=>TS.test(x)).length; return n>=2 && n>=ls.length*0.3; }
+  const parseAny=t=>/-->/.test(t)?parseSRT(t):/<text[\s>]/.test(t)?parseXML(t):looksYT(t)?parseYT(t):parsePlain(t);
 
   /* ---- proxy fetch phụ đề ---- */
   const PROX=[u=>'https://api.allorigins.win/raw?url='+encodeURIComponent(u), u=>'https://corsproxy.io/?url='+encodeURIComponent(u)];
@@ -1795,9 +1816,13 @@ loadExtra();
   /* ---- sự kiện ---- */
   q("yd-fetch").onclick=async()=>{
     const id=vid(q("yd-url").value); if(!id){ stat('<span style="color:var(--bad,#b04a3f)">Link YouTube không hợp lệ.</span>'); return; }
-    stat('Đang lấy phụ đề từ YouTube (qua proxy công cộng)…'); q("yd-fetch").disabled=true;
+    stat('Đang thử lấy phụ đề tự động…'); q("yd-fetch").disabled=true;
     try{ const {segs,name}=await getCaps(id,q("yd-lang").value); start(id,segs,name); }
-    catch(e){ stat('<span style="color:var(--bad,#b04a3f)">Không tự lấy được phụ đề: '+esc(e.message)+'</span> → mở phần "tự dán transcript" bên dưới. Video vẫn phát được.'); mkPlayer(id); q("yd-practice").hidden=false; }
+    catch(e){
+      mkPlayer(id); q("yd-practice").hidden=false;
+      const openT=document.getElementById('yd-more'); if(openT) openT.open=true;
+      stat('<span style="color:var(--signal)">Không tự lấy được phụ đề (YouTube thường chặn lấy tự động).</span><br>'+
+        '<b>Cách chắc chắn (10 giây):</b> mở video trên YouTube → bấm <b>“…more”</b> dưới video → <b>Show transcript</b> → bôi đen toàn bộ khung transcript → Ctrl+C → dán vào ô <b>“tự dán transcript”</b> ngay dưới rồi bấm <b>Dùng transcript này</b>. Có sẵn mốc thời gian nên vẫn lặp đúng đoạn.'); }
     finally{ q("yd-fetch").disabled=false; }
   };
   q("yd-usemanual").onclick=()=>{ const id=vid(q("yd-url").value), t=q("yd-manual").value.trim();
