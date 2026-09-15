@@ -254,6 +254,30 @@ ul.tight{margin:0; padding-left:18px; font-size:14px; line-height:1.6; color:var
 ul.tight li{margin-bottom:4px}
 ul.tight li b{color:var(--ink)}
 .saved{font-family:var(--mono); font-size:11px; color:var(--muted)}
+
+/* YouTube dictation */
+.yd-input{width:100%; font-family:var(--mono); font-size:13px; padding:9px 11px; border:1px solid var(--rule); border-radius:2px; background:var(--card); color:var(--ink)}
+.yd-answer{width:100%; font-family:var(--serif); font-size:15.5px; line-height:1.5; padding:11px 13px; border:1px solid var(--rule); border-radius:2px; background:var(--card); color:var(--ink)}
+.yd-input:focus,.yd-answer:focus{outline:none; border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.yd-select{font-family:var(--mono); font-size:12px; padding:7px 8px; border:1px solid var(--rule); background:var(--card); color:var(--ink); border-radius:2px}
+.yd-video{position:relative; width:100%; padding-top:56.25%; background:#000; border:1px solid var(--rule); border-radius:3px; overflow:hidden}
+.yd-video iframe,.yd-video > div{position:absolute; inset:0; width:100%; height:100%; border:0}
+.yd-grid{display:grid; grid-template-columns:1.55fr 1fr; gap:16px}
+@media(max-width:820px){.yd-grid{grid-template-columns:1fr}}
+.yd-list{border:1px solid var(--rule); border-radius:3px; background:var(--card); max-height:360px; overflow-y:auto}
+.yd-seg{display:flex; gap:9px; align-items:center; padding:8px 11px; border-top:1px solid var(--rule-soft); cursor:pointer; font-size:13px; color:var(--ink-2)}
+.yd-seg:first-child{border-top:0}
+.yd-seg:hover{background:var(--card-2)}
+.yd-seg.on{background:var(--accent-soft)}
+.yd-seg.done .yt-txt{color:var(--ok)}
+.yd-seg .yn{font-family:var(--mono); font-size:11px; color:var(--muted); flex:0 0 auto; width:22px}
+.yd-seg .yt-txt{overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1}
+.yd-ok{color:var(--ok); font-weight:600}
+.yd-blank{color:var(--muted); letter-spacing:1px}
+.yd-reveal{background:var(--signal-soft); color:var(--ink); border-radius:2px; padding:1px 4px}
+.yd-prog{height:4px; background:var(--rule-soft); border-radius:2px; overflow:hidden}
+.yd-prog > i{display:block; height:100%; background:var(--ok); width:0; transition:width .3s}
+.yd-loop.on{background:var(--accent); border-color:var(--accent); color:#fff}
 </style>
 <header class="top">
   <div class="top-in">
@@ -510,6 +534,72 @@ ul.tight li b{color:var(--ink)}
       <div class="btn-row" style="margin-top:14px">
         <button class="btn primary" id="trapGrade">Chấm 5 câu</button>
         <span id="trapScore" class="saved"></span>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="blk">Bài tập 4 · Nghe chép từ video YouTube</h3>
+      <p class="note" style="margin-bottom:12px">Dán link một video YouTube <b>có phụ đề</b> (podcast, tin tức, TED, hội thoại...). Hệ thống tự lấy phụ đề, cắt thành từng câu để bạn nghe và <b>chép lại</b> — chấm từng từ như DailyDictation. Bấm "Ghi kết quả" để đưa vào bảng theo dõi ở tab Tổng quan.</p>
+
+      <div class="player" style="gap:8px">
+        <input id="yd-url" class="yd-input" style="flex:1; min-width:190px" placeholder="https://www.youtube.com/watch?v=..." autocomplete="off" spellcheck="false">
+        <select id="yd-lang" class="yd-select">
+          <option value="en">Phụ đề: Anh</option>
+          <option value="">Bất kỳ</option>
+        </select>
+        <button class="btn primary" id="yd-fetch">Tự lấy phụ đề</button>
+      </div>
+      <p class="note" id="yd-status" style="margin-top:8px" hidden></p>
+
+      <details style="margin-top:8px">
+        <summary class="note" style="cursor:pointer; user-select:none">Hoặc tự dán transcript / tải file .srt · .vtt</summary>
+        <div style="margin-top:10px">
+          <label class="btn sm" style="display:inline-block">Tải file phụ đề<input id="yd-file" type="file" accept=".srt,.vtt,.txt" hidden></label>
+          <textarea id="yd-manual" style="min-height:110px; margin-top:10px; font-family:var(--mono); font-size:13px" placeholder="Dán phụ đề vào đây. Hỗ trợ văn bản thường (mỗi câu 1 dòng), SRT hoặc VTT (có mốc thời gian sẽ tự lặp đúng đoạn)."></textarea>
+          <div class="btn-row" style="margin-top:8px"><button class="btn" id="yd-usemanual">Dùng transcript này</button></div>
+        </div>
+      </details>
+
+      <div id="yd-practice" hidden style="margin-top:16px">
+        <div class="yd-grid">
+          <div class="stack">
+            <div class="yd-video"><div id="yd-player"></div></div>
+            <div class="card">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:11px">
+                <span class="note">Câu <b id="yd-idx" style="color:var(--signal)">1</b> / <span id="yd-total">1</span></span>
+                <span class="speed" role="group" aria-label="Tốc độ">
+                  <button data-yr="0.5">0.5×</button><button data-yr="0.75">0.75×</button><button data-yr="1" aria-pressed="true">1×</button>
+                </span>
+              </div>
+              <div class="btn-row" style="margin-bottom:11px">
+                <button class="btn primary" id="yd-replay">↺ Nghe lại đoạn</button>
+                <button class="btn yd-loop" id="yd-loop" title="Lặp đoạn liên tục">⟳</button>
+                <button class="btn" id="yd-prev" title="Câu trước">◀</button>
+                <button class="btn" id="yd-next" title="Câu sau">▶</button>
+              </div>
+              <input id="yd-answer" class="yd-answer" placeholder="Gõ lại những gì bạn nghe được, nhấn Enter để chấm..." autocomplete="off" autocapitalize="off" spellcheck="false">
+              <div class="btn-row" style="margin-top:11px; align-items:center">
+                <button class="btn primary" id="yd-check">Kiểm tra</button>
+                <button class="btn" id="yd-hint">Gợi ý 1 từ</button>
+                <button class="btn" id="yd-reveal">Hiện đáp án</button>
+                <span class="saved" id="yd-acc"></span>
+              </div>
+              <div class="fb" id="yd-result" hidden style="margin-left:0; margin-top:12px; font-size:15px; line-height:1.55"></div>
+            </div>
+            <p class="note" style="font-size:12px"><b>Phím tắt:</b> Enter chấm / câu tiếp · Tab nghe lại · Esc hiện đáp án · Ctrl + ← / → đổi câu</p>
+          </div>
+          <div class="stack">
+            <div class="card">
+              <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px"><span class="eyebrow">Tiến độ bài này</span><span class="saved" id="yd-progtxt">0/0</span></div>
+              <div class="yd-prog"><i id="yd-progbar"></i></div>
+              <div class="btn-row" style="margin-top:13px">
+                <button class="btn primary sm" id="yd-log">Ghi kết quả vào bảng theo dõi</button>
+                <button class="btn sm" id="yd-reset">Xoá tiến độ</button>
+              </div>
+            </div>
+            <div class="yd-list" id="yd-seglist"></div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1552,6 +1642,189 @@ loadExtra();
     }
   }catch(e){}
   try{ const s=await window.claude.use("sample"); if(s) sampleFn=s; }catch(e){}
+})();
+
+/* ============ NGHE CHÉP TỪ YOUTUBE ============ */
+(function(){
+  const q=id=>document.getElementById(id);
+  if(!q("yd-fetch")) return;
+  const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  function stat(msg,hide){ const el=q("yd-status"); if(hide){el.hidden=true;return;} el.hidden=false; el.innerHTML=msg; }
+
+  function vid(url){
+    if(!url) return null; url=url.trim();
+    const ps=[/[?&]v=([\w-]{11})/,/youtu\.be\/([\w-]{11})/,/embed\/([\w-]{11})/,/shorts\/([\w-]{11})/,/live\/([\w-]{11})/];
+    for(const p of ps){const m=url.match(p); if(m) return m[1];}
+    if(/^[\w-]{11}$/.test(url)) return url; return null;
+  }
+  const norm=w=>w.toLowerCase().replace(/[""'']/g,"'").replace(/[^a-z0-9'\-À-ỹ]/gi,'').replace(/^'+|'+$/g,'');
+  const toks=s=>(s||'').split(/\s+/).map(norm).filter(Boolean);
+  function lcs(ref,usr){
+    const n=ref.length,m=usr.length, dp=Array.from({length:n+1},()=>new Int32Array(m+1));
+    for(let i=n-1;i>=0;i--)for(let j=m-1;j>=0;j--) dp[i][j]=ref[i]===usr[j]?dp[i+1][j+1]+1:Math.max(dp[i+1][j],dp[i][j+1]);
+    const rM=new Array(n).fill(false), uM=new Array(m).fill(false); let i=0,j=0;
+    while(i<n&&j<m){ if(ref[i]===usr[j]){rM[i]=uM[j]=true;i++;j++;} else if(dp[i+1][j]>=dp[i][j+1])i++; else j++; }
+    return {rM,uM};
+  }
+
+  /* ---- parse phụ đề ---- */
+  const hms=t=>{const p=t.replace(',','.').split(':').map(parseFloat); return p.length===3?p[0]*3600+p[1]*60+p[2]:p.length===2?p[0]*60+p[1]:(p[0]||0);};
+  function cues2sent(cues){
+    const out=[]; let buf='',st=null,en=null;
+    const flush=()=>{ if(buf.trim()) out.push({start:st,end:en,text:buf.trim().replace(/\s+/g,' ')}); buf='';st=null; };
+    for(const c of cues){ const t=c.text.replace(/\s+/g,' ').trim(); if(!t)continue; if(st===null)st=c.start; en=c.end; buf+=(buf?' ':'')+t; if(/[.!?…]["')\]]?$/.test(t))flush(); }
+    flush(); return out;
+  }
+  function parseSRT(text){
+    const clean=text.replace(/^WEBVTT.*$/m,'').replace(/\r/g,''); const blocks=clean.split(/\n\s*\n/); const cues=[];
+    const re=/(\d{1,2}:\d{2}(?::\d{2})?[.,]\d{1,3})\s*-->\s*(\d{1,2}:\d{2}(?::\d{2})?[.,]\d{1,3})/;
+    for(const b of blocks){ const ls=b.split('\n').filter(l=>l.trim()); const ti=ls.findIndex(l=>re.test(l)); if(ti<0)continue;
+      const m=ls[ti].match(re); const t=ls.slice(ti+1).join(' ').replace(/<[^>]+>/g,'').replace(/\{[^}]+\}/g,'').trim();
+      if(t) cues.push({start:hms(m[1]),end:hms(m[2]),text:t}); }
+    return cues2sent(cues);
+  }
+  function parseXML(xml){
+    const doc=new DOMParser().parseFromString(xml,'text/xml');
+    const cues=[...doc.getElementsByTagName('text')].map(n=>{ const s=parseFloat(n.getAttribute('start')||0), d=parseFloat(n.getAttribute('dur')||0);
+      const t=(n.textContent||'').replace(/&amp;/g,'&').replace(/&#39;/g,"'").replace(/&quot;/g,'"').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/\s+/g,' ').trim();
+      return {start:s,end:s+d,text:t}; }).filter(c=>c.text);
+    return cues2sent(cues);
+  }
+  function parsePlain(text){
+    const lines=text.split(/\n+/).map(l=>l.trim()).filter(Boolean); let sents;
+    if(lines.length>1 && lines.every(l=>l.length<400)) sents=lines;
+    else sents=text.replace(/\s+/g,' ').match(/[^.!?…]+[.!?…]+["')\]]?|\S+$/g)||[];
+    return sents.map(t=>({start:null,end:null,text:t.trim()})).filter(s=>s.text);
+  }
+  const parseAny=t=>/-->/.test(t)?parseSRT(t):/<text[\s>]/.test(t)?parseXML(t):parsePlain(t);
+
+  /* ---- proxy fetch phụ đề ---- */
+  const PROX=[u=>'https://api.allorigins.win/raw?url='+encodeURIComponent(u), u=>'https://corsproxy.io/?url='+encodeURIComponent(u)];
+  async function pfetch(url){ let e; for(const w of PROX){ try{ const r=await fetch(w(url),{cache:'no-store'}); if(r.ok){const t=await r.text(); if(t&&t.length>5)return t;} e=new Error('HTTP '+r.status);}catch(x){e=x;} } throw e||new Error('proxy fail'); }
+  async function getCaps(id,lang){
+    const html=await pfetch('https://www.youtube.com/watch?v='+id+'&hl=en');
+    const m=html.match(/"captionTracks":(\[.*?\])/); if(!m) throw new Error('Video này không có phụ đề (hoặc bị chặn).');
+    let tr=JSON.parse(m[1].replace(/\\u0026/g,'&')); if(!tr.length) throw new Error('Không tìm thấy track phụ đề.');
+    const pick=a=>a.sort((x,y)=>(x.kind==='asr')-(y.kind==='asr'))[0];
+    let t; if(lang){ const s=tr.filter(x=>(x.languageCode||'').startsWith(lang)); t=s.length?pick(s):pick(tr);} else t=pick(tr);
+    const xml=await pfetch(t.baseUrl.replace(/\\u0026/g,'&').replace(/&amp;/g,'&'));
+    const segs=parseXML(xml); if(!segs.length) throw new Error('Phụ đề rỗng.');
+    return {segs,name:(t.name&&t.name.simpleText)||t.languageCode};
+  }
+
+  /* ---- YT player ---- */
+  let player=null, apiReady=false, pending=null;
+  window.onYouTubeIframeAPIReady=function(){ apiReady=true; if(pending){mkPlayer(pending);pending=null;} };
+  (function(){ const s=document.createElement('script'); s.src='https://www.youtube.com/iframe_api'; document.head.appendChild(s); })();
+  function mkPlayer(id){
+    if(!apiReady){pending=id;return;}
+    if(player){ player.loadVideoById(id); player.pauseVideo(); return; }
+    player=new YT.Player('yd-player',{videoId:id, playerVars:{rel:0,modestbranding:1,playsinline:1}, events:{onReady:setRate}});
+  }
+  function setRate(){ try{ player&&player.setPlaybackRate(rate); }catch(e){} }
+
+  /* ---- state ---- */
+  let S={id:null,segs:[],cur:0,ans:{},timed:false}, rate=1, loop=false, watch=null;
+  const key=()=>'yd:'+S.id;
+  function persist(){ try{ localStorage.setItem(key(),JSON.stringify({ans:S.ans,cur:S.cur})); }catch(e){} }
+  function restore(){ try{ const r=localStorage.getItem(key()); if(r){const d=JSON.parse(r); S.ans=d.ans||{}; S.cur=d.cur||0;} }catch(e){} }
+
+  /* ---- phát đoạn ---- */
+  function clr(){ if(watch){clearInterval(watch);watch=null;} }
+  function play(i){
+    const s=S.segs[i];
+    if(!player||!S.timed||s.start==null){ if(player){setRate();player.playVideo();} return; }
+    clr(); setRate(); player.seekTo(Math.max(0,s.start-0.15),true); player.playVideo();
+    const end=s.end+0.05;
+    watch=setInterval(()=>{ let t=0; try{t=player.getCurrentTime();}catch(e){}
+      if(t>=end){ if(loop) player.seekTo(Math.max(0,s.start-0.15),true); else {player.pauseVideo();clr();} } },80);
+  }
+
+  /* ---- render ---- */
+  function list(){
+    q("yd-seglist").innerHTML=S.segs.map((s,i)=>{ const a=S.ans[i]; let c='yd-seg'; if(i===S.cur)c+=' on'; if(a&&a.acc===100)c+=' done';
+      const prev=a&&a.acc===100?s.text:('Câu '+(i+1)+(a?' · '+a.acc+'%':''));
+      return `<div class="${c}" data-i="${i}"><span class="yn">${String(i+1).padStart(2,'0')}</span><span class="yt-txt">${esc(prev)}</span>${a&&a.acc===100?'<span style="color:var(--ok)">✓</span>':''}</div>`;
+    }).join('');
+    q("yd-seglist").querySelectorAll('.yd-seg').forEach(el=>el.onclick=()=>goto(+el.dataset.i));
+    const on=q("yd-seglist").querySelector('.yd-seg.on'); if(on) on.scrollIntoView({block:'nearest'});
+  }
+  function prog(){ const done=S.segs.filter((_,i)=>S.ans[i]&&S.ans[i].acc===100).length; const pct=S.segs.length?Math.round(done/S.segs.length*100):0;
+    q("yd-progbar").style.width=pct+'%'; q("yd-progtxt").textContent=done+'/'+S.segs.length; }
+  function goto(i){ if(i<0||i>=S.segs.length)return; S.cur=i; q("yd-idx").textContent=i+1;
+    const a=S.ans[i]; q("yd-answer").value=a?a.text:''; q("yd-result").hidden=true; q("yd-acc").textContent='';
+    list(); persist(); play(i); q("yd-answer").focus();
+  }
+
+  /* ---- chấm ---- */
+  function check(){
+    const s=S.segs[S.cur], ref=toks(s.text), usr=toks(q("yd-answer").value); if(!ref.length)return;
+    const {rM,uM}=lcs(ref,usr); const correct=rM.filter(Boolean).length; const acc=Math.round(correct/ref.length*100);
+    const words=s.text.split(/\s+/); let ri=0;
+    const html=words.map(w=>{ if(!norm(w))return esc(w); const ok=rM[ri++];
+      return ok?`<span class="yd-ok">${esc(w)}</span>`:`<span class="yd-blank">${'·'.repeat(Math.max(2,w.replace(/[^a-zA-Z0-9]/g,'').length))}</span>`; }).join(' ');
+    const extra=usr.filter((_,j)=>!uM[j]);
+    const ex=extra.length?`<div style="font-size:12px;color:var(--bad,#b04a3f);margin-top:6px">Từ thừa/sai: ${extra.map(esc).join(', ')}</div>`:'';
+    q("yd-result").innerHTML=html+ex; q("yd-result").hidden=false;
+    const ae=q("yd-acc"); ae.textContent=acc+'%'; ae.style.color=acc===100?'var(--ok)':acc>=60?'var(--signal)':'var(--bad,#b04a3f)';
+    S.ans[S.cur]={text:q("yd-answer").value,acc}; persist(); list(); prog();
+    if(acc===100) setTimeout(()=>{ if(S.cur<S.segs.length-1)goto(S.cur+1); },650);
+  }
+  function reveal(){ const s=S.segs[S.cur]; q("yd-result").innerHTML=`<span class="yd-reveal">${esc(s.text)}</span>`; q("yd-result").hidden=false; q("yd-acc").textContent='đáp án'; q("yd-acc").style.color='var(--muted)'; }
+  function hint(){ const s=S.segs[S.cur], ref=toks(s.text), usr=toks(q("yd-answer").value); const {rM}=lcs(ref,usr);
+    const words=s.text.split(/\s+/).filter(w=>norm(w)); let tg=-1; for(let k=0;k<words.length;k++){ if(!rM[k]){tg=k;break;} }
+    if(tg<0){ stat('<span style="color:var(--ok)">Bạn đã đúng hết rồi.</span>'); return; }
+    const cur=q("yd-answer").value.trim(); q("yd-answer").value=(cur?cur+' ':'')+words[tg]; q("yd-answer").focus();
+  }
+
+  /* ---- start ---- */
+  function start(id,segs,name){
+    S={id:id||('manual-'+Date.now()),segs,cur:0,ans:{},timed:segs.some(s=>s.start!=null)}; restore();
+    q("yd-practice").hidden=false; q("yd-total").textContent=segs.length; if(id)mkPlayer(id);
+    list(); prog(); goto(S.cur);
+    stat('<span style="color:var(--ok)">Đã tải '+segs.length+' câu'+(name?' · phụ đề '+esc(name):'')+(S.timed?' · tự lặp đúng đoạn.':' · phát thủ công (không có mốc thời gian).')+'</span>');
+    q("yd-practice").scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+
+  /* ---- sự kiện ---- */
+  q("yd-fetch").onclick=async()=>{
+    const id=vid(q("yd-url").value); if(!id){ stat('<span style="color:var(--bad,#b04a3f)">Link YouTube không hợp lệ.</span>'); return; }
+    stat('Đang lấy phụ đề từ YouTube (qua proxy công cộng)…'); q("yd-fetch").disabled=true;
+    try{ const {segs,name}=await getCaps(id,q("yd-lang").value); start(id,segs,name); }
+    catch(e){ stat('<span style="color:var(--bad,#b04a3f)">Không tự lấy được phụ đề: '+esc(e.message)+'</span> → mở phần "tự dán transcript" bên dưới. Video vẫn phát được.'); mkPlayer(id); q("yd-practice").hidden=false; }
+    finally{ q("yd-fetch").disabled=false; }
+  };
+  q("yd-usemanual").onclick=()=>{ const id=vid(q("yd-url").value), t=q("yd-manual").value.trim();
+    if(!t){ stat('<span style="color:var(--bad,#b04a3f)">Chưa có transcript.</span>'); return; }
+    const segs=parseAny(t); if(!segs.length){ stat('<span style="color:var(--bad,#b04a3f)">Không tách được câu nào.</span>'); return; }
+    if(!id) stat('<span style="color:var(--signal)">Chưa có link video — bạn vẫn chép được nhưng sẽ không nghe. Nên dán link.</span>');
+    start(id,segs,'thủ công');
+  };
+  q("yd-file").onchange=e=>{ const f=e.target.files[0]; if(!f)return; const r=new FileReader();
+    r.onload=()=>{ q("yd-manual").value=r.result; stat('Đã nạp "'+esc(f.name)+'". Nhấn "Dùng transcript này".'); }; r.readAsText(f); };
+  q("yd-replay").onclick=()=>play(S.cur);
+  q("yd-loop").onclick=()=>{ loop=!loop; q("yd-loop").classList.toggle('on',loop); if(loop)play(S.cur); else clr(); };
+  q("yd-prev").onclick=()=>goto(S.cur-1); q("yd-next").onclick=()=>goto(S.cur+1);
+  q("yd-check").onclick=check; q("yd-reveal").onclick=reveal; q("yd-hint").onclick=hint;
+  q("yd-log").onclick=()=>{ let c=0,tt=0; S.segs.forEach((s,i)=>{ const a=S.ans[i]; if(!a)return; const ref=toks(s.text); tt+=ref.length; c+=Math.round(a.acc/100*ref.length); });
+    if(!tt){ stat('<span style="color:var(--bad,#b04a3f)">Chưa chép câu nào để ghi.</span>'); return; }
+    if(typeof logAttempt==='function') logAttempt('dictation','YouTube dictation',c,tt);
+    stat('<span style="color:var(--ok)">Đã ghi '+Math.round(c/tt*100)+'% vào bảng theo dõi (tab Tổng quan).</span>');
+  };
+  q("yd-reset").onclick=()=>{ if(!confirm('Xoá tiến độ bài này?'))return; try{localStorage.removeItem(key());}catch(e){} S.ans={};S.cur=0; list();prog();goto(0); };
+  q("yd-url").addEventListener('keydown',e=>{ if(e.key==='Enter'){e.preventDefault();q("yd-fetch").click();} });
+  q("yd-answer").addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault();
+    const done=S.ans[S.cur]&&S.ans[S.cur].acc===100; if(done&&S.cur<S.segs.length-1)goto(S.cur+1); else check(); } });
+  document.querySelectorAll('.speed button[data-yr]').forEach(b=>b.onclick=()=>{ rate=parseFloat(b.dataset.yr);
+    b.parentElement.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b))); setRate(); });
+  document.addEventListener('keydown',e=>{ if(q("yd-practice").hidden)return; if(document.getElementById('p-ls').hidden)return;
+    if(e.key==='Tab'&&e.target.id==='yd-answer'){ e.preventDefault(); play(S.cur); }
+    else if(e.key==='Escape'){ e.preventDefault(); reveal(); }
+    else if(e.ctrlKey&&e.key==='ArrowRight'){ e.preventDefault(); goto(S.cur+1); }
+    else if(e.ctrlKey&&e.key==='ArrowLeft'){ e.preventDefault(); goto(S.cur-1); }
+  });
+  // tạm dừng video khi rời tab Listening
+  document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{ try{player&&player.pauseVideo&&player.pauseVideo();}catch(e){} clr(); }));
 })();
 </script>
 
