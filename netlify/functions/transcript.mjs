@@ -2,15 +2,16 @@
 // GET /.netlify/functions/transcript?v=VIDEO_ID&lang=en[&debug=1]
 // Trả JSON: { segs:[{start,end,text}], name, lang, via }  hoặc { error }
 
-const IT_KEY = "AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8"; // public INNERTUBE web key (ổn định nhiều năm)
-
-// Các client thử theo thứ tự — ANDROID/IOS né được tường "confirm you're not a bot"
+// Mỗi client InnerTube có API key riêng — dùng sai key sẽ trả {error}
 const CLIENTS = [
-  { name: "ANDROID", ver: "19.09.37", extra: { androidSdkVersion: 30 },
+  { name: "ANDROID", ver: "19.09.37", key: "AIzaSyA8eiZmM1FaDVjRy-df2KTyQ_vz_yYM39w",
+    extra: { androidSdkVersion: 30 },
     ua: "com.google.android.youtube/19.09.37 (Linux; U; Android 11) gzip" },
-  { name: "IOS", ver: "19.09.3", extra: {},
+  { name: "IOS", ver: "19.09.3", key: "AIzaSyB-63vPrdThhKuerbB2N_l7Kwwcxj6yUAc",
+    extra: {},
     ua: "com.google.ios.youtube/19.09.3 (iPhone14,3; U; CPU iOS 15_6 like Mac OS X)" },
-  { name: "WEB", ver: "2.20240304.00.00", extra: {},
+  { name: "WEB", ver: "2.20240304.00.00", key: "AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8",
+    extra: {},
     ua: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" },
 ];
 
@@ -31,7 +32,7 @@ function cues2sent(cues) {
 }
 
 async function itPlayer(v, c) {
-  const r = await fetch("https://www.youtube.com/youtubei/v1/player?key=" + IT_KEY + "&prettyPrint=false", {
+  const r = await fetch("https://www.youtube.com/youtubei/v1/player?key=" + c.key + "&prettyPrint=false", {
     method: "POST",
     headers: { "Content-Type": "application/json", "User-Agent": c.ua, "Accept-Language": "en" },
     body: JSON.stringify({
