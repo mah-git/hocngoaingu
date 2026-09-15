@@ -92,6 +92,7 @@ export const handler = async (event) => {
     return { statusCode: 400, headers: H, body: JSON.stringify({ error: "video id không hợp lệ" }) };
 
   const tried = [];
+  const detail = [];
   try {
     let tracks = null, usedClient = null, playability = null;
     for (const c of CLIENTS) {
@@ -102,11 +103,14 @@ export const handler = async (event) => {
       const t = pr && pr.captions && pr.captions.playerCaptionsTracklistRenderer &&
                 pr.captions.playerCaptionsTracklistRenderer.captionTracks;
       tried.push(c.name + ":" + (st || "?") + (t ? "(" + t.length + ")" : ""));
+      if (qs.debug) detail.push({ client: c.name, status: st,
+        reason: pr && pr.playabilityStatus && pr.playabilityStatus.reason,
+        keys: Object.keys(pr || {}).slice(0, 12), hasCaptions: !!(pr && pr.captions) });
       if (t && t.length) { tracks = t; usedClient = c; break; }
     }
 
     if (!tracks || !tracks.length) {
-      const dbg = qs.debug ? { _debug: { tried, playability } } : {};
+      const dbg = qs.debug ? { _debug: { tried, playability, detail } } : {};
       return { statusCode: 404, headers: H, body: JSON.stringify({ error: "video không có phụ đề", ...dbg }) };
     }
 
